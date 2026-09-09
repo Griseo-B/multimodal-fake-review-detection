@@ -1,4 +1,1 @@
 id,text,image_path,label,domain,source,gen_source,split,annotator,notes
-sample_001,房间很大很干净，早餐丰富。,images/001.jpg,real,hotel,public_dataset_x,,train,管文馨,
-sample_002,这是我写的假好评示例。,,human_fake,ecommerce,handwritten,,train,覃玉雯,
-sample_003,AI生成的酒店假评论示例。,images/003.jpg,ai_fake,hotel,self_gen,qwen,train,系统自动,生成时已打标
