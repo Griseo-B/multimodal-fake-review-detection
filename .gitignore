@@ -1,0 +1,65 @@
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.env
+.env.*
+
+# Jupyter
+.ipynb_checkpoints/
+
+# IDE
+.idea/
+.vscode/
+*.swp
+
+# OS
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Data (keep structure, ignore heavy files)
+data/raw/**
+data/processed/**
+!data/raw/.gitkeep
+!data/processed/.gitkeep
+!data/README.md
+!data/templates/**
+
+# Models & caches
+*.pt
+*.pth
+*.ckpt
+*.bin
+*.onnx
+*.h5
+checkpoints/
+wandb/
+runs/
+outputs/
+lightning_logs/
+
+# Archives
+*.zip
+*.tar
+*.tar.gz
+*.rar
+*.7z
+
+# Office temp
+~$*
+
+# Finance scans may contain personal info — keep local
+finance/invoices/
+finance/*.pdf
+finance/*.jpg
+finance/*.png
+!finance/README.md
+!finance/预算台账模板.csv
+
+# Secrets
+**/credentials*.json
+**/*secret*
+**/api_keys*
