@@ -1,2 +1,6 @@
 数据集名称,下载链接,大约条数,是否有图片,原有标签说明,能否对应三类(能/不能/部分能),是否已下载(是/否),推荐程度(高/中/低),负责人,备注
-AiGen-FoodReview,https://example.com/replace,20000,是,真实与AI生成等,部分能,否,高,朱启哲,示例行请替换
+AiGen-FoodReview,https://zenodo.org/records/10511456,20144,是,0=authentic（作者标注真实）；1=machine-generated（机器生成）,部分能,是,高,朱启哲,英文餐饮图文；GPT-4-Turbo与DALL-E-2；缺human_fake类；已下载全部20144条评论和20144张图片，文件校验及图文ID对应通过；有重复文本与图片尺寸差异，详见data/数据下载验证.md；按项目规范可对应real/ai_fake，保留原始标签；MIT许可；2026-09-16核验
+Fake Reviews（Salminen等）,https://osf.io/tyue9/,40000,否,约2万条原始人工评论与2万条GPT-2生成评论；具体字段编码待核实,部分能,否,中,朱启哲,英文电商评论；作者仓库https://github.com/joolsa/FakeReviews确认公开数据入口及GPT-2来源；约4万为作者概数；无独立human_fake类；OSF入口本次访问403，文件可获取性、精确条数及许可待定；2026-09-16核验
+Amazon Reviews 2023,https://amazon-reviews-2023.github.io/main.html,571540000,是,评分及verified_purchase等元数据；无真实/人工虚假/AI虚假标签,不能,否,中,朱启哲,英文商品评论；约5.7154亿条为全量规模，非带图数量；评论images字段与商品元数据图片须区分；仅作图文素材候选，不能把平台评论或已验证购买直接视为真实；建议按类别抽取；许可及图片链接有效率待定；2026-09-16核验
+DetectRL（优先Yelp评论子集）,https://github.com/NLP2CT/DetectRL,待定（Yelp子集规模待核实）,否,人类文本与LLM生成文本；包含改写及扰动场景，具体字段编码待定,部分能,否,中,朱启哲,英文；官方load_dataset.sh含Yelp采集流程；同时含非评论领域，需筛选Yelp；AI生成侧可按项目规则使用，人类侧真假需核对；无独立human_fake标签；现成数据下载位置、许可及子集条数待定；不等同于已下载；2026-09-16核验
+"Who Writes the Review, Human or AI?（论文数据线索）",待定（论文入口：https://arxiv.org/abs/2405.20285）,20000,否,论文报告10000条人工书评与10000条Vicuna生成书评,部分能,否,低,朱启哲,英文书评；20000为论文构建规模；生成数据公开下载入口及许可待定，尚不能确认是可获取公开数据集；无独立human_fake类；先保留线索，不能以原始Goodreads数据冒充论文生成数据；2026-09-16核验
