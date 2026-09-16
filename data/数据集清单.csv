@@ -1,2 +1,13 @@
-æ•°æ®é›†åç§°,ä¸‹è½½é“¾æ¥,å¤§çº¦æ¡æ•°,æ˜¯å¦æœ‰å›¾ç‰‡,åŸæœ‰æ ‡ç­¾è¯´æ˜,èƒ½å¦å¯¹åº”ä¸‰ç±»(èƒ½/ä¸èƒ½/éƒ¨åˆ†èƒ½),æ˜¯å¦å·²ä¸‹è½½(æ˜¯/å¦),æ¨èç¨‹åº¦(é«˜/ä¸­/ä½),è´Ÿè´£äºº,å¤‡æ³¨
-AiGen-FoodReview,https://example.com/replace,20000,æ˜¯,çœŸå®ä¸AIç”Ÿæˆç­‰,éƒ¨åˆ†èƒ½,å¦,é«˜,æœ±å¯å“²,ç¤ºä¾‹è¡Œè¯·æ›¿æ¢
+Êı¾İ¼¯Ãû³Æ,ÏÂÔØÁ´½Ó,´óÔ¼ÌõÊı,ÊÇ·ñÓĞÍ¼Æ¬,Ô­ÓĞ±êÇ©ËµÃ÷,ÄÜ·ñ¶ÔÓ¦ÈıÀà(ÄÜ/²»ÄÜ/²¿·ÖÄÜ),ÊÇ·ñÒÑÏÂÔØ(ÊÇ/·ñ),ÍÆ¼ö³Ì¶È(¸ß/ÖĞ/µÍ),¸ºÔğÈË,±¸×¢
+fake-reviews-dataset,https://www.kaggle.com/datasets/mexwell/fake-reviews-dataset,40000,·ñ,OR = Original reviews (presumably human created and authentic); CG = Computer-generated fake reviews.,²¿·ÖÄÜ,ÊÇ,¸ß,ÖìÃ÷ÕÜ,
+deceptive-opinion-spam-corpus,https://www.kaggle.com/datasets/rtatman/deceptive-opinion-spam-corpus,1600,·ñ,truthfult/deceptive,²¿·ÖÄÜ,ÊÇ,ÖĞ,ÖìÃ÷ÕÜ,
+yelpdata7,https://www.kaggle.com/datasets/danaxu11/yelpzip,160000,·ñ,0 = false/1 = true,²¿·ÖÄÜ,ÊÇ,¸ß,ÖìÃ÷ÕÜ,
+modern-fake-reviews,https://huggingface.co/datasets/Flowerly/modern-fake-reviews,5000,·ñ,OR = Original reviews (presumably human created and authentic); CG = Computer-generated fake reviews.,²¿·ÖÄÜ,·ñ,ÖĞ,ÖìÃ÷ÕÜ,
+Fake-Reviews-Dataset,https://huggingface.co/datasets/theArijitDas/Fake-Reviews-Dataset,40000,·ñ,0 = false/1 = true,²¿·ÖÄÜ,·ñ,¸ß,ÖìÃ÷ÕÜ,
+fake-review,https://huggingface.co/datasets/astrosbd/fake-review,40000,·ñ,real/fake,²¿·ÖÄÜ,·ñ,¸ß,ÖìÃ÷ÕÜ,
+Four-city Datasets,https://www.cs.cmu.edu/~jiweil/html/four_city.html,640,·ñ,true/fake,²¿·ÖÄÜ,ÊÇ,µÍ,ÖìÃ÷ÕÜ,
+fake-reviews-data,https://github.com/bretthollenbeck/fake-reviews-data,380000,·ñ,0 = false/1 = true,²¿·ÖÄÜ,ÊÇ,¸ß,ÖìÃ÷ÕÜ,
+restaurant_reviews_anonymized,https://github.com/asiamina/FakeReviews-RestaurantDataset/blob/master/restaurant_reviews_anonymized.csv,111,·ñ,0 = false/1 = true,²¿·ÖÄÜ,ÊÇ,ÖĞ,ÖìÃ÷ÕÜ,
+Paraphrased OPinion Spam (POPS) Corpus v1.0,https://github.com/jacobis/paraphrased-opinion-spam,400,·ñ,È«¼Ù,²»ÄÜ,·ñ,µÍ,ÖìÃ÷ÕÜ,
+Bengali_Fake_Review_Dataset,https://www.kaggle.com/datasets/shawontanvir/bengali-fake-review-dataset,9000,·ñ,0 = false/1 = true,²¿·ÖÄÜ,ÊÇ,µÍ,ÖìÃ÷ÕÜ,
+fake-review-dataset-clean-v2,https://www.kaggle.com/datasets/shouryaraw/fake-review-dataset-clean-v2,40000,·ñ,true/false,²¿·ÖÄÜ,·ñ,ÖĞ,ÖìÃ÷ÕÜ,
