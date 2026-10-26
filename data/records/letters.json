@@ -1,0 +1,20 @@
+{
+  "letters": {
+    "A": "aigen_foodreview",
+    "B": "ctrip_chnsenticorp",
+    "C": "ctrip_trip_sample_2026",
+    "D": "ecommerce_10cats",
+    "E": "waimai_10k",
+    "F": "jd_review",
+    "G": "jd_herbal"
+  },
+  "source_to_letter": {
+    "aigen_foodreview": "A",
+    "ctrip_chnsenticorp": "B",
+    "ctrip_trip_sample_2026": "C",
+    "ecommerce_10cats": "D",
+    "waimai_10k": "E",
+    "jd_review": "F",
+    "jd_herbal": "G"
+  }
+}

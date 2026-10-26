@@ -1,0 +1,74 @@
+{
+  "schema_version": "1.0",
+  "policy": "all_rows_per_source",
+  "id_format": "{letter}{seq:06d}",
+  "letters": {
+    "A": "aigen_foodreview",
+    "B": "ctrip_chnsenticorp",
+    "C": "ctrip_trip_sample_2026",
+    "D": "ecommerce_10cats",
+    "E": "waimai_10k",
+    "F": "jd_review",
+    "G": "jd_herbal"
+  },
+  "counts": {
+    "aigen_foodreview": {
+      "n": 20144,
+      "with_image": 20144,
+      "usable": 20144,
+      "by_label": {
+        "real": 10143,
+        "ai_fake": 10001
+      }
+    },
+    "ctrip_chnsenticorp": {
+      "n": 7766,
+      "with_image": 0,
+      "usable": 7763,
+      "by_label": {
+        "real": 7766
+      }
+    },
+    "ctrip_trip_sample_2026": {
+      "n": 800,
+      "with_image": 0,
+      "usable": 800,
+      "by_label": {
+        "real": 800
+      }
+    },
+    "ecommerce_10cats": {
+      "n": 62774,
+      "with_image": 0,
+      "usable": 62735,
+      "by_label": {
+        "real": 62774
+      }
+    },
+    "waimai_10k": {
+      "n": 11987,
+      "with_image": 0,
+      "usable": 11987,
+      "by_label": {
+        "real": 11987
+      }
+    },
+    "jd_review": {
+      "n": 3452,
+      "with_image": 0,
+      "usable": 3405,
+      "by_label": {
+        "real": 3452
+      }
+    },
+    "jd_herbal": {
+      "n": 211391,
+      "with_image": 0,
+      "usable": 200829,
+      "by_label": {
+        "real": 211391
+      }
+    }
+  },
+  "n_total": 318314
+}
