@@ -1,0 +1,9 @@
+{
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "encode_sec": 113.80730570000014,
+  "n": 20128,
+  "n_train": 12080,
+  "n_test": 4021,
+  "model": "bert-base-uncased",
+  "scope": "all_usable"
+}

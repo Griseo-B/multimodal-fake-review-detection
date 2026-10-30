@@ -1,72 +1,40 @@
-# 数据目录说明
+# 数据
 
-- **公开数据优先**
-- **原始大数据不上传 GitHub**（已在 `.gitignore` 忽略）
+训练和复现用的表在 `frozen/`。原始文件在 `raw/`，缩放后的图在 `processed/`。大文件不上传 GitHub。进展和取舍写在 `docs/实验进展.md`。
 
-## 文件夹
+## 现在用的
 
 | 路径 | 用途 |
-|------|------|
-| `raw/` | 原始下载数据（本地存放，只读） |
-| `records/` | 主档：一行一条，全量导入 |
-| `templates/` | 清单表、标注表、规范 |
+|---|---|
+| `frozen/three_class.csv` | 三类训练表，95,299 条。带 `protocol` 和 224 图。不要和 `mm_v2.csv` 混着改 |
+| `frozen/mm_v2.csv` | 全量表，41,606 条。不要改 |
+| `frozen/allowed_reviews.csv` | 允许使用的评论合在一张表里，并带上已有图片路径 |
+| `frozen/mm_v2_hotel3.csv` | 芝加哥酒店三类平衡子集，已有划分 |
+| `frozen/two_class.csv`、`two_class_protocol.csv` | 真评 / 人写假评，以及能否混训 |
+| `frozen/hotel_three_class.csv`、`phone_paired.csv` | 酒店、手机的文本三类 |
+| `frozen/aigen_food.csv`、`ott_hotel.csv` | 审核后的两个子集 |
+| `frozen/mm3.csv` | 10 月 27 日的 1,080 条，只对应那次模型 |
+| `raw/aigen_foodreview/` | 餐饮原图和原表。MIT |
+| `raw/ott/` | Ott 酒店文本。CC BY-NC-SA 3.0 |
+| `raw/maide_up/`、`raw/salminen/` | 酒店和电商文本 |
+| `raw/human_written_fake/` | 人写假评来源 |
+| `raw/hotel_ai/*.csv`、`raw/phone_ai/` | 本研究已经生成的文本 |
+| `raw/human_fake_images/` | 酒店和手机后补照片及分配清单 |
+| `raw/abo_small/`、`raw/hotel_images/` | 只为重做 `mm3.csv`。酒店图没有许可证，不上传 |
+| `raw/models/clip-vit-base-patch32/` | 重跑图像特征时用 |
+| `processed/mm_v2/`、`processed/mm3/`、`processed/three_class/` | 已经缩到 224 的图 |
 
-## 找公开数据集
+标签和能否进入数据集，以 `templates/标注规范.md` 为准。金标、人工标注和按规则打分都可以用。总览在 `catalog.csv`。本次补进的评论在 `raw/supplement/kept.csv`。
 
-找到后请填写：`数据集清单.csv`（模板见同目录）。
+## AiGen 校验
 
-每个数据集至少写清：
+三个 CSV 的 MD5 与 Zenodo v1 一致。
 
-1. 名称  
-2. 下载链接  
-3. 大约条数  
-4. 有没有图片  
-5. 原有标签是什么  
-6. 能否对应到：真 / 人假 / AI假  
-7. 是否已下载到本地  
-8. 一句话是否推荐使用  
+| 文件 | MD5 |
+|---|---|
+| train.csv | `a4afa633ef14d4a8bae7fb4781e0d6ec` |
+| val.csv | `d6d18216e7cabf9a9b956309d4d8e06f` |
+| test.csv | `c41a361eafa9800e3e8be3362a0101f4` |
+| images.zip | `c4e484d8f709d3943b7aff2f48f581c7` |
 
-清单里已进主档的来源、两位同学提交但尚未放入本仓库 `data/raw/` 的候选，都在同一张表。AiGen-FoodReview 的文件校验见 `data/数据下载验证.md`。
-
-## 当前已下载（本地 `raw/`，不入库）
-
-公开学术/开源评论，**不是**去淘宝/携程现网爬取（执行方案中期前也不做大规模爬取）。
-
-| 本地目录 | 平台 | 条数 | 有图？ | 编号字母 |
-|----------|------|------|--------|----------|
-| `raw/aigen_foodreview/` | Yelp 口径餐饮（真/AI假） | 20,144 | **是，20,144 张图文对齐** | A |
-| `raw/ctrip_chnsenticorp/` | 携程酒店 | 7,766 | 无 | B |
-| `raw/ctrip_trip_sample_2026/` | 携程 / Trip.com | 800 | 平台上 440 条曾带图，本地无图文件 | C |
-| `raw/ecommerce_10cats/` | 淘宝/京东/当当/携程混合网购 | 62,774 | 无 | D |
-| `raw/waimai_10k/` | 外卖 | 11,987 | 无 | E |
-| `raw/jd_review/` | 京东 | 3,452 | 无 | F |
-| `raw/jd_herbal/` | 京东 | 211,391 | 无 | G |
-
-导入已完成（每源全部收录，不抽样）。主档文件：
-
-- `records/all.jsonl`：全部 **318,314** 条
-- `records/by_source/*.jsonl`：按来源拆开
-- `records/id_map.csv`：编号 ↔ 来源 ↔ 原始行
-- `records/letters.json`：字母对照
-- `records/manifest.json`：条数统计
-
-编号如 `A000001`、`B000001`，首字母表示来源；每条外套里仍有 `source`、原始定位、标签、场景等字段。图片路径指向 `raw/aigen_foodreview/images/`，二进制不写入主档。
-
-公开可下载的淘宝/携程**晒图文件包不存在**（携程样本只有 `imagesCount`；Hugging Face 上 6.5GB「淘宝确认收货」是 App 截图，不是评论配图）。中文电商图文需后续自建（用已有中文评 + 生成图）或另找带图公开集。
-
-这些公开集原标签几乎都是**情感/评分**，不是真/人假/AI假。除 AiGen 自带真/AI假外，其余 `label` 一律记为 `real`（真实平台用户评论口径），三类标签要另标或另下虚假评论集。空评仍进档，仅 `usable_for_train=false`。
-
-## 统一样本字段（主档外套）
-
-| 字段 | 说明 |
-|------|------|
-| `id` | 字母+六位序号，如 `A000001` |
-| `source` | 来源代号 |
-| `source_letter` | 与编号首字母一致 |
-| `content.text` | 评论文字 |
-| `content.images` | 图片路径列表，没有则空 |
-| `labels.task` | `real` / `human_fake` / `ai_fake` |
-| `context.domain` | 场景：hotel / food / ecommerce 等 |
-| `generation` | 若是 AI 假：文本/图像模型 |
-| `split` | `train` / `val` / `test` |
-| `raw_payload` | 该行全部原始栏目 |
+来源：<https://zenodo.org/records/10511456>

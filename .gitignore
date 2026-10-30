@@ -32,8 +32,12 @@ data/records/**
 !data/records/README.md
 !data/README.md
 !data/templates/**
+data/frozen/*.csv
+data/frozen/*.json
 
 # Models & caches
+*.joblib
+*.npz
 *.pt
 *.pth
 *.ckpt

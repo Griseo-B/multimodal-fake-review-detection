@@ -1,0 +1,6 @@
+{
+  "model": "experiments/20261026_aigen_tfidf/model_tfidf.joblib",
+  "method": "fixed English synonym list; unchanged sentences receive the prefix 'In short, '",
+  "original_macro_f1": 0.9931940888301147,
+  "rewritten_macro_f1": 0.9931940888301147
+}

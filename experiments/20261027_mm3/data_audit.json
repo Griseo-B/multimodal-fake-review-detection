@@ -1,0 +1,187 @@
+{
+  "seed": 42,
+  "per_cell": 120,
+  "rows": 1080,
+  "saved_image_side": 224,
+  "cells": [
+    {
+      "domain": "ecommerce",
+      "label": "ai_fake",
+      "split": "test",
+      "n": 12
+    },
+    {
+      "domain": "ecommerce",
+      "label": "ai_fake",
+      "split": "train",
+      "n": 96
+    },
+    {
+      "domain": "ecommerce",
+      "label": "ai_fake",
+      "split": "val",
+      "n": 12
+    },
+    {
+      "domain": "ecommerce",
+      "label": "human_fake",
+      "split": "test",
+      "n": 20
+    },
+    {
+      "domain": "ecommerce",
+      "label": "human_fake",
+      "split": "train",
+      "n": 90
+    },
+    {
+      "domain": "ecommerce",
+      "label": "human_fake",
+      "split": "val",
+      "n": 10
+    },
+    {
+      "domain": "ecommerce",
+      "label": "real",
+      "split": "test",
+      "n": 12
+    },
+    {
+      "domain": "ecommerce",
+      "label": "real",
+      "split": "train",
+      "n": 96
+    },
+    {
+      "domain": "ecommerce",
+      "label": "real",
+      "split": "val",
+      "n": 12
+    },
+    {
+      "domain": "food",
+      "label": "ai_fake",
+      "split": "test",
+      "n": 12
+    },
+    {
+      "domain": "food",
+      "label": "ai_fake",
+      "split": "train",
+      "n": 96
+    },
+    {
+      "domain": "food",
+      "label": "ai_fake",
+      "split": "val",
+      "n": 12
+    },
+    {
+      "domain": "food",
+      "label": "human_fake",
+      "split": "test",
+      "n": 20
+    },
+    {
+      "domain": "food",
+      "label": "human_fake",
+      "split": "train",
+      "n": 90
+    },
+    {
+      "domain": "food",
+      "label": "human_fake",
+      "split": "val",
+      "n": 10
+    },
+    {
+      "domain": "food",
+      "label": "real",
+      "split": "test",
+      "n": 12
+    },
+    {
+      "domain": "food",
+      "label": "real",
+      "split": "train",
+      "n": 96
+    },
+    {
+      "domain": "food",
+      "label": "real",
+      "split": "val",
+      "n": 12
+    },
+    {
+      "domain": "hotel",
+      "label": "ai_fake",
+      "split": "test",
+      "n": 12
+    },
+    {
+      "domain": "hotel",
+      "label": "ai_fake",
+      "split": "train",
+      "n": 96
+    },
+    {
+      "domain": "hotel",
+      "label": "ai_fake",
+      "split": "val",
+      "n": 12
+    },
+    {
+      "domain": "hotel",
+      "label": "human_fake",
+      "split": "test",
+      "n": 11
+    },
+    {
+      "domain": "hotel",
+      "label": "human_fake",
+      "split": "train",
+      "n": 97
+    },
+    {
+      "domain": "hotel",
+      "label": "human_fake",
+      "split": "val",
+      "n": 12
+    },
+    {
+      "domain": "hotel",
+      "label": "real",
+      "split": "test",
+      "n": 11
+    },
+    {
+      "domain": "hotel",
+      "label": "real",
+      "split": "train",
+      "n": 97
+    },
+    {
+      "domain": "hotel",
+      "label": "real",
+      "split": "val",
+      "n": 12
+    }
+  ],
+  "sources": {
+    "aigen": 240,
+    "ott": 240,
+    "salminen": 240,
+    "researcher_template": 240,
+    "qwen2.5-0.5b": 120
+  },
+  "licenses": {
+    "aigen": "MIT",
+    "ott": "CC BY-NC-SA 3.0; raw archive is not uploaded",
+    "salminen": "CC BY 4.0; GPT-2 fakes are ai_fake, not human_fake",
+    "hotel_images": "Onno/hotel-images card states no license; local only, not uploaded",
+    "product_images": "Amazon Berkeley Objects mirror, CC BY 4.0",
+    "templates": "written for this study; deceptive by construction; not crowd gold"
+  },
+  "prefix_rule": "hotel AI rows whose first 10 words appear in Ott, AiGen, or Salminen were dropped",
+  "image_rule": "every file used by the model is 224x224; orig_width and orig_height are audit-only"
+}

@@ -1,0 +1,25 @@
+去向,标签,内容,条数,图,依据,文件
+已有,真 / AI假,餐饮 AiGen,20128,一一对应,金标,frozen/allowed_reviews.csv
+已有,真 / 人假,酒店 Ott,1596,共用实拍,金标,frozen/allowed_reviews.csv
+已有,AI假,芝加哥酒店两个小模型,840,420 张 Stable Diffusion，420 条无图,生成,frozen/allowed_reviews.csv
+已有,真 / AI假,酒店 MAiDE-up,3064,899 张 Stable Diffusion，2165 条无图,金标,frozen/allowed_reviews.csv
+已有,真 / AI假,电商 Salminen,15978,3741 张 Stable Diffusion，12237 条无图,金标,frozen/allowed_reviews.csv
+已有,真 / 人假,书评、手机、四城、荷兰语等,9705,部分共用实拍,金标,frozen/allowed_reviews.csv
+已有,AI假,手机,59,56 条有同品牌照片,生成,frozen/allowed_reviews.csv
+新收,人假,餐饮 Li 2014 众包,201,共用网上实拍,金标,raw/supplement/kept.csv
+新收,真,餐饮 Li 2014 顾客,200,无,金标,raw/supplement/kept.csv
+新收,人假,酒店 Li 2014 员工,280,共用网上实拍,金标,raw/supplement/kept.csv
+新收,真,携程 / Trip.com,675,无文件,平台用户评论,raw/supplement/kept.csv
+新收,人假,大众点评十城与成都,5936,共用网上实拍,规则标注,raw/supplement/kept.csv
+新收,真,大众点评十城与成都,31658,只有张数,规则标注,raw/supplement/kept.csv
+新收,人假,京东商品,1756,共用网上实拍,规则标注,raw/supplement/kept.csv
+新收,真,京东商品,2180,无,规则标注,raw/supplement/kept.csv
+新收,真,天猫 1 个商品,20,7 张文件,人工标注,raw/supplement/collected_20261029
+新收,真,京东 20 个商品,441,930 张文件,人工标注,raw/supplement/collected_jd_20261029
+新收,真,大众点评 126 家店,377,1736 张文件,人工标注,raw/supplement/collected_20261029
+新收,真,携程 20 家酒店,224,662 张文件,人工标注,raw/supplement/collected_ctrip_20261029
+不收,,模型重标垃圾评论,,,不是人工标注,
+不收,,Li 2014 医生,,,不在申报场景,原始包里仍留着
+不收,,罗马乌尔都语评论,5150,,未写明人工标注,raw/supplement/ru-frdc-2022.csv
+不收,,骚扰短信与微博谣言,,,不是消费评论,raw/supplement/jd_scidb
+训练,真 / 人假 / AI假,三类训练表,95299,有图的缩到 224,按 protocol 分开,frozen/three_class.csv

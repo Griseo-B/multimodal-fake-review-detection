@@ -1,0 +1,33 @@
+{
+  "gate": "validation-chosen fusion rule has test macro-F1 >= 0.90 and one-per-group macro-F1 >= 0.90",
+  "operating_model": "fusion_two_step",
+  "val_macro_f1": {
+    "fusion_flat": 0.8766508443927798,
+    "fusion_two_step": 0.8944186121605476,
+    "fusion_branch_two_level": 0.8755113590427682
+  },
+  "passed": true,
+  "branch_threshold": 0.55,
+  "two_step_threshold": 0.6499999999999999,
+  "attention_mean_test": {
+    "tfidf": 0.9317382574081421,
+    "clip_text": 0.01706538163125515,
+    "clip_image": 0.01706538163125515,
+    "resnet": 0.01706538163125515,
+    "handcrafted": 0.01706538163125515
+  },
+  "bootstrap_macro_f1": {
+    "mean": 0.9550646610232036,
+    "low": 0.920237924826395,
+    "high": 0.9907159288018748
+  },
+  "bootstrap_one_per_group": {
+    "mean": 0.9396282920009181,
+    "low": 0.8766773530885748,
+    "high": 0.9828948792435636
+  },
+  "n_train": 854,
+  "n_val": 104,
+  "n_test": 122,
+  "n_test_one_per_group": 86
+}

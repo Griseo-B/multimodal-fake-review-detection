@@ -1,17 +1,21 @@
-# 代码说明
+# 代码
 
 | 目录 | 用途 |
-|------|------|
-| `data/` | 读取清单、清洗、划分 train/val/test |
-| `models/` | 模型定义 |
-| `train/` | 训练脚本 |
-| `eval/` | 评估与出结果表 |
-| `explain/` | 特征贡献与模板化解释 |
+|---|---|
+| `data/` | 审核、清洗、建表、配图 |
+| `train/` | 训练 |
+| `eval/` | 评估 |
+| `explain/` | 特征贡献 |
 
-## 约定
+随机种子是 42。大数据和权重不上传 GitHub。哪些脚本还要留，写在 `docs/实验进展.md` 的「代码」一节。
 
-- 随机种子固定，保证可复现  
-- 每次正式实验在 `experiments/` 新建一条记录  
-- 大数据路径写在配置文件或环境变量，不要写死含个人信息的绝对路径到公开 fork  
+当前入口：
 
-当前为仓库骨架，训练代码后续按周迭代加入。数据主档已整理好，见 `data/records/`。
+- `python code/data/audit_and_freeze.py`
+- `python code/data/build_mm_v2.py`
+- `python code/data/build_allowed_reviews.py`
+- `python code/data/build_supplement.py`
+- `python code/data/build_three_class.py`
+- `python code/train/text_baseline.py --table data/frozen/aigen_food.csv --out experiments/20261026_aigen_tfidf --labels real ai_fake`
+
+`text_baseline.py` 只读带 `usable` 和 `split` 的表。

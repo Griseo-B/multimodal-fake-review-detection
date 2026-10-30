@@ -1,0 +1,11 @@
+{
+  "device": "NVIDIA GeForce RTX 4060 Laptop GPU",
+  "model": "openai/clip-vit-base-patch32",
+  "n": 20128,
+  "n_train": 12080,
+  "n_test": 4021,
+  "processor_size": {
+    "height": 224,
+    "width": 224
+  }
+}
