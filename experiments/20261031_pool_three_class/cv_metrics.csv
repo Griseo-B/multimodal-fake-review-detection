@@ -1,0 +1,5 @@
+﻿pool,model,weighting,rows,cv_macro_f1,cv_note
+a,logreg,balanced,7168,0.7452,"5-fold StratifiedGroupKFold on group_id, out-of-fold"
+a,lightgbm,balanced,7168,0.7949,"5-fold StratifiedGroupKFold on group_id, out-of-fold"
+b,logreg,balanced,45370,0.8234,"5-fold StratifiedGroupKFold on group_id, out-of-fold"
+b,lightgbm,balanced,45370,0.9216,"5-fold StratifiedGroupKFold on group_id, out-of-fold"

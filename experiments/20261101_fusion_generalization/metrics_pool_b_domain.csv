@@ -1,0 +1,7 @@
+﻿pool,held_out,run,family,blocks,two_level,task,rows_train,rows_test,features,parameters,best_epoch,val_macro_f1,seconds,macro_f1,f1_real,f1_human,f1_ai,majority_macro_f1,auc,macro_f1_ci_low,macro_f1_ci_high
+pool_b,book,leave_out_book,gate,text_hand+llm (no-risk),False,three_class,31281,7818,931,64581,28,0.9841,11.1,0.7404,0.8057,0.4306,0.9849,0.3831,0.9778,0.7309,0.7504
+pool_b,ecommerce,leave_out_ecommerce,gate,text_hand+llm (no-risk),False,three_class,17918,22651,931,64581,20,0.9928,6.2,0.4638,0.6773,0.3439,0.3701,0.4682,0.7156,0.4563,0.4712
+pool_b,food,leave_out_food,gate,text_hand+llm (no-risk),False,three_class,20220,22740,931,64581,36,0.978,9.1,0.5509,0.8512,0.1544,0.6471,0.4901,0.9473,0.545,0.5562
+pool_b,hotel,leave_out_hotel,gate,text_hand+llm (no-risk),False,three_class,28588,10875,931,64581,37,0.9929,11.2,0.6729,0.7629,0.5045,0.7513,0.4184,0.8138,0.664,0.6818
+pool_b,other,leave_out_other,gate,text_hand+llm (no-risk),False,three_class,31981,7030,931,64581,50,0.9844,55.6,0.9449,0.984,0.8914,0.9592,0.426,0.998,0.9392,0.9505
+pool_b,none,in_pool,gate,text_hand+llm (no-risk),False,three_class,32497,6436,931,64581,23,0.9877,64.1,0.9802,0.984,0.9679,0.9887,0.4654,0.9993,0.9751,0.985

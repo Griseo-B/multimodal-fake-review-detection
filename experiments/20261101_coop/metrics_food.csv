@@ -1,0 +1,5 @@
+﻿run,rows_train,rows_test,macro_f1,macro_f1_ci_low,macro_f1_ci_high,auc,note
+clip-frozen-prompt,12082,4021,0.3534,0.3432,0.3627,0.7909,"hand-written class prompts, zero training"
+coop-learned-context,12082,4021,0.9308,0.923,0.938,0.9814,"ctx 16, best epoch 12"
+coop+hand-fusion,12082,4021,0.9913,0.9883,0.9938,0.9994,learned prompt logits concatenated with handcrafted text features
+text-only-twin,12082,4021,0.9784,0.9737,0.9829,0.9964,"same rows, handcrafted text features only"

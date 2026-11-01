@@ -1,0 +1,11 @@
+﻿pool,setting,block,features,train_rows,test_rows,classes,macro_f1,f1_low,f1_high,accuracy
+a,availability_only,has_image,1,5502,842,real|human_fake|ai_fake,0.3446,0.3218,0.366,0.4347
+a,text(rows with image),text,39,2575,479,real|human_fake|ai_fake,0.8097,0.775,0.8416,0.8058
+a,text+has_image,text+flag,40,5502,842,real|human_fake|ai_fake,0.8054,0.7781,0.8306,0.8064
+a,text+image(shared ok),text+mm,60,2575,479,real|human_fake|ai_fake,0.8592,0.8324,0.8877,0.8518
+a,image only(shared ok),mm,21,2575,479,real|human_fake|ai_fake,0.6018,0.5631,0.6398,0.6284
+b,availability_only,has_image,1,32497,6436,real|human_fake|ai_fake,0.3601,0.3522,0.3677,0.544
+b,text(rows with image),text,39,18364,4645,real|human_fake|ai_fake,0.923,0.9084,0.9371,0.9621
+b,text+has_image,text+flag,40,32497,6436,real|human_fake|ai_fake,0.9319,0.9225,0.9395,0.9521
+b,text+image(shared ok),text+mm,60,18364,4645,real|human_fake|ai_fake,0.9808,0.9772,0.9836,0.9727
+b,image only(shared ok),mm,21,18364,4645,real|human_fake|ai_fake,0.5381,0.5339,0.5424,0.4654

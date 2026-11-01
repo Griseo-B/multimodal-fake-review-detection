@@ -1,0 +1,4 @@
+﻿split_column,train_rows,test_rows,features,macro_f1,auc,variant
+split,15834,4460,21,0.7742,0.8562,split
+split_purged,15836,4460,21,0.7739,0.8562,split_purged
+split_purged,15836,4460,21,0.7739,0.8562,purged_without_cross_label_images

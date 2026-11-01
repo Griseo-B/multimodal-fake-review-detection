@@ -1,0 +1,172 @@
+{
+  "rows": 22494,
+  "split_rows": {
+    "train": 15685,
+    "test": 3428,
+    "val": 3381
+  },
+  "domain_x_label": {
+    "ecommerce/human_fake": 3061,
+    "ecommerce/real": 379,
+    "food/human_fake": 6136,
+    "food/real": 11294,
+    "hotel/human_fake": 1400,
+    "hotel/real": 224
+  },
+  "probes": [
+    {
+      "probe": "text_only",
+      "n": 3428,
+      "auc": 0.9934,
+      "accuracy": 0.9595,
+      "f1": 0.9589
+    },
+    {
+      "probe": "image_visual_only",
+      "n": 3428,
+      "auc": 0.8317,
+      "accuracy": 0.7491,
+      "f1": 0.7339
+    },
+    {
+      "probe": "image_align_only",
+      "n": 3428,
+      "auc": 0.8098,
+      "accuracy": 0.7573,
+      "f1": 0.75
+    },
+    {
+      "probe": "image_scene_only",
+      "n": 3428,
+      "auc": 0.7202,
+      "accuracy": 0.6561,
+      "f1": 0.6369
+    },
+    {
+      "probe": "image_all",
+      "n": 3428,
+      "auc": 0.8889,
+      "accuracy": 0.8258,
+      "f1": 0.8232
+    },
+    {
+      "probe": "text_plus_image",
+      "n": 3428,
+      "auc": 0.9937,
+      "accuracy": 0.9627,
+      "f1": 0.9623
+    }
+  ],
+  "slices": [
+    {
+      "probe": "text_only",
+      "slice": "domain=ecommerce",
+      "n": 521,
+      "auc": 0.9578
+    },
+    {
+      "probe": "text_only",
+      "slice": "domain=food",
+      "n": 2636,
+      "auc": 0.9938
+    },
+    {
+      "probe": "text_only",
+      "slice": "domain=hotel",
+      "n": 271,
+      "auc": 0.9921
+    },
+    {
+      "probe": "image_visual_only",
+      "slice": "domain=ecommerce",
+      "n": 521,
+      "auc": 0.6453
+    },
+    {
+      "probe": "image_visual_only",
+      "slice": "domain=food",
+      "n": 2636,
+      "auc": 0.8037
+    },
+    {
+      "probe": "image_visual_only",
+      "slice": "domain=hotel",
+      "n": 271,
+      "auc": 0.669
+    },
+    {
+      "probe": "image_align_only",
+      "slice": "domain=ecommerce",
+      "n": 521,
+      "auc": 0.3614
+    },
+    {
+      "probe": "image_align_only",
+      "slice": "domain=food",
+      "n": 2636,
+      "auc": 0.9004
+    },
+    {
+      "probe": "image_align_only",
+      "slice": "domain=hotel",
+      "n": 271,
+      "auc": 0.076
+    },
+    {
+      "probe": "image_scene_only",
+      "slice": "domain=ecommerce",
+      "n": 521,
+      "auc": 0.4896
+    },
+    {
+      "probe": "image_scene_only",
+      "slice": "domain=food",
+      "n": 2636,
+      "auc": 0.7466
+    },
+    {
+      "probe": "image_scene_only",
+      "slice": "domain=hotel",
+      "n": 271,
+      "auc": 0.3652
+    },
+    {
+      "probe": "image_all",
+      "slice": "domain=ecommerce",
+      "n": 521,
+      "auc": 0.6154
+    },
+    {
+      "probe": "image_all",
+      "slice": "domain=food",
+      "n": 2636,
+      "auc": 0.9133
+    },
+    {
+      "probe": "image_all",
+      "slice": "domain=hotel",
+      "n": 271,
+      "auc": 0.2997
+    },
+    {
+      "probe": "text_plus_image",
+      "slice": "domain=ecommerce",
+      "n": 521,
+      "auc": 0.9572
+    },
+    {
+      "probe": "text_plus_image",
+      "slice": "domain=food",
+      "n": 2636,
+      "auc": 0.9946
+    },
+    {
+      "probe": "text_plus_image",
+      "slice": "domain=hotel",
+      "n": 271,
+      "auc": 0.9888
+    }
+  ],
+  "delta_text_plus_image": 0.0003,
+  "note": "Domain and label are correlated by construction (food supplies most real photos, ecommerce most fakes), so slice-level AUC is the honest number, not the pooled one."
+}

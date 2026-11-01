@@ -1,0 +1,7 @@
+probe,n,auc,accuracy,f1
+text_only,3428,0.9934,0.9595,0.9589
+image_visual_only,3428,0.8317,0.7491,0.7339
+image_align_only,3428,0.8098,0.7573,0.75
+image_scene_only,3428,0.7202,0.6561,0.6369
+image_all,3428,0.8889,0.8258,0.8232
+text_plus_image,3428,0.9937,0.9627,0.9623

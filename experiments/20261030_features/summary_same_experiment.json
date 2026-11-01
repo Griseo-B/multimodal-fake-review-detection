@@ -1,0 +1,104 @@
+{
+  "protocol": "same_experiment",
+  "contrast": "real_vs_human_fake",
+  "features_dir": "data/processed/features/20261030_all_protocols",
+  "rows": 4874,
+  "rows_english": 3576,
+  "rows_chinese": 0,
+  "bootstrap": 1000,
+  "leak_threshold": 0.95,
+  "chinese_only": false,
+  "leak_flags": [],
+  "top_features": [
+    {
+      "group": "hotel",
+      "feature": "ttr",
+      "auc": 0.6227,
+      "ci_low": 0.5791,
+      "ci_high": 0.6643
+    },
+    {
+      "group": "hotel",
+      "feature": "n_chars",
+      "auc": 0.3843,
+      "ci_low": 0.3395,
+      "ci_high": 0.4274
+    },
+    {
+      "group": "hotel",
+      "feature": "n_words",
+      "auc": 0.3884,
+      "ci_low": 0.3442,
+      "ci_high": 0.4331
+    },
+    {
+      "group": "hotel",
+      "feature": "n_sents",
+      "auc": 0.3912,
+      "ci_low": 0.3493,
+      "ci_high": 0.436
+    },
+    {
+      "group": "hotel",
+      "feature": "hapax_ratio",
+      "auc": 0.6088,
+      "ci_low": 0.5652,
+      "ci_high": 0.6489
+    },
+    {
+      "group": "ecommerce",
+      "feature": "ari",
+      "auc": 0.4214,
+      "ci_low": 0.3986,
+      "ci_high": 0.4453
+    },
+    {
+      "group": "ecommerce",
+      "feature": "words_per_sentence",
+      "auc": 0.4301,
+      "ci_low": 0.4081,
+      "ci_high": 0.4548
+    },
+    {
+      "group": "ecommerce",
+      "feature": "gunning_fog",
+      "auc": 0.431,
+      "ci_low": 0.4092,
+      "ci_high": 0.4537
+    },
+    {
+      "group": "all",
+      "feature": "ari",
+      "auc": 0.4313,
+      "ci_low": 0.4109,
+      "ci_high": 0.4518
+    },
+    {
+      "group": "ecommerce",
+      "feature": "flesch",
+      "auc": 0.5666,
+      "ci_low": 0.5463,
+      "ci_high": 0.5891
+    },
+    {
+      "group": "ecommerce",
+      "feature": "excl_ratio",
+      "auc": 0.5629,
+      "ci_low": 0.5485,
+      "ci_high": 0.5768
+    },
+    {
+      "group": "hotel",
+      "feature": "smoothness",
+      "auc": 0.5627,
+      "ci_low": 0.5141,
+      "ci_high": 0.608
+    }
+  ],
+  "by_group": {
+    "all": 31,
+    "ecommerce": 31,
+    "hotel": 31
+  },
+  "note": "AUC compares real with human_fake only; rows of other labels are excluded."
+}

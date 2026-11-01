@@ -1,0 +1,13 @@
+﻿pool,model,weighting,features,train_rows,test_rows,macro_f1,f1_low,f1_high,accuracy,majority_macro_f1,majority_label,seconds,split
+a,logreg,plain,39,5502,842,0.7425,0.7147,0.7721,0.747,0.161,ai_fake,1.5,split_purged train/test
+a,logreg,balanced,39,5502,842,0.7308,0.7024,0.7593,0.7328,0.161,ai_fake,1.4,split_purged train/test
+a,logreg,downsample,39,5502,842,0.7437,0.714,0.7713,0.7482,0.161,ai_fake,1.4,split_purged train/test
+a,lightgbm,plain,39,5502,842,0.7633,0.7318,0.7893,0.7672,0.161,ai_fake,3.3,split_purged train/test
+a,lightgbm,balanced,39,5502,842,0.7726,0.7452,0.7993,0.7755,0.161,ai_fake,2.4,split_purged train/test
+a,lightgbm,downsample,39,5502,842,0.7633,0.7336,0.7886,0.7672,0.161,ai_fake,2.5,split_purged train/test
+b,logreg,plain,39,32497,6436,0.8244,0.8106,0.8365,0.8561,0.2117,real,8.9,split_purged train/test
+b,logreg,balanced,39,32497,6436,0.8216,0.8112,0.834,0.8527,0.2117,real,8.8,split_purged train/test
+b,logreg,downsample,39,20659,6436,0.8268,0.8143,0.8388,0.8552,0.2089,ai_fake,8.5,split_purged train/test
+b,lightgbm,plain,39,32497,6436,0.9248,0.9159,0.9333,0.9458,0.2117,real,10.7,split_purged train/test
+b,lightgbm,balanced,39,32497,6436,0.9185,0.9095,0.9275,0.9439,0.2117,real,10.7,split_purged train/test
+b,lightgbm,downsample,39,20659,6436,0.9178,0.9081,0.9264,0.9419,0.2089,ai_fake,10.4,split_purged train/test

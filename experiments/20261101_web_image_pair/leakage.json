@@ -1,0 +1,40 @@
+{
+  "rows": 5237,
+  "entities": 29,
+  "unique_images": 183,
+  "labels": {
+    "real": 3132,
+    "human_fake": 2105
+  },
+  "image_identity_permutation": {
+    "statistic": 5.62,
+    "null_mean": 156.0,
+    "null_p95": 184.79,
+    "p_value": 1.0,
+    "entities_tested": 29,
+    "interpretation": "p > 0.05 => image choice is independent of the label inside every entity"
+  },
+  "image_only_probes": [
+    {
+      "probe": "image_visual_only",
+      "auc": 0.5414
+    },
+    {
+      "probe": "image_align_only",
+      "auc": 0.5744
+    },
+    {
+      "probe": "image_scene_only",
+      "auc": 0.5566
+    },
+    {
+      "probe": "image_all",
+      "auc": 0.6134
+    }
+  ],
+  "text_only_auc": 0.8559,
+  "text_plus_image_auc": 0.8533,
+  "delta_from_image": -0.0026,
+  "cv": "GroupKFold(5) grouped by entity",
+  "conclusion": "Image-only AUC near 0.5 and a non-significant image x label test mean the borrowed web photo carries entity identity, not label signal. Any gain in text+image over text-only must come from text-image consistency features rather than from the picture telling the model the answer."
+}

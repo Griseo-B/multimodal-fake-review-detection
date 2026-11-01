@@ -1,0 +1,29 @@
+{
+  "note": "Spearman on split=train only. Pairs at or above 0.85 are listed; clusters join pairs at or above 0.90 and are counted as one piece of evidence.",
+  "groups": [
+    {
+      "group": "all",
+      "rows": 0,
+      "pairs": [],
+      "clusters": []
+    },
+    {
+      "group": "food",
+      "rows": 0,
+      "pairs": [],
+      "clusters": []
+    },
+    {
+      "group": "ecommerce",
+      "rows": 0,
+      "pairs": [],
+      "clusters": []
+    },
+    {
+      "group": "hotel",
+      "rows": 0,
+      "pairs": [],
+      "clusters": []
+    }
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "folds": 5,
+  "bootstrap": 500,
+  "seed": 42,
+  "grouping": "StratifiedGroupKFold on group_id",
+  "excluded": [
+    "ngram_dup_ratio",
+    "opening_dup",
+    "raw image width, height, byte size"
+  ],
+  "best": [
+    {
+      "protocol": "public_dataset/food",
+      "block": "text+mm",
+      "model": "lightgbm",
+      "rows": 20128,
+      "features": 57,
+      "macro_f1": 0.9874,
+      "auc": 0.9992
+    },
+    {
+      "protocol": "public_dataset/food",
+      "block": "text+mm",
+      "model": "logreg",
+      "rows": 20128,
+      "features": 57,
+      "macro_f1": 0.9864,
+      "auc": 0.9988
+    },
+    {
+      "protocol": "public_dataset",
+      "block": "text+mm",
+      "model": "lightgbm",
+      "rows": 24768,
+      "features": 61,
+      "macro_f1": 0.9849,
+      "auc": 0.999
+    },
+    {
+      "protocol": "public_dataset/food",
+      "block": "text",
+      "model": "lightgbm",
+      "rows": 20128,
+      "features": 35,
+      "macro_f1": 0.9797,
+      "auc": 0.9982
+    },
+    {
+      "protocol": "public_dataset/food",
+      "block": "text",
+      "model": "logreg",
+      "rows": 20128,
+      "features": 35,
+      "macro_f1": 0.9774,
+      "auc": 0.9968
+    },
+    {
+      "protocol": "public_dataset/ecommerce",
+      "block": "text",
+      "model": "lightgbm",
+      "rows": 15978,
+      "features": 35,
+      "macro_f1": 0.9705,
+      "auc": 0.9965
+    },
+    {
+      "protocol": "public_dataset/ecommerce",
+      "block": "text",
+      "model": "logreg",
+      "rows": 15978,
+      "features": 35,
+      "macro_f1": 0.9611,
+      "auc": 0.992
+    },
+    {
+      "protocol": "public_dataset",
+      "block": "text",
+      "model": "lightgbm",
+      "rows": 39170,
+      "features": 39,
+      "macro_f1": 0.9601,
+      "auc": 0.994
+    }
+  ],
+  "note": "macro-F1 is out-of-fold at threshold 0.5; the majority baseline is beside it."
+}

@@ -1,0 +1,102 @@
+{
+  "protocol": "rule_label",
+  "contrast": "real_vs_human_fake",
+  "features_dir": "data/processed/features/20261030_all_protocols",
+  "rows": 41528,
+  "rows_english": 0,
+  "rows_chinese": 41528,
+  "bootstrap": 1000,
+  "leak_threshold": 0.95,
+  "chinese_only": true,
+  "leak_flags": [],
+  "top_features": [
+    {
+      "group": "zh",
+      "feature": "n_sents",
+      "auc": 0.6495,
+      "ci_low": 0.6431,
+      "ci_high": 0.6562
+    },
+    {
+      "group": "zh",
+      "feature": "words_per_sentence",
+      "auc": 0.4137,
+      "ci_low": 0.4066,
+      "ci_high": 0.4207
+    },
+    {
+      "group": "zh",
+      "feature": "pos_noun",
+      "auc": 0.4689,
+      "ci_low": 0.4622,
+      "ci_high": 0.4758
+    },
+    {
+      "group": "zh",
+      "feature": "ttr",
+      "auc": 0.4761,
+      "ci_low": 0.4684,
+      "ci_high": 0.4837
+    },
+    {
+      "group": "zh",
+      "feature": "hapax_ratio",
+      "auc": 0.4773,
+      "ci_low": 0.4697,
+      "ci_high": 0.4849
+    },
+    {
+      "group": "zh",
+      "feature": "avg_word_len",
+      "auc": 0.5209,
+      "ci_low": 0.5135,
+      "ci_high": 0.5284
+    },
+    {
+      "group": "zh",
+      "feature": "pos_pron",
+      "auc": 0.5199,
+      "ci_low": 0.5128,
+      "ci_high": 0.5268
+    },
+    {
+      "group": "zh",
+      "feature": "pos_adj",
+      "auc": 0.5154,
+      "ci_low": 0.5081,
+      "ci_high": 0.5224
+    },
+    {
+      "group": "zh",
+      "feature": "upper_word_ratio",
+      "auc": 0.5118,
+      "ci_low": 0.5094,
+      "ci_high": 0.514
+    },
+    {
+      "group": "zh",
+      "feature": "digit_ratio",
+      "auc": 0.5097,
+      "ci_low": 0.5044,
+      "ci_high": 0.5152
+    },
+    {
+      "group": "zh",
+      "feature": "number_ratio",
+      "auc": 0.5097,
+      "ci_low": 0.5042,
+      "ci_high": 0.5154
+    },
+    {
+      "group": "zh",
+      "feature": "pos_verb",
+      "auc": 0.4921,
+      "ci_low": 0.4852,
+      "ci_high": 0.4991
+    }
+  ],
+  "by_group": {
+    "zh": 20
+  },
+  "note": "AUC compares real with human_fake only; rows of other labels are excluded."
+}

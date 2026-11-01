@@ -1,0 +1,49 @@
+{
+  "shared_entity": {
+    "rows": 5613,
+    "unique_images": 232,
+    "entities": 37,
+    "images_per_entity": {
+      "min": 3,
+      "median": 6.0,
+      "max": 8
+    },
+    "rows_per_image": {
+      "min": 5,
+      "median": 13.0,
+      "max": 123
+    },
+    "rows_traced_to_entity": 5557,
+    "trace_rate": 0.99,
+    "assigned_entity_equals_reviewed_place": 1.0,
+    "checkable_rows": 5237,
+    "image_filename_prefix_matches_entity": 1.0,
+    "matching": "entity level: the photo is of the hotel or phone model the review is about"
+  },
+  "shared_web": {
+    "rows": 8172,
+    "unique_images": 2953,
+    "by_domain": {
+      "food": 6136,
+      "ecommerce": 1756,
+      "hotel": 280
+    },
+    "rows_per_image": {
+      "min": 1,
+      "median": 3.0,
+      "max": 4
+    },
+    "images_used_by_more_than_one_row": 2555,
+    "matching": "scene level only: same food/hotel/ecommerce, not the same restaurant or product",
+    "source_of_photos": "photos taken from real reviews in the same scene"
+  },
+  "table_columns": {
+    "has_entity_column": false,
+    "has_pool_column": false,
+    "note": "three_class.csv keeps only image_224_path, so the entity of a shared photo has to be recovered by joining text back to two_class.csv; the result is entity_map.csv."
+  },
+  "images_per_review": {
+    "note": "every row has at most one image; image_path never carries a '|' separator",
+    "rows_with_multiple": 0
+  }
+}

@@ -1,0 +1,68 @@
+{
+  "contrast": "real vs ai_fake on public_dataset rows that own an image",
+  "feature_block": "image only, 21 statistics",
+  "overlap": [
+    {
+      "split_column": "split",
+      "test_rows": 4460,
+      "test_rows_sharing_an_image_with_train": 0,
+      "share": 0.0
+    },
+    {
+      "split_column": "split_purged",
+      "test_rows": 4460,
+      "test_rows_sharing_an_image_with_train": 0,
+      "share": 0.0
+    }
+  ],
+  "pool_overlap": [
+    {
+      "pool": "a",
+      "rows_with_image": 3515,
+      "test_rows_split": 513,
+      "test_sharing_image_split": 27,
+      "test_rows_split_purged": 479,
+      "test_sharing_image_split_purged": 0,
+      "rows_with_cross_label_image": 1690
+    },
+    {
+      "pool": "b",
+      "rows_with_image": 27673,
+      "test_rows_split": 4817,
+      "test_sharing_image_split": 152,
+      "test_rows_split_purged": 4645,
+      "test_sharing_image_split_purged": 0,
+      "rows_with_cross_label_image": 2242
+    }
+  ],
+  "rows": [
+    {
+      "split_column": "split",
+      "train_rows": 15834,
+      "test_rows": 4460,
+      "features": 21,
+      "macro_f1": 0.7742,
+      "auc": 0.8562,
+      "variant": "split"
+    },
+    {
+      "split_column": "split_purged",
+      "train_rows": 15836,
+      "test_rows": 4460,
+      "features": 21,
+      "macro_f1": 0.7739,
+      "auc": 0.8562,
+      "variant": "split_purged"
+    },
+    {
+      "split_column": "split_purged",
+      "train_rows": 15836,
+      "test_rows": 4460,
+      "features": 21,
+      "macro_f1": 0.7739,
+      "auc": 0.8562,
+      "variant": "purged_without_cross_label_images"
+    }
+  ],
+  "note": "The point of the second row is the difference from the first. The image block reads generator provenance, so a drop means part of the earlier number was the same picture appearing on both sides."
+}

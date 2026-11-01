@@ -1,0 +1,11 @@
+﻿pool,run,family,blocks,two_level,task,rows_train,rows_test,features,parameters,best_epoch,val_macro_f1,seconds,macro_f1,f1_real,f1_human,f1_ai,majority_macro_f1,auc,macro_f1_ci_low,macro_f1_ci_high
+pool_a,lgbm-text,lightgbm,text_hand (no-risk),False,three_class,5502,842,35,,0,,2.7,0.7324,0.6918,0.6626,0.8427,0.4086,0.9001,0.7011,0.7582
+pool_a,lgbm-text+llm,lightgbm,text_hand+llm (no-risk),False,three_class,5502,842,1571,,0,,38.8,0.902,0.8778,0.8601,0.9682,0.4086,0.9776,0.883,0.9192
+pool_a,gate-text,gate,text_hand (no-risk),False,three_class,5502,842,35,6916.0,86,0.7305,4.8,0.738,0.7068,0.6558,0.8514,0.4086,0.8896,0.7084,0.767
+pool_a,gate-text+llm,gate,text_hand+llm (no-risk),False,three_class,5502,842,1571,105541.0,43,0.9027,2.6,0.9081,0.8928,0.8651,0.9664,0.4086,0.9828,0.8875,0.9254
+pool_a,gate-text+llm+clip,gate,text_hand+llm+clip_text (no-risk),False,three_class,5502,842,2083,138630.0,31,0.8916,2.4,0.9017,0.8815,0.8589,0.9646,0.4086,0.9821,0.8814,0.9199
+pool_a,twolevel-text+llm,gate,text_hand+llm,True,three_class,5502,842,1576,211592.0,31,0.899,4.5,0.9069,0.8841,0.8685,0.9682,0.4086,0.9795,0.8896,0.9261
+pool_a,twolevel-text+llm-noRisk,gate,text_hand+llm (no-risk),True,three_class,5502,842,1571,210952.0,27,0.896,3.9,0.9079,0.8958,0.8705,0.9575,0.4086,0.98,0.8891,0.9275
+pool_a/with_image,mm-text,gate,text_hand (no-risk),False,three_class,2575,479,35,6916.0,75,0.7533,1.8,0.7354,0.6093,0.7056,0.8912,0.38,0.8942,0.7011,0.7746
+pool_a/with_image,mm-text+llm,gate,text_hand+llm (no-risk),False,three_class,2575,479,1571,105541.0,42,0.9044,1.6,0.9104,0.8815,0.8711,0.9786,0.38,0.981,0.8831,0.9359
+pool_a/with_image,mm-text+llm+image,gate,text_hand+llm+image_stats (no-risk),False,three_class,2575,479,1593,107270.0,48,0.9135,2.0,0.9129,0.8795,0.8736,0.9856,0.38,0.9798,0.8883,0.9369

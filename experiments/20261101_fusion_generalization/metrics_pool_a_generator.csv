@@ -1,0 +1,5 @@
+﻿pool,held_out,run,family,blocks,two_level,task,rows_train,rows_test,features,parameters,best_epoch,val_macro_f1,seconds,macro_f1,f1_real,f1_human,f1_ai,majority_macro_f1,auc,macro_f1_ci_low,macro_f1_ci_high
+pool_a,Qwen/Qwen2.5-0.5B-Instruct,leave_out_Qwen/Qwen2.5-0.5B-Instruct,gate,text_hand+llm (no-risk),False,three_class,5166,1220,931,64581,27,0.8883,3.5,0.863,0.855,0.789,0.9452,0.5295,0.9778,0.8412,0.8832
+pool_a,TinyLlama/TinyLlama-1.1B-Chat-v1.0,leave_out_TinyLlama/TinyLlama-1.1B-Chat-v1.0,gate,text_hand+llm (no-risk),False,three_class,5166,1220,931,64581,27,0.8862,2.0,0.894,0.8696,0.8415,0.9711,0.5295,0.9831,0.8753,0.9118
+pool_a,gpt-4,leave_out_gpt-4,gate,text_hand+llm (no-risk),False,three_class,4060,2455,931,64581,36,0.9041,1.9,0.3908,0.2767,0.6198,0.2759,0.7662,0.6485,0.3704,0.408
+pool_a,none,in_pool,gate,text_hand+llm (no-risk),False,three_class,5502,842,931,64581,21,0.8924,1.8,0.8865,0.8627,0.8471,0.9497,0.4086,0.9774,0.8637,0.9069

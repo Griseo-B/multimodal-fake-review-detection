@@ -1,0 +1,158 @@
+{
+  "note": "Spearman on split=train only. Pairs at or above 0.85 are listed; clusters join pairs at or above 0.90 and are counted as one piece of evidence.",
+  "groups": [
+    {
+      "group": "all",
+      "rows": 2882,
+      "features": 31,
+      "rho_pair_threshold": 0.85,
+      "rho_cluster_threshold": 0.9,
+      "pairs": [
+        {
+          "left": "digit_ratio",
+          "right": "number_ratio",
+          "rho": 1.0,
+          "abs": 1.0
+        },
+        {
+          "left": "n_words",
+          "right": "n_chars",
+          "rho": 0.9939,
+          "abs": 0.9939
+        },
+        {
+          "left": "ttr",
+          "right": "hapax_ratio",
+          "rho": 0.9844,
+          "abs": 0.9844
+        },
+        {
+          "left": "n_chars",
+          "right": "n_sents",
+          "rho": 0.8598,
+          "abs": 0.8598
+        },
+        {
+          "left": "n_words",
+          "right": "n_sents",
+          "rho": 0.8576,
+          "abs": 0.8576
+        },
+        {
+          "left": "n_words",
+          "right": "ttr",
+          "rho": -0.8525,
+          "abs": 0.8525
+        }
+      ],
+      "clusters": [
+        [
+          "n_chars",
+          "n_words"
+        ],
+        [
+          "hapax_ratio",
+          "ttr"
+        ],
+        [
+          "digit_ratio",
+          "number_ratio"
+        ]
+      ]
+    },
+    {
+      "group": "food",
+      "rows": 0,
+      "pairs": [],
+      "clusters": []
+    },
+    {
+      "group": "ecommerce",
+      "rows": 2273,
+      "features": 31,
+      "rho_pair_threshold": 0.85,
+      "rho_cluster_threshold": 0.9,
+      "pairs": [
+        {
+          "left": "digit_ratio",
+          "right": "number_ratio",
+          "rho": 1.0,
+          "abs": 1.0
+        },
+        {
+          "left": "n_words",
+          "right": "n_chars",
+          "rho": 0.9925,
+          "abs": 0.9925
+        },
+        {
+          "left": "ttr",
+          "right": "hapax_ratio",
+          "rho": 0.9865,
+          "abs": 0.9865
+        }
+      ],
+      "clusters": [
+        [
+          "n_chars",
+          "n_words"
+        ],
+        [
+          "hapax_ratio",
+          "ttr"
+        ],
+        [
+          "digit_ratio",
+          "number_ratio"
+        ]
+      ]
+    },
+    {
+      "group": "hotel",
+      "rows": 609,
+      "features": 31,
+      "rho_pair_threshold": 0.85,
+      "rho_cluster_threshold": 0.9,
+      "pairs": [
+        {
+          "left": "digit_ratio",
+          "right": "number_ratio",
+          "rho": 1.0,
+          "abs": 1.0
+        },
+        {
+          "left": "n_words",
+          "right": "n_chars",
+          "rho": 0.9887,
+          "abs": 0.9887
+        },
+        {
+          "left": "ttr",
+          "right": "hapax_ratio",
+          "rho": 0.9623,
+          "abs": 0.9623
+        },
+        {
+          "left": "ari",
+          "right": "gunning_fog",
+          "rho": 0.8624,
+          "abs": 0.8624
+        }
+      ],
+      "clusters": [
+        [
+          "n_chars",
+          "n_words"
+        ],
+        [
+          "hapax_ratio",
+          "ttr"
+        ],
+        [
+          "digit_ratio",
+          "number_ratio"
+        ]
+      ]
+    }
+  ]
+}

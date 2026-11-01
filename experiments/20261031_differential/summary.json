@@ -1,0 +1,154 @@
+{
+  "question": "Which features separate human fakes and AI fakes from real reviews differently?",
+  "anchor": "real reviews of public_dataset",
+  "confound": "human fakes come from different_origin and same_experiment, so a gap may reflect source style rather than fakery. Descriptive only.",
+  "rows": 230,
+  "by_group": {
+    "all": 78,
+    "ecommerce": 37,
+    "food": 37,
+    "hotel": 78
+  },
+  "top_gaps": [
+    {
+      "group": "all",
+      "feature": "perplexity",
+      "auc_ai": 0.2278,
+      "auc_human": 0.4895,
+      "gap": 0.2617
+    },
+    {
+      "group": "all",
+      "feature": "hapax_ratio",
+      "auc_ai": 0.4929,
+      "auc_human": 0.3084,
+      "gap": -0.1845
+    },
+    {
+      "group": "all",
+      "feature": "ngram_dup_ratio",
+      "auc_ai": 0.668,
+      "auc_human": 0.4994,
+      "gap": 0.1674
+    },
+    {
+      "group": "all",
+      "feature": "ttr",
+      "auc_ai": 0.4519,
+      "auc_human": 0.2976,
+      "gap": -0.1543
+    },
+    {
+      "group": "all",
+      "feature": "n_words",
+      "auc_ai": 0.535,
+      "auc_human": 0.6785,
+      "gap": -0.1435
+    },
+    {
+      "group": "ecommerce",
+      "feature": "perplexity",
+      "auc_ai": 0.0295,
+      "auc_human": 0.4875,
+      "gap": 0.458
+    },
+    {
+      "group": "ecommerce",
+      "feature": "ngram_dup_ratio",
+      "auc_ai": 0.8949,
+      "auc_human": 0.4989,
+      "gap": 0.3938
+    },
+    {
+      "group": "ecommerce",
+      "feature": "function_word_ratio",
+      "auc_ai": 0.8283,
+      "auc_human": 0.5034,
+      "gap": 0.3249
+    },
+    {
+      "group": "ecommerce",
+      "feature": "avg_word_len",
+      "auc_ai": 0.1667,
+      "auc_human": 0.4873,
+      "gap": 0.3206
+    },
+    {
+      "group": "ecommerce",
+      "feature": "smoothness",
+      "auc_ai": 0.7834,
+      "auc_human": 0.4991,
+      "gap": 0.2825
+    },
+    {
+      "group": "food",
+      "feature": "ari",
+      "auc_ai": 0.939,
+      "auc_human": 0.4923,
+      "gap": 0.4313
+    },
+    {
+      "group": "food",
+      "feature": "flesch",
+      "auc_ai": 0.04,
+      "auc_human": 0.4262,
+      "gap": 0.3862
+    },
+    {
+      "group": "food",
+      "feature": "gunning_fog",
+      "auc_ai": 0.939,
+      "auc_human": 0.5694,
+      "gap": 0.3696
+    },
+    {
+      "group": "food",
+      "feature": "avg_word_len",
+      "auc_ai": 0.9391,
+      "auc_human": 0.574,
+      "gap": 0.3651
+    },
+    {
+      "group": "food",
+      "feature": "comma_per_sentence",
+      "auc_ai": 0.8951,
+      "auc_human": 0.4444,
+      "gap": 0.3395
+    },
+    {
+      "group": "hotel",
+      "feature": "perplexity",
+      "auc_ai": 0.2131,
+      "auc_human": 0.5111,
+      "gap": 0.2758
+    },
+    {
+      "group": "hotel",
+      "feature": "flesch",
+      "auc_ai": 0.22,
+      "auc_human": 0.5145,
+      "gap": 0.2655
+    },
+    {
+      "group": "hotel",
+      "feature": "gunning_fog",
+      "auc_ai": 0.7723,
+      "auc_human": 0.4792,
+      "gap": 0.2515
+    },
+    {
+      "group": "hotel",
+      "feature": "ari",
+      "auc_ai": 0.7636,
+      "auc_human": 0.4773,
+      "gap": 0.2409
+    },
+    {
+      "group": "hotel",
+      "feature": "ari",
+      "auc_ai": 0.7636,
+      "auc_human": 0.5462,
+      "gap": 0.2174
+    }
+  ]
+}

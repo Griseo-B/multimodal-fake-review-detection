@@ -1,0 +1,120 @@
+{
+  "protocol": "public_dataset",
+  "contrast": "real_vs_ai_fake",
+  "features_dir": "data/processed/features/20261030_public_dataset",
+  "rows": 39170,
+  "rows_english": 37430,
+  "rows_chinese": 1740,
+  "bootstrap": 1000,
+  "leak_threshold": 0.95,
+  "chinese_only": false,
+  "leak_flags": [
+    {
+      "group": "food",
+      "feature": "flesch",
+      "auc": 0.04,
+      "ci_low": 0.0374,
+      "ci_high": 0.0427
+    },
+    {
+      "group": "ecommerce",
+      "feature": "perplexity",
+      "auc": 0.0295,
+      "ci_low": 0.0273,
+      "ci_high": 0.0319
+    }
+  ],
+  "top_features": [
+    {
+      "group": "ecommerce",
+      "feature": "perplexity",
+      "auc": 0.0295,
+      "ci_low": 0.0273,
+      "ci_high": 0.0319
+    },
+    {
+      "group": "food",
+      "feature": "flesch",
+      "auc": 0.04,
+      "ci_low": 0.0374,
+      "ci_high": 0.0427
+    },
+    {
+      "group": "food",
+      "feature": "avg_word_len",
+      "auc": 0.9391,
+      "ci_low": 0.9357,
+      "ci_high": 0.9422
+    },
+    {
+      "group": "food",
+      "feature": "gunning_fog",
+      "auc": 0.939,
+      "ci_low": 0.9356,
+      "ci_high": 0.9424
+    },
+    {
+      "group": "food",
+      "feature": "ari",
+      "auc": 0.939,
+      "ci_low": 0.9358,
+      "ci_high": 0.9429
+    },
+    {
+      "group": "food",
+      "feature": "comma_per_sentence",
+      "auc": 0.8951,
+      "ci_low": 0.8907,
+      "ci_high": 0.8995
+    },
+    {
+      "group": "ecommerce",
+      "feature": "ngram_dup_ratio",
+      "auc": 0.8949,
+      "ci_low": 0.8902,
+      "ci_high": 0.8998
+    },
+    {
+      "group": "hotel",
+      "feature": "avg_word_len",
+      "auc": 0.8679,
+      "ci_low": 0.848,
+      "ci_high": 0.8892
+    },
+    {
+      "group": "ecommerce",
+      "feature": "ari",
+      "auc": 0.1459,
+      "ci_low": 0.1402,
+      "ci_high": 0.1515
+    },
+    {
+      "group": "food",
+      "feature": "intensifier_ratio",
+      "auc": 0.1638,
+      "ci_low": 0.1581,
+      "ci_high": 0.1697
+    },
+    {
+      "group": "ecommerce",
+      "feature": "avg_word_len",
+      "auc": 0.1667,
+      "ci_low": 0.1604,
+      "ci_high": 0.1728
+    },
+    {
+      "group": "ecommerce",
+      "feature": "function_word_ratio",
+      "auc": 0.8283,
+      "ci_low": 0.8221,
+      "ci_high": 0.8349
+    }
+  ],
+  "by_group": {
+    "all": 40,
+    "ecommerce": 37,
+    "food": 60,
+    "hotel": 38
+  },
+  "note": "AUC compares real with ai_fake only; rows of other labels are excluded."
+}

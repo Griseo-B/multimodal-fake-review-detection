@@ -1,0 +1,4 @@
+﻿block,model,rows,features,positives,auc,majority
+real_vs_ai,logreg,24768,21,14641,0.8663,0.5911
+dalle_vs_sd,logreg,14641,21,10001,0.9943,0.6831
+real_vs_sd,logreg,14767,21,4640,0.9787,0.6858

@@ -1,0 +1,82 @@
+{
+  "rows": 8172,
+  "changed": 3419,
+  "pairing": {
+    "scene": 4752,
+    "category": 3420
+  },
+  "by_domain": {
+    "ecommerce": {
+      "rows": 1756,
+      "category": 920,
+      "scene": 836,
+      "top_categories": {
+        "3C数码": 794,
+        "食品饮料": 92,
+        "服饰鞋包": 21,
+        "家用电器": 13
+      }
+    },
+    "food": {
+      "rows": 6136,
+      "category": 2500,
+      "scene": 3636,
+      "top_categories": {
+        "火锅": 1799,
+        "日料": 394,
+        "烧烤": 136,
+        "甜品": 97,
+        "粤菜": 48,
+        "西餐": 12,
+        "韩国料理": 4,
+        "川菜": 4
+      }
+    },
+    "hotel": {
+      "rows": 280,
+      "category": 0,
+      "scene": 280,
+      "top_categories": {}
+    }
+  },
+  "pools": {
+    "food": {
+      "咖啡": 94,
+      "甜品": 66,
+      "火锅": 377,
+      "日料": 160,
+      "烧烤": 111,
+      "本帮菜": 109,
+      "粤菜": 109,
+      "西餐": 109,
+      "面包": 51,
+      "川菜": 218,
+      "湘菜": 180,
+      "韩国料理": 145
+    },
+    "ecommerce": {
+      "居家日用": 182,
+      "3C数码": 221,
+      "家用电器": 87,
+      "个人护理": 160,
+      "食品饮料": 237,
+      "服饰鞋包": 51
+    },
+    "food_query_counts": {
+      "咖啡": 94,
+      "甜品": 66,
+      "火锅": 377,
+      "日料": 160,
+      "烧烤": 111,
+      "本帮菜": 109,
+      "粤菜": 109,
+      "西餐": 109,
+      "面包": 51,
+      "川菜": 218,
+      "湘菜": 180,
+      "韩国料理": 145
+    }
+  },
+  "min_hits": 2,
+  "note": "A row keeps pairing='scene' when its text gives no category evidence or the category has no photo pool. Those rows are not silently upgraded."
+}

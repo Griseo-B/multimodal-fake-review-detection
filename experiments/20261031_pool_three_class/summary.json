@@ -1,0 +1,106 @@
+{
+  "pools": [
+    "a",
+    "b"
+  ],
+  "folds_and_seed": {
+    "test": "split_purged train/test",
+    "cv": "5-fold grouped, seed 42",
+    "bootstrap": 500
+  },
+  "class_order": [
+    "real",
+    "human_fake",
+    "ai_fake"
+  ],
+  "downsample_rule": "training rows of every class capped at 1.5x the smallest class",
+  "best_per_pool": {
+    "a": [
+      {
+        "model": "lightgbm",
+        "weighting": "balanced",
+        "macro_f1": 0.7726,
+        "f1_low": 0.7452,
+        "f1_high": 0.7993,
+        "majority_macro_f1": 0.161
+      },
+      {
+        "model": "lightgbm",
+        "weighting": "plain",
+        "macro_f1": 0.7633,
+        "f1_low": 0.7318,
+        "f1_high": 0.7893,
+        "majority_macro_f1": 0.161
+      },
+      {
+        "model": "lightgbm",
+        "weighting": "downsample",
+        "macro_f1": 0.7633,
+        "f1_low": 0.7336,
+        "f1_high": 0.7886,
+        "majority_macro_f1": 0.161
+      }
+    ],
+    "b": [
+      {
+        "model": "lightgbm",
+        "weighting": "plain",
+        "macro_f1": 0.9248,
+        "f1_low": 0.9159,
+        "f1_high": 0.9333,
+        "majority_macro_f1": 0.2117
+      },
+      {
+        "model": "lightgbm",
+        "weighting": "balanced",
+        "macro_f1": 0.9185,
+        "f1_low": 0.9095,
+        "f1_high": 0.9275,
+        "majority_macro_f1": 0.2117
+      },
+      {
+        "model": "lightgbm",
+        "weighting": "downsample",
+        "macro_f1": 0.9178,
+        "f1_low": 0.9081,
+        "f1_high": 0.9264,
+        "majority_macro_f1": 0.2089
+      }
+    ]
+  },
+  "cv": [
+    {
+      "pool": "a",
+      "model": "logreg",
+      "weighting": "balanced",
+      "rows": 7168,
+      "cv_macro_f1": 0.7452,
+      "cv_note": "5-fold StratifiedGroupKFold on group_id, out-of-fold"
+    },
+    {
+      "pool": "a",
+      "model": "lightgbm",
+      "weighting": "balanced",
+      "rows": 7168,
+      "cv_macro_f1": 0.7949,
+      "cv_note": "5-fold StratifiedGroupKFold on group_id, out-of-fold"
+    },
+    {
+      "pool": "b",
+      "model": "logreg",
+      "weighting": "balanced",
+      "rows": 45370,
+      "cv_macro_f1": 0.8234,
+      "cv_note": "5-fold StratifiedGroupKFold on group_id, out-of-fold"
+    },
+    {
+      "pool": "b",
+      "model": "lightgbm",
+      "weighting": "balanced",
+      "rows": 45370,
+      "cv_macro_f1": 0.9216,
+      "cv_note": "5-fold StratifiedGroupKFold on group_id, out-of-fold"
+    }
+  ],
+  "note": "Text only. The image block covers public_dataset rows only, so no three-class multimodal fit exists on either pool yet. macro-F1 is reported against the majority-class baseline in the same table, because a number below that baseline means the weighting, not the features, is doing the work."
+}

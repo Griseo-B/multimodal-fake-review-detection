@@ -1,0 +1,5 @@
+probe,auc
+image_visual_only,0.5414
+image_align_only,0.5744
+image_scene_only,0.5566
+image_all,0.6134

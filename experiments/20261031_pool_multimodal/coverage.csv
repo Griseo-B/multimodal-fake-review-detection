@@ -1,0 +1,7 @@
+﻿pool,label,rows,any_image,any_image_rate,paired_image,paired_image_rate
+a,real,2611,796,0.3049,0,0.0
+a,human_fake,1920,1400,0.7292,0,0.0
+a,ai_fake,2637,1319,0.5002,1319,0.5002
+b,real,19891,10127,0.5091,10127,0.5091
+b,human_fake,6200,2905,0.4685,0,0.0
+b,ai_fake,19279,14641,0.7594,14641,0.7594

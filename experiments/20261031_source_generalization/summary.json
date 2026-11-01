@@ -1,0 +1,184 @@
+{
+  "model": "lightgbm, class_weight balanced",
+  "split": "split_purged",
+  "leave_one_domain": [
+    {
+      "held_out_domain": "food",
+      "ai_generators_in_test": [
+        "gpt-4-turbo+dalle-2"
+      ],
+      "ai_generators_in_train": [
+        "gpt-2",
+        "gpt-4"
+      ],
+      "note": "the generator changes with the domain, so this is both contrasts at once"
+    },
+    {
+      "held_out_domain": "ecommerce",
+      "ai_generators_in_test": [
+        "gpt-2"
+      ],
+      "ai_generators_in_train": [
+        "gpt-4",
+        "gpt-4-turbo+dalle-2"
+      ],
+      "note": "the generator changes with the domain, so this is both contrasts at once"
+    },
+    {
+      "held_out_domain": "hotel",
+      "ai_generators_in_test": [
+        "gpt-4"
+      ],
+      "ai_generators_in_train": [
+        "gpt-2",
+        "gpt-4-turbo+dalle-2"
+      ],
+      "note": "the generator changes with the domain, so this is both contrasts at once"
+    }
+  ],
+  "rows": [
+    {
+      "setting": "in_pool",
+      "held_out": "none",
+      "model": "lightgbm",
+      "weighting": "balanced",
+      "train_rows": 32497,
+      "test_rows": 6436,
+      "macro_f1": 0.9185,
+      "accuracy": 0.9439,
+      "f1_real": 0.9456,
+      "support_real": 2995,
+      "f1_human_fake": 0.8507,
+      "support_human_fake": 504,
+      "f1_ai_fake": 0.9591,
+      "support_ai_fake": 2937,
+      "classes_in_test": "real|human_fake|ai_fake"
+    },
+    {
+      "setting": "leave_one_domain/pool_b/food",
+      "held_out": "food",
+      "model": "lightgbm",
+      "weighting": "balanced",
+      "train_rows": 20220,
+      "test_rows": 8051,
+      "macro_f1": 0.2787,
+      "accuracy": 0.4575,
+      "f1_real": 0.79,
+      "support_real": 3993,
+      "f1_human_fake": 0.0,
+      "support_human_fake": 5,
+      "f1_ai_fake": 0.0462,
+      "support_ai_fake": 4053,
+      "classes_in_test": "real|human_fake|ai_fake",
+      "train_domains": "book|ecommerce|hotel|other"
+    },
+    {
+      "setting": "leave_one_domain/pool_b/ecommerce",
+      "held_out": "ecommerce",
+      "model": "lightgbm",
+      "weighting": "balanced",
+      "train_rows": 17918,
+      "test_rows": 3293,
+      "macro_f1": 0.3228,
+      "accuracy": 0.4974,
+      "f1_real": 0.6968,
+      "support_real": 1741,
+      "f1_human_fake": 0.2623,
+      "support_human_fake": 107,
+      "f1_ai_fake": 0.0094,
+      "support_ai_fake": 1445,
+      "classes_in_test": "real|human_fake|ai_fake",
+      "train_domains": "book|food|hotel|other"
+    },
+    {
+      "setting": "leave_one_domain/pool_b/hotel",
+      "held_out": "hotel",
+      "model": "lightgbm",
+      "weighting": "balanced",
+      "train_rows": 28588,
+      "test_rows": 1075,
+      "macro_f1": 0.1889,
+      "accuracy": 0.3953,
+      "f1_real": 0.0,
+      "support_real": 251,
+      "f1_human_fake": 0.5667,
+      "support_human_fake": 469,
+      "f1_ai_fake": 0.0,
+      "support_ai_fake": 355,
+      "classes_in_test": "real|human_fake|ai_fake",
+      "train_domains": "book|ecommerce|food|other"
+    },
+    {
+      "setting": "in_pool",
+      "held_out": "none",
+      "model": "lightgbm",
+      "weighting": "balanced",
+      "train_rows": 5502,
+      "test_rows": 842,
+      "macro_f1": 0.7726,
+      "accuracy": 0.7755,
+      "f1_real": 0.7496,
+      "support_real": 344,
+      "f1_human_fake": 0.6824,
+      "support_human_fake": 230,
+      "f1_ai_fake": 0.8857,
+      "support_ai_fake": 268,
+      "classes_in_test": "real|human_fake|ai_fake"
+    },
+    {
+      "setting": "leave_one_generator/pool_a/Qwen/Qwen2.5-0.5B-Instruct",
+      "held_out": "Qwen/Qwen2.5-0.5B-Instruct",
+      "model": "lightgbm",
+      "weighting": "balanced",
+      "train_rows": 5166,
+      "test_rows": 840,
+      "macro_f1": 0.7537,
+      "accuracy": 0.8298,
+      "f1_real": 0.7438,
+      "support_real": 171,
+      "f1_human_fake": 0.5897,
+      "support_human_fake": 128,
+      "f1_ai_fake": 0.9275,
+      "support_ai_fake": 541,
+      "classes_in_test": "real|human_fake|ai_fake",
+      "train_generators": "TinyLlama/TinyLlama-1.1B-Chat-v1.0|gpt-4"
+    },
+    {
+      "setting": "leave_one_generator/pool_a/TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "held_out": "TinyLlama/TinyLlama-1.1B-Chat-v1.0",
+      "model": "lightgbm",
+      "weighting": "balanced",
+      "train_rows": 5166,
+      "test_rows": 840,
+      "macro_f1": 0.7637,
+      "accuracy": 0.8476,
+      "f1_real": 0.7256,
+      "support_real": 171,
+      "f1_human_fake": 0.6197,
+      "support_human_fake": 128,
+      "f1_ai_fake": 0.9457,
+      "support_ai_fake": 541,
+      "classes_in_test": "real|human_fake|ai_fake",
+      "train_generators": "Qwen/Qwen2.5-0.5B-Instruct|gpt-4"
+    },
+    {
+      "setting": "leave_one_generator/pool_a/gpt-4",
+      "held_out": "gpt-4",
+      "model": "lightgbm",
+      "weighting": "balanced",
+      "train_rows": 4060,
+      "test_rows": 3108,
+      "macro_f1": 0.3795,
+      "accuracy": 0.3639,
+      "f1_real": 0.4011,
+      "support_real": 674,
+      "f1_human_fake": 0.5004,
+      "support_human_fake": 469,
+      "f1_ai_fake": 0.2371,
+      "support_ai_fake": 1965,
+      "classes_in_test": "real|human_fake|ai_fake",
+      "train_generators": "Qwen/Qwen2.5-0.5B-Instruct|TinyLlama/TinyLlama-1.1B-Chat-v1.0"
+    }
+  ],
+  "note": "The leave-one-domain rows also change the generator, because generator and domain are confounded in this table. Read them as an upper-bound warning, not as a clean domain transfer result."
+}

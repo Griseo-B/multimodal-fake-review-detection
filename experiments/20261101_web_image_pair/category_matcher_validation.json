@@ -1,0 +1,168 @@
+{
+  "held_out_reviews": 374,
+  "called": 191,
+  "coverage": 0.511,
+  "precision": 0.963,
+  "per_class": {
+    "咖啡": {
+      "reviews": 21,
+      "called": 7,
+      "coverage": 0.333,
+      "precision": 0.857
+    },
+    "川菜": {
+      "reviews": 45,
+      "called": 15,
+      "coverage": 0.333,
+      "precision": 0.867
+    },
+    "日料": {
+      "reviews": 24,
+      "called": 12,
+      "coverage": 0.5,
+      "precision": 1.0
+    },
+    "本帮菜": {
+      "reviews": 18,
+      "called": 9,
+      "coverage": 0.5,
+      "precision": 0.889
+    },
+    "湘菜": {
+      "reviews": 45,
+      "called": 15,
+      "coverage": 0.333,
+      "precision": 1.0
+    },
+    "火锅": {
+      "reviews": 96,
+      "called": 71,
+      "coverage": 0.74,
+      "precision": 1.0
+    },
+    "烧烤": {
+      "reviews": 24,
+      "called": 20,
+      "coverage": 0.833,
+      "precision": 1.0
+    },
+    "甜品": {
+      "reviews": 18,
+      "called": 6,
+      "coverage": 0.333,
+      "precision": 0.5
+    },
+    "粤菜": {
+      "reviews": 18,
+      "called": 7,
+      "coverage": 0.389,
+      "precision": 1.0
+    },
+    "西餐": {
+      "reviews": 18,
+      "called": 4,
+      "coverage": 0.222,
+      "precision": 1.0
+    },
+    "面包": {
+      "reviews": 15,
+      "called": 7,
+      "coverage": 0.467,
+      "precision": 1.0
+    },
+    "韩国料理": {
+      "reviews": 32,
+      "called": 18,
+      "coverage": 0.562,
+      "precision": 1.0
+    }
+  },
+  "top_confusions": [
+    {
+      "truth": "火锅",
+      "pred": "火锅",
+      "n": 71
+    },
+    {
+      "truth": "烧烤",
+      "pred": "烧烤",
+      "n": 20
+    },
+    {
+      "truth": "韩国料理",
+      "pred": "韩国料理",
+      "n": 18
+    },
+    {
+      "truth": "湘菜",
+      "pred": "湘菜",
+      "n": 15
+    },
+    {
+      "truth": "川菜",
+      "pred": "川菜",
+      "n": 13
+    },
+    {
+      "truth": "日料",
+      "pred": "日料",
+      "n": 12
+    },
+    {
+      "truth": "本帮菜",
+      "pred": "本帮菜",
+      "n": 8
+    },
+    {
+      "truth": "粤菜",
+      "pred": "粤菜",
+      "n": 7
+    },
+    {
+      "truth": "面包",
+      "pred": "面包",
+      "n": 7
+    },
+    {
+      "truth": "咖啡",
+      "pred": "咖啡",
+      "n": 6
+    },
+    {
+      "truth": "西餐",
+      "pred": "西餐",
+      "n": 4
+    },
+    {
+      "truth": "甜品",
+      "pred": "甜品",
+      "n": 3
+    },
+    {
+      "truth": "甜品",
+      "pred": "面包",
+      "n": 3
+    },
+    {
+      "truth": "川菜",
+      "pred": "火锅",
+      "n": 1
+    },
+    {
+      "truth": "本帮菜",
+      "pred": "日料",
+      "n": 1
+    },
+    {
+      "truth": "咖啡",
+      "pred": "甜品",
+      "n": 1
+    },
+    {
+      "truth": "川菜",
+      "pred": "湘菜",
+      "n": 1
+    }
+  ],
+  "note": "Ground truth is the Dianping search query of each shop we crawled, i.e. the cuisine the shop actually serves. Reviews are genuine user text, not fake ones, so this measures the labeler, not the dataset."
+}

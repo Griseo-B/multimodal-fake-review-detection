@@ -1,0 +1,321 @@
+{
+  "note": "Spearman on split=train only. Pairs at or above 0.85 are listed; clusters join pairs at or above 0.90 and are counted as one piece of evidence.",
+  "groups": [
+    {
+      "group": "all",
+      "rows": 25928,
+      "features": 59,
+      "rho_pair_threshold": 0.85,
+      "rho_cluster_threshold": 0.9,
+      "pairs": [
+        {
+          "left": "digit_ratio",
+          "right": "number_ratio",
+          "rho": 1.0,
+          "abs": 1.0
+        },
+        {
+          "left": "n_words",
+          "right": "n_chars",
+          "rho": 0.9876,
+          "abs": 0.9876
+        },
+        {
+          "left": "ttr",
+          "right": "hapax_ratio",
+          "rho": 0.9656,
+          "abs": 0.9656
+        },
+        {
+          "left": "ari",
+          "right": "gunning_fog",
+          "rho": 0.944,
+          "abs": 0.944
+        },
+        {
+          "left": "flesch",
+          "right": "gunning_fog",
+          "rho": -0.9217,
+          "abs": 0.9217
+        },
+        {
+          "left": "flesch",
+          "right": "ari",
+          "rho": -0.9065,
+          "abs": 0.9065
+        },
+        {
+          "left": "n_words",
+          "right": "n_sents",
+          "rho": 0.8878,
+          "abs": 0.8878
+        },
+        {
+          "left": "avg_word_len",
+          "right": "flesch",
+          "rho": -0.8826,
+          "abs": 0.8826
+        },
+        {
+          "left": "n_chars",
+          "right": "n_sents",
+          "rho": 0.8566,
+          "abs": 0.8566
+        }
+      ],
+      "clusters": [
+        [
+          "ari",
+          "flesch",
+          "gunning_fog"
+        ],
+        [
+          "n_chars",
+          "n_words"
+        ],
+        [
+          "hapax_ratio",
+          "ttr"
+        ],
+        [
+          "digit_ratio",
+          "number_ratio"
+        ]
+      ]
+    },
+    {
+      "group": "food",
+      "rows": 12080,
+      "features": 58,
+      "rho_pair_threshold": 0.85,
+      "rho_cluster_threshold": 0.9,
+      "pairs": [
+        {
+          "left": "digit_ratio",
+          "right": "number_ratio",
+          "rho": 1.0,
+          "abs": 1.0
+        },
+        {
+          "left": "n_words",
+          "right": "n_chars",
+          "rho": 0.9851,
+          "abs": 0.9851
+        },
+        {
+          "left": "ttr",
+          "right": "hapax_ratio",
+          "rho": 0.9575,
+          "abs": 0.9575
+        },
+        {
+          "left": "ari",
+          "right": "gunning_fog",
+          "rho": 0.9478,
+          "abs": 0.9478
+        },
+        {
+          "left": "flesch",
+          "right": "gunning_fog",
+          "rho": -0.94,
+          "abs": 0.94
+        },
+        {
+          "left": "flesch",
+          "right": "ari",
+          "rho": -0.9125,
+          "abs": 0.9125
+        },
+        {
+          "left": "avg_word_len",
+          "right": "flesch",
+          "rho": -0.9069,
+          "abs": 0.9069
+        },
+        {
+          "left": "lap_var",
+          "right": "edge_density",
+          "rho": 0.8503,
+          "abs": 0.8503
+        }
+      ],
+      "clusters": [
+        [
+          "ari",
+          "avg_word_len",
+          "flesch",
+          "gunning_fog"
+        ],
+        [
+          "n_chars",
+          "n_words"
+        ],
+        [
+          "hapax_ratio",
+          "ttr"
+        ],
+        [
+          "digit_ratio",
+          "number_ratio"
+        ]
+      ]
+    },
+    {
+      "group": "ecommerce",
+      "rows": 12792,
+      "features": 58,
+      "rho_pair_threshold": 0.85,
+      "rho_cluster_threshold": 0.9,
+      "pairs": [
+        {
+          "left": "digit_ratio",
+          "right": "number_ratio",
+          "rho": 1.0,
+          "abs": 1.0
+        },
+        {
+          "left": "n_words",
+          "right": "n_chars",
+          "rho": 0.9881,
+          "abs": 0.9881
+        },
+        {
+          "left": "ttr",
+          "right": "hapax_ratio",
+          "rho": 0.9836,
+          "abs": 0.9836
+        },
+        {
+          "left": "lap_var",
+          "right": "fft_high_ratio",
+          "rho": 0.9245,
+          "abs": 0.9245
+        },
+        {
+          "left": "ari",
+          "right": "gunning_fog",
+          "rho": 0.8756,
+          "abs": 0.8756
+        },
+        {
+          "left": "n_words",
+          "right": "n_sents",
+          "rho": 0.866,
+          "abs": 0.866
+        },
+        {
+          "left": "lap_var",
+          "right": "edge_density",
+          "rho": 0.8554,
+          "abs": 0.8554
+        },
+        {
+          "left": "scene_match",
+          "right": "entity_image_prob",
+          "rho": 0.8511,
+          "abs": 0.8511
+        },
+        {
+          "left": "n_chars",
+          "right": "n_sents",
+          "rho": 0.8507,
+          "abs": 0.8507
+        }
+      ],
+      "clusters": [
+        [
+          "n_chars",
+          "n_words"
+        ],
+        [
+          "hapax_ratio",
+          "ttr"
+        ],
+        [
+          "digit_ratio",
+          "number_ratio"
+        ],
+        [
+          "fft_high_ratio",
+          "lap_var"
+        ]
+      ]
+    },
+    {
+      "group": "hotel",
+      "rows": 1056,
+      "features": 59,
+      "rho_pair_threshold": 0.85,
+      "rho_cluster_threshold": 0.9,
+      "pairs": [
+        {
+          "left": "digit_ratio",
+          "right": "number_ratio",
+          "rho": 1.0,
+          "abs": 1.0
+        },
+        {
+          "left": "n_words",
+          "right": "n_chars",
+          "rho": 0.9767,
+          "abs": 0.9767
+        },
+        {
+          "left": "ttr",
+          "right": "hapax_ratio",
+          "rho": 0.9537,
+          "abs": 0.9537
+        },
+        {
+          "left": "lap_var",
+          "right": "edge_density",
+          "rho": 0.939,
+          "abs": 0.939
+        },
+        {
+          "left": "lap_var",
+          "right": "fft_high_ratio",
+          "rho": 0.9363,
+          "abs": 0.9363
+        },
+        {
+          "left": "edge_density",
+          "right": "fft_high_ratio",
+          "rho": 0.9226,
+          "abs": 0.9226
+        },
+        {
+          "left": "ari",
+          "right": "gunning_fog",
+          "rho": 0.8923,
+          "abs": 0.8923
+        },
+        {
+          "left": "scene_match",
+          "right": "entity_image_prob",
+          "rho": 0.8655,
+          "abs": 0.8655
+        }
+      ],
+      "clusters": [
+        [
+          "edge_density",
+          "fft_high_ratio",
+          "lap_var"
+        ],
+        [
+          "n_chars",
+          "n_words"
+        ],
+        [
+          "hapax_ratio",
+          "ttr"
+        ],
+        [
+          "digit_ratio",
+          "number_ratio"
+        ]
+      ]
+    }
+  ]
+}

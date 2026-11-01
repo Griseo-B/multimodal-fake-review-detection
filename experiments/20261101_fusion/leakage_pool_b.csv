@@ -1,0 +1,7 @@
+﻿pool,target,block,values,classes,macro_f1,accuracy,majority
+pool_b,source,llm,11,11,0.8695,0.9747,0.4436
+pool_b,source,text_hand,11,11,0.4938,0.6648,0.4436
+pool_b,domain,llm,5,5,0.9976,0.9979,0.448
+pool_b,domain,text_hand,5,5,0.7681,0.7835,0.448
+pool_b,language,llm,3,3,0.9995,0.9999,0.9473
+pool_b,language,text_hand,3,3,0.9862,0.9975,0.9473

@@ -1,0 +1,14 @@
+[
+  {
+    "split_column": "split",
+    "test_rows": 4460,
+    "test_rows_sharing_an_image_with_train": 0,
+    "share": 0.0
+  },
+  {
+    "split_column": "split_purged",
+    "test_rows": 4460,
+    "test_rows_sharing_an_image_with_train": 0,
+    "share": 0.0
+  }
+]

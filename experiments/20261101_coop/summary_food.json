@@ -1,0 +1,82 @@
+{
+  "config": {
+    "seed": 42,
+    "n_ctx": 16,
+    "epochs": 12,
+    "lr": 0.0001,
+    "batch_size": 512,
+    "logit_scale": 100.0
+  },
+  "pool": "pool_b",
+  "domain": "food",
+  "rows": 20128,
+  "class_names": [
+    "a genuine photo taken by a customer",
+    "a machine generated promotional photo"
+  ],
+  "training": {
+    "best_epoch": 12,
+    "val_macro_f1": 0.9289,
+    "epochs_run": 12,
+    "history": [
+      {
+        "epoch": 10,
+        "val_macro_f1": 0.914,
+        "val_auc": 0.974
+      },
+      {
+        "epoch": 11,
+        "val_macro_f1": 0.9227,
+        "val_auc": 0.9789
+      },
+      {
+        "epoch": 12,
+        "val_macro_f1": 0.9289,
+        "val_auc": 0.9821
+      }
+    ]
+  },
+  "note": "image source (amateur photo vs DALL-E) is the separable factor; the text-only twin on the same rows is the control",
+  "table": [
+    {
+      "run": "clip-frozen-prompt",
+      "rows_train": 12082,
+      "rows_test": 4021,
+      "macro_f1": 0.3534,
+      "macro_f1_ci_low": 0.3432,
+      "macro_f1_ci_high": 0.3627,
+      "auc": 0.7909,
+      "note": "hand-written class prompts, zero training"
+    },
+    {
+      "run": "coop-learned-context",
+      "rows_train": 12082,
+      "rows_test": 4021,
+      "macro_f1": 0.9308,
+      "macro_f1_ci_low": 0.923,
+      "macro_f1_ci_high": 0.938,
+      "auc": 0.9814,
+      "note": "ctx 16, best epoch 12"
+    },
+    {
+      "run": "coop+hand-fusion",
+      "rows_train": 12082,
+      "rows_test": 4021,
+      "macro_f1": 0.9913,
+      "macro_f1_ci_low": 0.9883,
+      "macro_f1_ci_high": 0.9938,
+      "auc": 0.9994,
+      "note": "learned prompt logits concatenated with handcrafted text features"
+    },
+    {
+      "run": "text-only-twin",
+      "rows_train": 12082,
+      "rows_test": 4021,
+      "macro_f1": 0.9784,
+      "macro_f1_ci_low": 0.9737,
+      "macro_f1_ci_high": 0.9829,
+      "auc": 0.9964,
+      "note": "same rows, handcrafted text features only"
+    }
+  ]
+}

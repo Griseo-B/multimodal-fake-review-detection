@@ -1,0 +1,46 @@
+{
+  "question": "Is the image block reading a generator fingerprint or the synthetic-versus-photo gap?",
+  "reading": "dalle_vs_sd at or above 0.90 means the block identifies the generator, so real_vs_ai on images is not evidence that the review is dishonest.",
+  "rows": [
+    {
+      "block": "real_vs_ai",
+      "model": "logreg",
+      "rows": 24768,
+      "features": 21,
+      "positives": 14641,
+      "auc": 0.8663,
+      "majority": 0.5911
+    },
+    {
+      "block": "dalle_vs_sd",
+      "model": "logreg",
+      "rows": 14641,
+      "features": 21,
+      "positives": 10001,
+      "auc": 0.9943,
+      "majority": 0.6831
+    },
+    {
+      "block": "real_vs_sd",
+      "model": "logreg",
+      "rows": 14767,
+      "features": 21,
+      "positives": 4640,
+      "auc": 0.9787,
+      "majority": 0.6858
+    }
+  ],
+  "counts": {
+    "generator": {
+      "": 10127,
+      "gpt-4-turbo+dalle-2": 10001,
+      "gpt-2": 3741,
+      "gpt-4": 899
+    },
+    "image_role": {
+      "paired_review": 10127,
+      "paired_dalle": 10001,
+      "paired_sd": 4640
+    }
+  }
+}

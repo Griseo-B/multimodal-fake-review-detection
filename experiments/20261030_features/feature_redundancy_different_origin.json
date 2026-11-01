@@ -1,0 +1,239 @@
+{
+  "note": "Spearman on split=train only. Pairs at or above 0.85 are listed; clusters join pairs at or above 0.90 and are counted as one piece of evidence.",
+  "groups": [
+    {
+      "group": "all",
+      "rows": 5365,
+      "features": 31,
+      "rho_pair_threshold": 0.85,
+      "rho_cluster_threshold": 0.9,
+      "pairs": [
+        {
+          "left": "digit_ratio",
+          "right": "number_ratio",
+          "rho": 1.0,
+          "abs": 1.0
+        },
+        {
+          "left": "n_words",
+          "right": "n_chars",
+          "rho": 0.9891,
+          "abs": 0.9891
+        },
+        {
+          "left": "ttr",
+          "right": "hapax_ratio",
+          "rho": 0.9791,
+          "abs": 0.9791
+        },
+        {
+          "left": "ari",
+          "right": "gunning_fog",
+          "rho": 0.9064,
+          "abs": 0.9064
+        },
+        {
+          "left": "n_words",
+          "right": "ttr",
+          "rho": -0.873,
+          "abs": 0.873
+        },
+        {
+          "left": "flesch",
+          "right": "gunning_fog",
+          "rho": -0.867,
+          "abs": 0.867
+        },
+        {
+          "left": "words_per_sentence",
+          "right": "ari",
+          "rho": 0.8624,
+          "abs": 0.8624
+        }
+      ],
+      "clusters": [
+        [
+          "n_chars",
+          "n_words"
+        ],
+        [
+          "hapax_ratio",
+          "ttr"
+        ],
+        [
+          "digit_ratio",
+          "number_ratio"
+        ],
+        [
+          "ari",
+          "gunning_fog"
+        ]
+      ]
+    },
+    {
+      "group": "food",
+      "rows": 317,
+      "features": 31,
+      "rho_pair_threshold": 0.85,
+      "rho_cluster_threshold": 0.9,
+      "pairs": [
+        {
+          "left": "digit_ratio",
+          "right": "number_ratio",
+          "rho": 1.0,
+          "abs": 1.0
+        },
+        {
+          "left": "n_words",
+          "right": "n_chars",
+          "rho": 0.9936,
+          "abs": 0.9936
+        },
+        {
+          "left": "ttr",
+          "right": "hapax_ratio",
+          "rho": 0.9746,
+          "abs": 0.9746
+        },
+        {
+          "left": "ari",
+          "right": "gunning_fog",
+          "rho": 0.872,
+          "abs": 0.872
+        }
+      ],
+      "clusters": [
+        [
+          "n_chars",
+          "n_words"
+        ],
+        [
+          "hapax_ratio",
+          "ttr"
+        ],
+        [
+          "digit_ratio",
+          "number_ratio"
+        ]
+      ]
+    },
+    {
+      "group": "ecommerce",
+      "rows": 1507,
+      "features": 31,
+      "rho_pair_threshold": 0.85,
+      "rho_cluster_threshold": 0.9,
+      "pairs": [
+        {
+          "left": "digit_ratio",
+          "right": "number_ratio",
+          "rho": 1.0,
+          "abs": 1.0
+        },
+        {
+          "left": "n_words",
+          "right": "n_chars",
+          "rho": 0.9955,
+          "abs": 0.9955
+        },
+        {
+          "left": "ttr",
+          "right": "hapax_ratio",
+          "rho": 0.9911,
+          "abs": 0.9911
+        },
+        {
+          "left": "n_words",
+          "right": "ttr",
+          "rho": -0.8867,
+          "abs": 0.8867
+        },
+        {
+          "left": "n_chars",
+          "right": "ttr",
+          "rho": -0.8704,
+          "abs": 0.8704
+        },
+        {
+          "left": "n_chars",
+          "right": "n_sents",
+          "rho": 0.8575,
+          "abs": 0.8575
+        },
+        {
+          "left": "n_words",
+          "right": "hapax_ratio",
+          "rho": -0.8541,
+          "abs": 0.8541
+        },
+        {
+          "left": "n_words",
+          "right": "n_sents",
+          "rho": 0.8538,
+          "abs": 0.8538
+        }
+      ],
+      "clusters": [
+        [
+          "n_chars",
+          "n_words"
+        ],
+        [
+          "hapax_ratio",
+          "ttr"
+        ],
+        [
+          "digit_ratio",
+          "number_ratio"
+        ]
+      ]
+    },
+    {
+      "group": "hotel",
+      "rows": 1704,
+      "features": 31,
+      "rho_pair_threshold": 0.85,
+      "rho_cluster_threshold": 0.9,
+      "pairs": [
+        {
+          "left": "digit_ratio",
+          "right": "number_ratio",
+          "rho": 1.0,
+          "abs": 1.0
+        },
+        {
+          "left": "n_words",
+          "right": "n_chars",
+          "rho": 0.9917,
+          "abs": 0.9917
+        },
+        {
+          "left": "ttr",
+          "right": "hapax_ratio",
+          "rho": 0.97,
+          "abs": 0.97
+        },
+        {
+          "left": "ari",
+          "right": "gunning_fog",
+          "rho": 0.8789,
+          "abs": 0.8789
+        }
+      ],
+      "clusters": [
+        [
+          "n_chars",
+          "n_words"
+        ],
+        [
+          "hapax_ratio",
+          "ttr"
+        ],
+        [
+          "digit_ratio",
+          "number_ratio"
+        ]
+      ]
+    }
+  ]
+}

@@ -1,0 +1,24 @@
+{
+  "status": "ok",
+  "matched_rows": 20128,
+  "ari": {
+    "spearman": 0.9726,
+    "mean_ours": 8.12,
+    "mean_source": 9.504
+  },
+  "flesch": {
+    "spearman": 0.9468,
+    "mean_ours": 62.626,
+    "mean_source": 68.913
+  },
+  "gunning_fog": {
+    "spearman": 0.9427,
+    "mean_ours": 11.569,
+    "mean_source": 9.989
+  },
+  "perplexity": {
+    "spearman": 0.9207,
+    "mean_ours": 58.652,
+    "mean_source": 46.932
+  }
+}
