@@ -1,0 +1,131 @@
+{
+  "seeds": [
+    42,
+    7,
+    2024,
+    13,
+    99
+  ],
+  "config": {
+    "seed": null,
+    "hidden": 64,
+    "dropout": 0.2,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "epochs": 120,
+    "patience": 15,
+    "batch_size": 512
+  },
+  "llm_features": "data\\processed\\features\\20261101_llm_Qwen2.5-0.5B-Instruct",
+  "blocks": [
+    "text_hand",
+    "llm",
+    "clip_text",
+    "image_stats",
+    "clip_image",
+    "resnet"
+  ],
+  "note": "corpus-level duplicate features excluded; test split used once; image rows are not a random subset; seed_summary.csv holds the spread across seeds",
+  "pools": {
+    "pool_a": {
+      "rows": 7168,
+      "by_label": {
+        "ai_fake": 2637,
+        "real": 2611,
+        "human_fake": 1920
+      },
+      "by_domain": {
+        "hotel": 7168
+      },
+      "by_split": {
+        "train": 5502,
+        "test": 842,
+        "val": 824
+      },
+      "blocks": {
+        "image_stats": {
+          "dim": 22,
+          "present": 3515
+        },
+        "clip_text": {
+          "dim": 512,
+          "present": 3515
+        },
+        "clip_image": {
+          "dim": 512,
+          "present": 3515
+        },
+        "resnet": {
+          "dim": 2048,
+          "present": 3515
+        },
+        "llm": {
+          "dim": 896,
+          "present": 7168
+        }
+      }
+    }
+  },
+  "best": [
+    {
+      "pool": "pool_a/with_image",
+      "run": "mm-text+llm+image",
+      "macro_f1_mean": 0.901,
+      "macro_f1_std": 0.0093
+    },
+    {
+      "pool": "pool_a/with_image",
+      "run": "mm-text+llm",
+      "macro_f1_mean": 0.8975,
+      "macro_f1_std": 0.0195
+    },
+    {
+      "pool": "pool_a",
+      "run": "gate-text+llm+clip",
+      "macro_f1_mean": 0.893,
+      "macro_f1_std": 0.0041
+    },
+    {
+      "pool": "pool_a",
+      "run": "gate-text+llm-risk",
+      "macro_f1_mean": 0.8929,
+      "macro_f1_std": 0.005
+    },
+    {
+      "pool": "pool_a",
+      "run": "gate-text+llm",
+      "macro_f1_mean": 0.8928,
+      "macro_f1_std": 0.0042
+    },
+    {
+      "pool": "pool_a",
+      "run": "twolevel-text+llm",
+      "macro_f1_mean": 0.8912,
+      "macro_f1_std": 0.0026
+    },
+    {
+      "pool": "pool_a",
+      "run": "twolevel-text+llm-noRisk",
+      "macro_f1_mean": 0.8874,
+      "macro_f1_std": 0.0051
+    },
+    {
+      "pool": "pool_a",
+      "run": "lgbm-text+llm-risk",
+      "macro_f1_mean": 0.8799,
+      "macro_f1_std": 0.0
+    },
+    {
+      "pool": "pool_a",
+      "run": "lgbm-text+llm",
+      "macro_f1_mean": 0.8798,
+      "macro_f1_std": 0.0
+    },
+    {
+      "pool": "pool_a",
+      "run": "lgbm-text-risk",
+      "macro_f1_mean": 0.7789,
+      "macro_f1_std": 0.0
+    }
+  ]
+}

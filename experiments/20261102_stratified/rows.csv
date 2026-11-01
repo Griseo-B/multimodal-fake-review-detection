@@ -1,0 +1,265 @@
+﻿pool,run,seed,slice,rows,classes,macro_f1,majority_macro_f1,f1_real,f1_human_fake,f1_ai_fake
+pool_a,gate-text,13,all,842,3,0.7272,0.4086,0.7002,0.6333,0.8483
+pool_a,gate-text,13,language=en,660,3,0.714,0.4,0.6613,0.6333,0.8473
+pool_a,gate-text,13,language=zh,182,2,0.8335,0.5604,0.8171,,0.85
+pool_a,gate-text,13,zh_two_class,182,2,0.8335,0.5604,0.8171,,0.85
+pool_a,gate-text+llm,13,all,842,3,0.8962,0.4086,0.8737,0.8637,0.9513
+pool_a,gate-text+llm,13,language=en,660,3,0.8978,0.4,0.8627,0.8637,0.967
+pool_a,gate-text+llm,13,language=zh,182,2,0.9167,0.5604,0.908,,0.9254
+pool_a,gate-text+llm,13,zh_two_class,182,2,0.9167,0.5604,0.908,,0.9254
+pool_a,gate-text+llm+clip,13,all,842,3,0.8904,0.4086,0.8663,0.8537,0.9513
+pool_a,gate-text+llm+clip,13,language=en,660,3,0.886,0.4,0.8462,0.8537,0.9581
+pool_a,gate-text+llm+clip,13,language=zh,182,2,0.9334,0.5604,0.9268,,0.94
+pool_a,gate-text+llm+clip,13,zh_two_class,182,2,0.9334,0.5604,0.9268,,0.94
+pool_a,gate-text+llm-risk,13,all,842,3,0.9007,0.4086,0.8825,0.8671,0.9526
+pool_a,gate-text+llm-risk,13,language=en,660,3,0.9083,0.4,0.8788,0.8671,0.979
+pool_a,gate-text+llm-risk,13,language=zh,182,2,0.9007,0.5604,0.8941,,0.9072
+pool_a,gate-text+llm-risk,13,zh_two_class,182,2,0.9007,0.5604,0.8941,,0.9072
+pool_a,gate-text-risk,13,all,842,3,0.7713,0.4086,0.7399,0.6874,0.8865
+pool_a,gate-text-risk,13,language=en,660,3,0.7733,0.4,0.7213,0.6874,0.9112
+pool_a,gate-text-risk,13,language=zh,182,2,0.8211,0.5604,0.7975,,0.8447
+pool_a,gate-text-risk,13,zh_two_class,182,2,0.8211,0.5604,0.7975,,0.8447
+pool_a,lgbm-text,13,all,842,3,0.7324,0.4086,0.6918,0.6626,0.8427
+pool_a,lgbm-text,13,language=en,660,3,0.7254,0.4,0.6639,0.6626,0.8497
+pool_a,lgbm-text,13,language=zh,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text,13,zh_two_class,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text+llm,13,all,842,3,0.8798,0.4086,0.855,0.8354,0.949
+pool_a,lgbm-text+llm,13,language=en,660,3,0.8821,0.4,0.8413,0.8354,0.9697
+pool_a,lgbm-text+llm,13,language=zh,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm,13,zh_two_class,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm-risk,13,all,842,3,0.8799,0.4086,0.8524,0.8361,0.9511
+pool_a,lgbm-text+llm-risk,13,language=en,660,3,0.8822,0.4,0.8377,0.8361,0.973
+pool_a,lgbm-text+llm-risk,13,language=zh,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm-risk,13,zh_two_class,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text-risk,13,all,842,3,0.7789,0.4086,0.7545,0.7009,0.8813
+pool_a,lgbm-text-risk,13,language=en,660,3,0.7865,0.4,0.7475,0.7009,0.9112
+pool_a,lgbm-text-risk,13,language=zh,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text-risk,13,zh_two_class,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,twolevel-text+llm,13,all,842,3,0.8955,0.4086,0.8715,0.8643,0.9508
+pool_a,twolevel-text+llm,13,language=en,660,3,0.9,0.4,0.8627,0.8643,0.9728
+pool_a,twolevel-text+llm,13,language=zh,182,2,0.906,0.5604,0.8982,,0.9137
+pool_a,twolevel-text+llm,13,zh_two_class,182,2,0.906,0.5604,0.8982,,0.9137
+pool_a,twolevel-text+llm-noRisk,13,all,842,3,0.894,0.4086,0.8692,0.8577,0.9551
+pool_a,twolevel-text+llm-noRisk,13,language=en,660,3,0.894,0.4,0.8543,0.8577,0.9701
+pool_a,twolevel-text+llm-noRisk,13,language=zh,182,2,0.9223,0.5604,0.9146,,0.93
+pool_a,twolevel-text+llm-noRisk,13,zh_two_class,182,2,0.9223,0.5604,0.9146,,0.93
+pool_a,gate-text,2024,all,842,3,0.7352,0.4086,0.7046,0.6543,0.8467
+pool_a,gate-text,2024,language=en,660,3,0.7216,0.4,0.6625,0.6557,0.8466
+pool_a,gate-text,2024,language=zh,182,2,0.8366,0.5604,0.8263,,0.8469
+pool_a,gate-text,2024,zh_two_class,182,2,0.8342,0.5604,0.8214,,0.8469
+pool_a,gate-text+llm,2024,all,842,3,0.8964,0.4086,0.8729,0.8631,0.9531
+pool_a,gate-text+llm,2024,language=en,660,3,0.9014,0.4,0.8651,0.8631,0.976
+pool_a,gate-text+llm,2024,language=zh,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,gate-text+llm,2024,zh_two_class,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,gate-text+llm+clip,2024,all,842,3,0.8877,0.4086,0.8708,0.8391,0.9533
+pool_a,gate-text+llm+clip,2024,language=en,660,3,0.8846,0.4,0.8533,0.8391,0.9612
+pool_a,gate-text+llm+clip,2024,language=zh,182,2,0.9334,0.5604,0.9268,,0.94
+pool_a,gate-text+llm+clip,2024,zh_two_class,182,2,0.9334,0.5604,0.9268,,0.94
+pool_a,gate-text+llm-risk,2024,all,842,3,0.892,0.4086,0.866,0.8571,0.9527
+pool_a,gate-text+llm-risk,2024,language=en,660,3,0.8962,0.4,0.8555,0.8571,0.9759
+pool_a,gate-text+llm-risk,2024,language=zh,182,2,0.906,0.5604,0.8982,,0.9137
+pool_a,gate-text+llm-risk,2024,zh_two_class,182,2,0.906,0.5604,0.8982,,0.9137
+pool_a,gate-text-risk,2024,all,842,3,0.7775,0.4086,0.7422,0.6964,0.8938
+pool_a,gate-text-risk,2024,language=en,660,3,0.7758,0.4,0.7152,0.6964,0.9159
+pool_a,gate-text-risk,2024,language=zh,182,2,0.8389,0.5604,0.8221,,0.8557
+pool_a,gate-text-risk,2024,zh_two_class,182,2,0.8389,0.5604,0.8221,,0.8557
+pool_a,lgbm-text,2024,all,842,3,0.7324,0.4086,0.6918,0.6626,0.8427
+pool_a,lgbm-text,2024,language=en,660,3,0.7254,0.4,0.6639,0.6626,0.8497
+pool_a,lgbm-text,2024,language=zh,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text,2024,zh_two_class,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text+llm,2024,all,842,3,0.8798,0.4086,0.855,0.8354,0.949
+pool_a,lgbm-text+llm,2024,language=en,660,3,0.8821,0.4,0.8413,0.8354,0.9697
+pool_a,lgbm-text+llm,2024,language=zh,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm,2024,zh_two_class,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm-risk,2024,all,842,3,0.8799,0.4086,0.8524,0.8361,0.9511
+pool_a,lgbm-text+llm-risk,2024,language=en,660,3,0.8822,0.4,0.8377,0.8361,0.973
+pool_a,lgbm-text+llm-risk,2024,language=zh,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm-risk,2024,zh_two_class,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text-risk,2024,all,842,3,0.7789,0.4086,0.7545,0.7009,0.8813
+pool_a,lgbm-text-risk,2024,language=en,660,3,0.7865,0.4,0.7475,0.7009,0.9112
+pool_a,lgbm-text-risk,2024,language=zh,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text-risk,2024,zh_two_class,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,twolevel-text+llm,2024,all,842,3,0.8904,0.4086,0.8632,0.8507,0.9572
+pool_a,twolevel-text+llm,2024,language=en,660,3,0.8886,0.4,0.8451,0.8507,0.9701
+pool_a,twolevel-text+llm,2024,language=zh,182,2,0.9276,0.5604,0.9193,,0.936
+pool_a,twolevel-text+llm,2024,zh_two_class,182,2,0.9276,0.5604,0.9193,,0.936
+pool_a,twolevel-text+llm-noRisk,2024,all,842,3,0.8911,0.4086,0.8659,0.8536,0.954
+pool_a,twolevel-text+llm-noRisk,2024,language=en,660,3,0.8891,0.4,0.8491,0.8536,0.9645
+pool_a,twolevel-text+llm-noRisk,2024,language=zh,182,2,0.9274,0.5604,0.9182,,0.9366
+pool_a,twolevel-text+llm-noRisk,2024,zh_two_class,182,2,0.9274,0.5604,0.9182,,0.9366
+pool_a,gate-text,42,all,842,3,0.738,0.4086,0.7068,0.6558,0.8514
+pool_a,gate-text,42,language=en,660,3,0.7223,0.4,0.6625,0.6571,0.8473
+pool_a,gate-text,42,language=zh,182,2,0.8475,0.5604,0.8364,,0.8586
+pool_a,gate-text,42,zh_two_class,182,2,0.845,0.5604,0.8313,,0.8586
+pool_a,gate-text+llm,42,all,842,3,0.8865,0.4086,0.8627,0.8471,0.9497
+pool_a,gate-text+llm,42,language=en,660,3,0.8881,0.4,0.8497,0.8471,0.9674
+pool_a,gate-text+llm,42,language=zh,182,2,0.9112,0.5604,0.9024,,0.92
+pool_a,gate-text+llm,42,zh_two_class,182,2,0.9112,0.5604,0.9024,,0.92
+pool_a,gate-text+llm+clip,42,all,842,3,0.8975,0.4086,0.8814,0.8646,0.9466
+pool_a,gate-text+llm+clip,42,language=en,660,3,0.8958,0.4,0.8697,0.8646,0.9529
+pool_a,gate-text+llm+clip,42,language=zh,182,2,0.9276,0.5604,0.9193,,0.936
+pool_a,gate-text+llm+clip,42,zh_two_class,182,2,0.9276,0.5604,0.9193,,0.936
+pool_a,gate-text+llm-risk,42,all,842,3,0.8878,0.4086,0.8648,0.8494,0.9493
+pool_a,gate-text+llm-risk,42,language=en,660,3,0.8897,0.4,0.8527,0.8494,0.967
+pool_a,gate-text+llm-risk,42,language=zh,182,2,0.9112,0.5604,0.9024,,0.92
+pool_a,gate-text+llm-risk,42,zh_two_class,182,2,0.9112,0.5604,0.9024,,0.92
+pool_a,gate-text-risk,42,all,842,3,0.7817,0.4086,0.7591,0.6987,0.8873
+pool_a,gate-text-risk,42,language=en,660,3,0.7826,0.4,0.7409,0.6987,0.908
+pool_a,gate-text-risk,42,language=zh,182,2,0.8331,0.5604,0.8148,,0.8515
+pool_a,gate-text-risk,42,zh_two_class,182,2,0.8331,0.5604,0.8148,,0.8515
+pool_a,lgbm-text,42,all,842,3,0.7324,0.4086,0.6918,0.6626,0.8427
+pool_a,lgbm-text,42,language=en,660,3,0.7254,0.4,0.6639,0.6626,0.8497
+pool_a,lgbm-text,42,language=zh,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text,42,zh_two_class,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text+llm,42,all,842,3,0.8798,0.4086,0.855,0.8354,0.949
+pool_a,lgbm-text+llm,42,language=en,660,3,0.8821,0.4,0.8413,0.8354,0.9697
+pool_a,lgbm-text+llm,42,language=zh,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm,42,zh_two_class,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm-risk,42,all,842,3,0.8799,0.4086,0.8524,0.8361,0.9511
+pool_a,lgbm-text+llm-risk,42,language=en,660,3,0.8822,0.4,0.8377,0.8361,0.973
+pool_a,lgbm-text+llm-risk,42,language=zh,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm-risk,42,zh_two_class,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text-risk,42,all,842,3,0.7789,0.4086,0.7545,0.7009,0.8813
+pool_a,lgbm-text-risk,42,language=en,660,3,0.7865,0.4,0.7475,0.7009,0.9112
+pool_a,lgbm-text-risk,42,language=zh,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text-risk,42,zh_two_class,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,twolevel-text+llm,42,all,842,3,0.8904,0.4086,0.8611,0.8525,0.9575
+pool_a,twolevel-text+llm,42,language=en,660,3,0.8868,0.4,0.8408,0.8525,0.9672
+pool_a,twolevel-text+llm,42,language=zh,182,2,0.9329,0.5604,0.9241,,0.9417
+pool_a,twolevel-text+llm,42,zh_two_class,182,2,0.9329,0.5604,0.9241,,0.9417
+pool_a,twolevel-text+llm-noRisk,42,all,842,3,0.8868,0.4086,0.861,0.8477,0.9515
+pool_a,twolevel-text+llm-noRisk,42,language=en,660,3,0.8851,0.4,0.8434,0.8477,0.9643
+pool_a,twolevel-text+llm-noRisk,42,language=zh,182,2,0.9223,0.5604,0.9146,,0.93
+pool_a,twolevel-text+llm-noRisk,42,zh_two_class,182,2,0.9223,0.5604,0.9146,,0.93
+pool_a,gate-text,7,all,842,3,0.7193,0.4086,0.6773,0.6371,0.8434
+pool_a,gate-text,7,language=en,660,3,0.704,0.4,0.6354,0.6371,0.8394
+pool_a,gate-text,7,language=zh,182,2,0.8264,0.5604,0.8025,,0.8502
+pool_a,gate-text,7,zh_two_class,182,2,0.8264,0.5604,0.8025,,0.8502
+pool_a,gate-text+llm,7,all,842,3,0.8907,0.4086,0.8657,0.8607,0.9456
+pool_a,gate-text+llm,7,language=en,660,3,0.8918,0.4,0.8538,0.8607,0.961
+pool_a,gate-text+llm,7,language=zh,182,2,0.9112,0.5604,0.9024,,0.92
+pool_a,gate-text+llm,7,zh_two_class,182,2,0.9112,0.5604,0.9024,,0.92
+pool_a,gate-text+llm+clip,7,all,842,3,0.8929,0.4086,0.8772,0.8522,0.9493
+pool_a,gate-text+llm+clip,7,language=en,660,3,0.8897,0.4,0.8621,0.8522,0.9547
+pool_a,gate-text+llm+clip,7,language=zh,182,2,0.9333,0.5604,0.9259,,0.9406
+pool_a,gate-text+llm+clip,7,zh_two_class,182,2,0.9333,0.5604,0.9259,,0.9406
+pool_a,gate-text+llm-risk,7,all,842,3,0.8945,0.4086,0.8725,0.8554,0.9557
+pool_a,gate-text+llm-risk,7,language=en,660,3,0.8935,0.4,0.8577,0.8554,0.9674
+pool_a,gate-text+llm-risk,7,language=zh,182,2,0.9274,0.5604,0.9182,,0.9366
+pool_a,gate-text+llm-risk,7,zh_two_class,182,2,0.9274,0.5604,0.9182,,0.9366
+pool_a,gate-text-risk,7,all,842,3,0.7646,0.4086,0.747,0.6681,0.8788
+pool_a,gate-text-risk,7,language=en,660,3,0.7656,0.4,0.728,0.6681,0.9008
+pool_a,gate-text-risk,7,language=zh,182,2,0.8224,0.5604,0.8049,,0.84
+pool_a,gate-text-risk,7,zh_two_class,182,2,0.8224,0.5604,0.8049,,0.84
+pool_a,lgbm-text,7,all,842,3,0.7324,0.4086,0.6918,0.6626,0.8427
+pool_a,lgbm-text,7,language=en,660,3,0.7254,0.4,0.6639,0.6626,0.8497
+pool_a,lgbm-text,7,language=zh,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text,7,zh_two_class,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text+llm,7,all,842,3,0.8798,0.4086,0.855,0.8354,0.949
+pool_a,lgbm-text+llm,7,language=en,660,3,0.8821,0.4,0.8413,0.8354,0.9697
+pool_a,lgbm-text+llm,7,language=zh,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm,7,zh_two_class,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm-risk,7,all,842,3,0.8799,0.4086,0.8524,0.8361,0.9511
+pool_a,lgbm-text+llm-risk,7,language=en,660,3,0.8822,0.4,0.8377,0.8361,0.973
+pool_a,lgbm-text+llm-risk,7,language=zh,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm-risk,7,zh_two_class,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text-risk,7,all,842,3,0.7789,0.4086,0.7545,0.7009,0.8813
+pool_a,lgbm-text-risk,7,language=en,660,3,0.7865,0.4,0.7475,0.7009,0.9112
+pool_a,lgbm-text-risk,7,language=zh,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text-risk,7,zh_two_class,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,twolevel-text+llm,7,all,842,3,0.8886,0.4086,0.8615,0.8484,0.956
+pool_a,twolevel-text+llm,7,language=en,660,3,0.8867,0.4,0.8444,0.8484,0.9674
+pool_a,twolevel-text+llm,7,language=zh,182,2,0.927,0.5604,0.9161,,0.9378
+pool_a,twolevel-text+llm,7,zh_two_class,182,2,0.927,0.5604,0.9161,,0.9378
+pool_a,twolevel-text+llm-noRisk,7,all,842,3,0.8827,0.4086,0.8622,0.8403,0.9456
+pool_a,twolevel-text+llm-noRisk,7,language=en,660,3,0.885,0.4,0.8504,0.8403,0.9643
+pool_a,twolevel-text+llm-noRisk,7,language=zh,182,2,0.906,0.5604,0.8982,,0.9137
+pool_a,twolevel-text+llm-noRisk,7,zh_two_class,182,2,0.906,0.5604,0.8982,,0.9137
+pool_a,gate-text,99,all,842,3,0.718,0.4086,0.6869,0.6186,0.8484
+pool_a,gate-text,99,language=en,660,3,0.6999,0.4,0.6382,0.6186,0.8427
+pool_a,gate-text,99,language=zh,182,2,0.845,0.5604,0.8313,,0.8586
+pool_a,gate-text,99,zh_two_class,182,2,0.845,0.5604,0.8313,,0.8586
+pool_a,gate-text+llm,99,all,842,3,0.8941,0.4086,0.8746,0.8554,0.9524
+pool_a,gate-text+llm,99,language=en,660,3,0.8943,0.4,0.8629,0.8554,0.9647
+pool_a,gate-text+llm,99,language=zh,182,2,0.9217,0.5604,0.9114,,0.932
+pool_a,gate-text+llm,99,zh_two_class,182,2,0.9217,0.5604,0.9114,,0.932
+pool_a,gate-text+llm+clip,99,all,842,3,0.8965,0.4086,0.8744,0.8643,0.9508
+pool_a,gate-text+llm+clip,99,language=en,660,3,0.8931,0.4,0.8577,0.8643,0.9573
+pool_a,gate-text+llm+clip,99,language=zh,182,2,0.9334,0.5604,0.9268,,0.94
+pool_a,gate-text+llm+clip,99,zh_two_class,182,2,0.9334,0.5604,0.9268,,0.94
+pool_a,gate-text+llm-risk,99,all,842,3,0.8895,0.4086,0.8631,0.8524,0.9529
+pool_a,gate-text+llm-risk,99,language=en,660,3,0.8919,0.4,0.8504,0.8524,0.9728
+pool_a,gate-text+llm-risk,99,language=zh,182,2,0.9112,0.5604,0.9024,,0.92
+pool_a,gate-text+llm-risk,99,zh_two_class,182,2,0.9112,0.5604,0.9024,,0.92
+pool_a,gate-text-risk,99,all,842,3,0.78,0.4086,0.7512,0.6996,0.8893
+pool_a,gate-text-risk,99,language=en,660,3,0.7787,0.4,0.7284,0.6996,0.908
+pool_a,gate-text-risk,99,language=zh,182,2,0.8385,0.5604,0.8199,,0.8571
+pool_a,gate-text-risk,99,zh_two_class,182,2,0.8385,0.5604,0.8199,,0.8571
+pool_a,lgbm-text,99,all,842,3,0.7324,0.4086,0.6918,0.6626,0.8427
+pool_a,lgbm-text,99,language=en,660,3,0.7254,0.4,0.6639,0.6626,0.8497
+pool_a,lgbm-text,99,language=zh,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text,99,zh_two_class,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text+llm,99,all,842,3,0.8798,0.4086,0.855,0.8354,0.949
+pool_a,lgbm-text+llm,99,language=en,660,3,0.8821,0.4,0.8413,0.8354,0.9697
+pool_a,lgbm-text+llm,99,language=zh,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm,99,zh_two_class,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm-risk,99,all,842,3,0.8799,0.4086,0.8524,0.8361,0.9511
+pool_a,lgbm-text+llm-risk,99,language=en,660,3,0.8822,0.4,0.8377,0.8361,0.973
+pool_a,lgbm-text+llm-risk,99,language=zh,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm-risk,99,zh_two_class,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text-risk,99,all,842,3,0.7789,0.4086,0.7545,0.7009,0.8813
+pool_a,lgbm-text-risk,99,language=en,660,3,0.7865,0.4,0.7475,0.7009,0.9112
+pool_a,lgbm-text-risk,99,language=zh,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text-risk,99,zh_two_class,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,twolevel-text+llm,99,all,842,3,0.8909,0.4086,0.8615,0.8635,0.9478
+pool_a,twolevel-text+llm,99,language=en,660,3,0.8936,0.4,0.8501,0.8635,0.9672
+pool_a,twolevel-text+llm,99,language=zh,182,2,0.9056,0.5604,0.8957,,0.9154
+pool_a,twolevel-text+llm,99,zh_two_class,182,2,0.9056,0.5604,0.8957,,0.9154
+pool_a,twolevel-text+llm-noRisk,99,all,842,3,0.8826,0.4086,0.8505,0.844,0.9533
+pool_a,twolevel-text+llm-noRisk,99,language=en,660,3,0.88,0.4,0.8289,0.844,0.9672
+pool_a,twolevel-text+llm-noRisk,99,language=zh,182,2,0.9223,0.5604,0.9146,,0.93
+pool_a,twolevel-text+llm-noRisk,99,zh_two_class,182,2,0.9223,0.5604,0.9146,,0.93
+pool_a,gate-text [vote],vote,all,842,3,0.7308,0.4086,0.7023,0.6362,0.854
+pool_a,gate-text [vote],vote,language=en,660,3,0.7154,0.4,0.6585,0.6362,0.8514
+pool_a,gate-text [vote],vote,language=zh,182,2,0.845,0.5604,0.8313,,0.8586
+pool_a,gate-text [vote],vote,zh_two_class,182,2,0.845,0.5604,0.8313,,0.8586
+pool_a,gate-text+llm [vote],vote,all,842,3,0.8949,0.4086,0.8729,0.8601,0.9515
+pool_a,gate-text+llm [vote],vote,language=en,660,3,0.8963,0.4,0.8617,0.8601,0.9672
+pool_a,gate-text+llm [vote],vote,language=zh,182,2,0.9167,0.5604,0.908,,0.9254
+pool_a,gate-text+llm [vote],vote,zh_two_class,182,2,0.9167,0.5604,0.908,,0.9254
+pool_a,gate-text+llm+clip [vote],vote,all,842,3,0.8932,0.4086,0.8748,0.8535,0.9513
+pool_a,gate-text+llm+clip [vote],vote,language=en,660,3,0.89,0.4,0.8588,0.8535,0.9578
+pool_a,gate-text+llm+clip [vote],vote,language=zh,182,2,0.9333,0.5604,0.9259,,0.9406
+pool_a,gate-text+llm+clip [vote],vote,zh_two_class,182,2,0.9333,0.5604,0.9259,,0.9406
+pool_a,gate-text+llm-risk [vote],vote,all,842,3,0.8952,0.4086,0.8719,0.8589,0.9547
+pool_a,gate-text+llm-risk [vote],vote,language=en,660,3,0.8988,0.4,0.8616,0.8589,0.9759
+pool_a,gate-text+llm-risk [vote],vote,language=zh,182,2,0.9114,0.5604,0.9036,,0.9192
+pool_a,gate-text+llm-risk [vote],vote,zh_two_class,182,2,0.9114,0.5604,0.9036,,0.9192
+pool_a,gate-text-risk [vote],vote,all,842,3,0.7785,0.4086,0.7527,0.6971,0.8857
+pool_a,gate-text-risk [vote],vote,language=en,660,3,0.7799,0.4,0.7347,0.6971,0.908
+pool_a,gate-text-risk [vote],vote,language=zh,182,2,0.8274,0.5604,0.8075,,0.8473
+pool_a,gate-text-risk [vote],vote,zh_two_class,182,2,0.8274,0.5604,0.8075,,0.8473
+pool_a,lgbm-text [vote],vote,all,842,3,0.7324,0.4086,0.6918,0.6626,0.8427
+pool_a,lgbm-text [vote],vote,language=en,660,3,0.7254,0.4,0.6639,0.6626,0.8497
+pool_a,lgbm-text [vote],vote,language=zh,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text [vote],vote,zh_two_class,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text+llm [vote],vote,all,842,3,0.8798,0.4086,0.855,0.8354,0.949
+pool_a,lgbm-text+llm [vote],vote,language=en,660,3,0.8821,0.4,0.8413,0.8354,0.9697
+pool_a,lgbm-text+llm [vote],vote,language=zh,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm [vote],vote,zh_two_class,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm-risk [vote],vote,all,842,3,0.8799,0.4086,0.8524,0.8361,0.9511
+pool_a,lgbm-text+llm-risk [vote],vote,language=en,660,3,0.8822,0.4,0.8377,0.8361,0.973
+pool_a,lgbm-text+llm-risk [vote],vote,language=zh,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text+llm-risk [vote],vote,zh_two_class,182,2,0.9058,0.5604,0.897,,0.9146
+pool_a,lgbm-text-risk [vote],vote,all,842,3,0.7789,0.4086,0.7545,0.7009,0.8813
+pool_a,lgbm-text-risk [vote],vote,language=en,660,3,0.7865,0.4,0.7475,0.7009,0.9112
+pool_a,lgbm-text-risk [vote],vote,language=zh,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,lgbm-text-risk [vote],vote,zh_two_class,182,2,0.804,0.5604,0.7771,,0.8309
+pool_a,twolevel-text+llm [vote],vote,all,842,3,0.8989,0.4086,0.8723,0.8671,0.9572
+pool_a,twolevel-text+llm [vote],vote,language=en,660,3,0.8998,0.4,0.8594,0.8671,0.973
+pool_a,twolevel-text+llm [vote],vote,language=zh,182,2,0.9219,0.5604,0.9125,,0.9314
+pool_a,twolevel-text+llm [vote],vote,zh_two_class,182,2,0.9219,0.5604,0.9125,,0.9314
+pool_a,twolevel-text+llm-noRisk [vote],vote,all,842,3,0.8928,0.4086,0.868,0.8589,0.9515
+pool_a,twolevel-text+llm-noRisk [vote],vote,language=en,660,3,0.8919,0.4,0.8525,0.8589,0.9643
+pool_a,twolevel-text+llm-noRisk [vote],vote,language=zh,182,2,0.9223,0.5604,0.9146,,0.93
+pool_a,twolevel-text+llm-noRisk [vote],vote,zh_two_class,182,2,0.9223,0.5604,0.9146,,0.93

@@ -1,0 +1,16 @@
+﻿pool,seed,run,family,blocks,two_level,task,rows_train,rows_test,features,parameters,best_epoch,val_macro_f1,seconds,macro_f1,f1_real,f1_human,f1_ai,majority_macro_f1,auc,macro_f1_ci_low,macro_f1_ci_high
+pool_b,42,lgbm-text,lightgbm,text_hand (no-risk),False,three_class,32497,6436,35,,0,,4.5,0.8873,0.9147,0.824,0.9233,0.4654,0.981,0.8776,0.8972
+pool_b,42,lgbm-text+llm,lightgbm,text_hand+llm (no-risk),False,three_class,32497,6436,931,,0,,58.0,0.9781,0.9806,0.9686,0.985,0.4654,0.999,0.9737,0.9826
+pool_b,42,gate-text,gate,text_hand (no-risk),False,three_class,32497,6436,35,6916.0,70,0.904,26.4,0.8914,0.9207,0.8184,0.935,0.4654,0.9839,0.8809,0.9015
+pool_b,42,gate-text+llm,gate,text_hand+llm (no-risk),False,three_class,32497,6436,931,64581.0,23,0.9877,14.6,0.9802,0.984,0.9679,0.9887,0.4654,0.9993,0.9753,0.985
+pool_b,42,gate-text+llm+clip,gate,text_hand+llm+clip_text (no-risk),False,three_class,32497,6436,1443,97670.0,28,0.9888,19.9,0.9831,0.9872,0.9719,0.9903,0.4654,0.9995,0.9781,0.9871
+pool_b,42,lgbm-text-risk,lightgbm,text_hand,False,three_class,32497,6436,40,,0,,4.2,0.9176,0.9455,0.8478,0.9595,0.4654,0.9911,0.908,0.927
+pool_b,42,gate-text-risk,gate,text_hand,False,three_class,32497,6436,40,7236.0,75,0.9302,26.7,0.9192,0.9482,0.8482,0.9612,0.4654,0.9906,0.9088,0.9282
+pool_b,42,lgbm-text+llm+clip,lightgbm,text_hand+llm+clip_text (no-risk),False,three_class,32497,6436,1443,,0,,106.1,0.9832,0.9829,0.9823,0.9844,0.4654,0.9993,0.9792,0.9868
+pool_b,42,lgbm-text+llm-risk,lightgbm,text_hand+llm,False,three_class,32497,6436,936,,0,,64.4,0.9809,0.9845,0.9705,0.9876,0.4654,0.9993,0.9759,0.9852
+pool_b,42,gate-text+llm-risk,gate,text_hand+llm,False,three_class,32497,6436,936,64901.0,27,0.9871,16.4,0.9797,0.9846,0.9649,0.9897,0.4654,0.9994,0.9743,0.9841
+pool_b,42,twolevel-text+llm,gate,text_hand+llm,True,three_class,32497,6436,936,129672.0,36,0.9851,43.0,0.9778,0.985,0.9591,0.9893,0.4654,0.9993,0.9723,0.9825
+pool_b,42,twolevel-text+llm-noRisk,gate,text_hand+llm (no-risk),True,three_class,32497,6436,931,129032.0,15,0.984,19.6,0.9784,0.9824,0.9661,0.9867,0.4654,0.9993,0.9731,0.9829
+pool_b/with_image,42,mm-text,gate,text_hand (no-risk),False,three_class,18364,4645,35,6916.0,74,0.9279,10.6,0.9144,0.9486,0.8329,0.9615,0.5346,0.9917,0.8983,0.928
+pool_b/with_image,42,mm-text+llm,gate,text_hand+llm (no-risk),False,three_class,18364,4645,931,64581.0,22,0.9939,6.5,0.9924,0.9957,0.984,0.9974,0.5346,1.0,0.9872,0.9966
+pool_b/with_image,42,mm-text+llm+image,gate,text_hand+llm+image_stats (no-risk),False,three_class,18364,4645,953,66310.0,21,0.9958,7.4,0.9936,0.9962,0.9865,0.998,0.5346,1.0,0.9884,0.9975

@@ -1,0 +1,131 @@
+{
+  "seeds": [
+    42
+  ],
+  "config": {
+    "seed": null,
+    "hidden": 64,
+    "dropout": 0.2,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "epochs": 120,
+    "patience": 15,
+    "batch_size": 512
+  },
+  "llm_features": "data\\processed\\features\\20261101_llm_Qwen2.5-0.5B-Instruct",
+  "blocks": [
+    "text_hand",
+    "llm",
+    "clip_text",
+    "image_stats",
+    "clip_image",
+    "resnet"
+  ],
+  "note": "corpus-level duplicate features excluded; test split used once; image rows are not a random subset; seed_summary.csv holds the spread across seeds",
+  "pools": {
+    "pool_b": {
+      "rows": 45370,
+      "by_label": {
+        "real": 19891,
+        "ai_fake": 19279,
+        "human_fake": 6200
+      },
+      "by_domain": {
+        "food": 20328,
+        "ecommerce": 17872,
+        "hotel": 4984,
+        "book": 1537,
+        "other": 649
+      },
+      "by_split": {
+        "train": 32497,
+        "val": 6437,
+        "test": 6436
+      },
+      "blocks": {
+        "image_stats": {
+          "dim": 22,
+          "present": 27673
+        },
+        "clip_text": {
+          "dim": 512,
+          "present": 27673
+        },
+        "clip_image": {
+          "dim": 512,
+          "present": 27673
+        },
+        "resnet": {
+          "dim": 2048,
+          "present": 27673
+        },
+        "llm": {
+          "dim": 896,
+          "present": 45370
+        }
+      }
+    }
+  },
+  "best": [
+    {
+      "pool": "pool_b/with_image",
+      "run": "mm-text+llm+image",
+      "macro_f1_mean": 0.9936,
+      "macro_f1_std": NaN
+    },
+    {
+      "pool": "pool_b/with_image",
+      "run": "mm-text+llm",
+      "macro_f1_mean": 0.9924,
+      "macro_f1_std": NaN
+    },
+    {
+      "pool": "pool_b",
+      "run": "lgbm-text+llm+clip",
+      "macro_f1_mean": 0.9832,
+      "macro_f1_std": NaN
+    },
+    {
+      "pool": "pool_b",
+      "run": "gate-text+llm+clip",
+      "macro_f1_mean": 0.9831,
+      "macro_f1_std": NaN
+    },
+    {
+      "pool": "pool_b",
+      "run": "lgbm-text+llm-risk",
+      "macro_f1_mean": 0.9809,
+      "macro_f1_std": NaN
+    },
+    {
+      "pool": "pool_b",
+      "run": "gate-text+llm",
+      "macro_f1_mean": 0.9802,
+      "macro_f1_std": NaN
+    },
+    {
+      "pool": "pool_b",
+      "run": "gate-text+llm-risk",
+      "macro_f1_mean": 0.9797,
+      "macro_f1_std": NaN
+    },
+    {
+      "pool": "pool_b",
+      "run": "twolevel-text+llm-noRisk",
+      "macro_f1_mean": 0.9784,
+      "macro_f1_std": NaN
+    },
+    {
+      "pool": "pool_b",
+      "run": "lgbm-text+llm",
+      "macro_f1_mean": 0.9781,
+      "macro_f1_std": NaN
+    },
+    {
+      "pool": "pool_b",
+      "run": "twolevel-text+llm",
+      "macro_f1_mean": 0.9778,
+      "macro_f1_std": NaN
+    }
+  ]
+}

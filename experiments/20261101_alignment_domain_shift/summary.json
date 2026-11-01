@@ -1,0 +1,121 @@
+{
+  "rows": 22494,
+  "columns": [
+    "clip_cosine",
+    "sent_max_cosine",
+    "sent_mean_cosine"
+  ],
+  "controls": [
+    "brightness",
+    "saturation",
+    "contrast",
+    "lap_var",
+    "edge_density",
+    "colorfulness",
+    "gray_entropy",
+    "fft_high_ratio",
+    "saliency_offset",
+    "third_rule_score",
+    "border_energy_ratio",
+    "lr_asymmetry"
+  ],
+  "note": "pooled AUC hides a sign flip; the per-domain column is the honest number, and a variant only counts if it lifts the weak domains without borrowing from the strong one.",
+  "table": [
+    {
+      "variant": "pooled",
+      "slice": "pooled",
+      "n": 3428,
+      "auc": 0.8098
+    },
+    {
+      "variant": "pooled",
+      "slice": "domain=ecommerce",
+      "n": 521,
+      "auc": 0.3614
+    },
+    {
+      "variant": "pooled",
+      "slice": "domain=food",
+      "n": 2636,
+      "auc": 0.9004
+    },
+    {
+      "variant": "pooled",
+      "slice": "domain=hotel",
+      "n": 271,
+      "auc": 0.076
+    },
+    {
+      "variant": "within",
+      "slice": "pooled",
+      "n": 3428,
+      "auc": 0.7624
+    },
+    {
+      "variant": "within",
+      "slice": "domain=ecommerce",
+      "n": 521,
+      "auc": 0.3758
+    },
+    {
+      "variant": "within",
+      "slice": "domain=food",
+      "n": 2636,
+      "auc": 0.9076
+    },
+    {
+      "variant": "within",
+      "slice": "domain=hotel",
+      "n": 271,
+      "auc": 0.0855
+    },
+    {
+      "variant": "per_domain",
+      "slice": "pooled",
+      "n": 3428,
+      "auc": 0.9236
+    },
+    {
+      "variant": "per_domain",
+      "slice": "domain=ecommerce",
+      "n": 521,
+      "auc": 0.6163
+    },
+    {
+      "variant": "per_domain",
+      "slice": "domain=food",
+      "n": 2636,
+      "auc": 0.9077
+    },
+    {
+      "variant": "per_domain",
+      "slice": "domain=hotel",
+      "n": 271,
+      "auc": 0.9533
+    },
+    {
+      "variant": "residual",
+      "slice": "pooled",
+      "n": 3428,
+      "auc": 0.7248
+    },
+    {
+      "variant": "residual",
+      "slice": "domain=ecommerce",
+      "n": 521,
+      "auc": 0.3587
+    },
+    {
+      "variant": "residual",
+      "slice": "domain=food",
+      "n": 2636,
+      "auc": 0.8566
+    },
+    {
+      "variant": "residual",
+      "slice": "domain=hotel",
+      "n": 271,
+      "auc": 0.0944
+    }
+  ]
+}

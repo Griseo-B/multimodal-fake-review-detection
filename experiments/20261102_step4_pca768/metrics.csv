@@ -1,0 +1,15 @@
+﻿pool,seed,run,family,blocks,two_level,task,rows_train,rows_test,features,parameters,best_epoch,val_macro_f1,seconds,macro_f1,f1_real,f1_human,f1_ai,majority_macro_f1,auc,macro_f1_ci_low,macro_f1_ci_high
+pool_a,42,lgbm-text,lightgbm,text_hand (no-risk),False,three_class,5502,842,35,,0,,5.4,0.7324,0.6918,0.6626,0.8427,0.4086,0.9001,0.7011,0.7582
+pool_a,42,lgbm-text+llm,lightgbm,text_hand+llm (no-risk),False,three_class,5502,842,803,,0,,36.3,0.8846,0.8619,0.8361,0.9557,0.4086,0.975,0.8635,0.9057
+pool_a,42,gate-text,gate,text_hand (no-risk),False,three_class,5502,842,35,6916.0,86,0.7305,11.8,0.738,0.7068,0.6558,0.8514,0.4086,0.8896,0.7084,0.767
+pool_a,42,gate-text+llm,gate,text_hand+llm (no-risk),False,three_class,5502,842,803,56389.0,8,0.9024,3.4,0.8965,0.872,0.8589,0.9586,0.4086,0.9807,0.8754,0.9153
+pool_a,42,gate-text+llm+clip,gate,text_hand+llm+clip_text (no-risk),False,three_class,5502,842,1315,89478.0,10,0.9087,3.9,0.9041,0.8915,0.8565,0.9644,0.4086,0.984,0.8843,0.922
+pool_a,42,lgbm-text-risk,lightgbm,text_hand,False,three_class,5502,842,40,,0,,3.1,0.7789,0.7545,0.7009,0.8813,0.4086,0.9199,0.7491,0.8043
+pool_a,42,gate-text-risk,gate,text_hand,False,three_class,5502,842,40,7236.0,90,0.771,8.4,0.7817,0.7591,0.6987,0.8873,0.4086,0.9141,0.7548,0.8081
+pool_a,42,lgbm-text+llm-risk,lightgbm,text_hand+llm,False,three_class,5502,842,808,,0,,40.3,0.8866,0.8666,0.8337,0.9594,0.4086,0.972,0.8628,0.9076
+pool_a,42,gate-text+llm-risk,gate,text_hand+llm,False,three_class,5502,842,808,56709.0,10,0.8981,3.7,0.8988,0.8793,0.8523,0.9647,0.4086,0.9796,0.8793,0.9182
+pool_a,42,twolevel-text+llm,gate,text_hand+llm,True,three_class,5502,842,808,113288.0,10,0.896,6.5,0.9014,0.8813,0.8565,0.9664,0.4086,0.9786,0.8817,0.9228
+pool_a,42,twolevel-text+llm-noRisk,gate,text_hand+llm (no-risk),True,three_class,5502,842,803,112648.0,7,0.8996,6.0,0.9058,0.8869,0.8584,0.9722,0.4086,0.981,0.8849,0.9252
+pool_a/with_image,42,mm-text,gate,text_hand (no-risk),False,three_class,2575,479,35,6916.0,75,0.7533,4.5,0.7354,0.6093,0.7056,0.8912,0.38,0.8942,0.6976,0.7735
+pool_a/with_image,42,mm-text+llm,gate,text_hand+llm (no-risk),False,three_class,2575,479,803,56389.0,15,0.9195,2.7,0.9187,0.8818,0.8889,0.9855,0.38,0.9823,0.8962,0.9416
+pool_a/with_image,42,mm-text+llm+image,gate,text_hand+llm+image_stats (no-risk),False,three_class,2575,479,825,58118.0,30,0.919,4.0,0.9193,0.8762,0.8889,0.9927,0.38,0.9823,0.8947,0.9396

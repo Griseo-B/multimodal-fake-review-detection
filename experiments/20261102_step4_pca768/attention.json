@@ -1,0 +1,132 @@
+[
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "gate-text",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "gate-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.045,
+        "llm": 0.955
+      },
+      "class_1": {
+        "text_hand": 0.1187,
+        "llm": 0.8813
+      },
+      "class_2": {
+        "text_hand": 0.0676,
+        "llm": 0.9324
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "gate-text+llm+clip",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0278,
+        "llm": 0.9518,
+        "clip_text": 0.0204
+      },
+      "class_1": {
+        "text_hand": 0.0362,
+        "llm": 0.6419,
+        "clip_text": 0.322
+      },
+      "class_2": {
+        "text_hand": 0.0618,
+        "llm": 0.6871,
+        "clip_text": 0.2511
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "gate-text-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "gate-text+llm-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.046,
+        "llm": 0.954
+      },
+      "class_1": {
+        "text_hand": 0.0446,
+        "llm": 0.9554
+      },
+      "class_2": {
+        "text_hand": 0.0382,
+        "llm": 0.9618
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "twolevel-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.1534,
+        "llm": 0.8466
+      },
+      "class_1": {
+        "text_hand": 0.0828,
+        "llm": 0.9172
+      },
+      "class_2": {
+        "text_hand": 0.0268,
+        "llm": 0.9732
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "twolevel-text+llm-noRisk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0656,
+        "llm": 0.9344
+      },
+      "class_1": {
+        "text_hand": 0.1345,
+        "llm": 0.8655
+      },
+      "class_2": {
+        "text_hand": 0.0698,
+        "llm": 0.9302
+      }
+    }
+  }
+]

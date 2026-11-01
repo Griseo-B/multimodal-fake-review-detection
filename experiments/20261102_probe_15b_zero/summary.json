@@ -1,0 +1,65 @@
+{
+  "model": "Qwen/Qwen2.5-1.5B-Instruct",
+  "pool": "pool_a",
+  "config": {
+    "seed": 42,
+    "epochs": 2,
+    "lr": 0.0002,
+    "batch_size": 8,
+    "grad_accum": 2,
+    "max_length": 224,
+    "lora_r": 8,
+    "lora_alpha": 16,
+    "lora_dropout": 0.05
+  },
+  "description_fields": [
+    "perplexity",
+    "flesch",
+    "ttr",
+    "pos_noun",
+    "pos_adv",
+    "pos_pron",
+    "clause_marker_ratio",
+    "sentiment",
+    "extreme_ratio",
+    "number_ratio",
+    "smoothness",
+    "n_words"
+  ],
+  "prompt": "你是虚假评论审核员。下面给出一条评论的自检描述和原文。\n三个类别：real（真实用户评论）、human_fake（人工撰写的虚假评论）、ai_fake（AI 生成的虚假评论）。\n只回答一个类别代号：real 记作真，human_fake 记作人，ai_fake 记作机。\n",
+  "rows": 7168,
+  "note": "label likelihood rather than free generation; description buckets fit on train only; corpus-level fields excluded; shuffle_description permutes the card fields as a control",
+  "shuffle_description": false,
+  "table": [
+    {
+      "run": "zero-shot",
+      "rows": 300,
+      "macro_f1": 0.2984,
+      "macro_f1_ci_low": 0.2493,
+      "macro_f1_ci_high": 0.3497,
+      "f1_real": 0.0813,
+      "f1_human": 0.2642,
+      "f1_ai": 0.5499,
+      "accuracy": 0.4033,
+      "majority_macro_f1": 0.3867,
+      "confusion": [
+        [
+          5,
+          10,
+          101
+        ],
+        [
+          2,
+          14,
+          65
+        ],
+        [
+          0,
+          1,
+          102
+        ]
+      ],
+      "seconds": 188.7
+    }
+  ]
+}

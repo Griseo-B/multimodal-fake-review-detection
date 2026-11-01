@@ -209,6 +209,15 @@ def build(pool: str, llm_path: Path | None = None, with_images: bool = True) -> 
         "text_columns": text_columns,
         "pool": pool,
         "source_table": str(TABLES[pool].relative_to(ROOT)),
+        # A stable integer per domain, and the vocabulary it indexes. Kept out
+        # of the feature matrices on purpose: domain is a conditioning signal,
+        # not a feature, and putting it in the text block would let the model
+        # memorise which pool a review came from.
+        "domains": sorted(ordered["domain"].astype(str).unique().tolist()),
+        "domain_index": ordered["domain"].astype(str).map(
+            {name: position for position, name in
+             enumerate(sorted(ordered["domain"].astype(str).unique().tolist()))
+        }).to_numpy(dtype=np.int64),
     }
 
 

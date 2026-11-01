@@ -1,0 +1,2 @@
+﻿run,rows,macro_f1,macro_f1_ci_low,macro_f1_ci_high,f1_real,f1_human,f1_ai,accuracy,majority_macro_f1,confusion,seconds
+lora,842,0.8592,0.834,0.8828,0.8518,0.7677,0.9582,0.8646,0.4086,"[[319, 22, 3], [70, 157, 3], [16, 0, 252]]",1092.9

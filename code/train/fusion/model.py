@@ -42,16 +42,31 @@ class BlockEncoder(nn.Module):
 
 
 class GatedFusion(nn.Module):
-    """Attention over feature groups, then one head."""
+    """Attention over feature groups, then one head.
+
+    `n_domains > 0` adds a bias to every gate score that depends only on the
+    domain. That is the smallest change that lets a group mean different things
+    in different domains: the CLIP alignment block helps on food and hurts on
+    hotel, and without the bias one pooled weight has to serve both. The bias
+    starts at exactly zero, so an unconditioned run is the initialisation.
+    """
 
     def __init__(self, widths: dict[str, int], hidden: int = 64, dropout: float = 0.2,
-                 n_classes: int = 3):
+                 n_classes: int = 3, n_domains: int = 0, domain_dim: int = 8):
         super().__init__()
         self.names = list(widths)
+        self.n_domains = n_domains
         self.encoders = nn.ModuleDict(
             {name: BlockEncoder(width, hidden, dropout) for name, width in widths.items()}
         )
         self.gate = nn.ModuleDict({name: nn.Linear(hidden, 1) for name in widths})
+        if n_domains:
+            self.domain_embed = nn.Embedding(n_domains, domain_dim)
+            self.domain_gate = nn.ModuleDict({name: nn.Linear(domain_dim, 1)
+                                              for name in widths})
+            for module in self.domain_gate.values():
+                nn.init.zeros_(module.weight)
+                nn.init.zeros_(module.bias)
         self.dropout = nn.Dropout(dropout)
         self.head = nn.Sequential(
             nn.Linear(hidden, hidden),
@@ -62,13 +77,19 @@ class GatedFusion(nn.Module):
         self.hidden = hidden
 
     def forward(self, blocks: dict[str, torch.Tensor],
-                masks: dict[str, torch.Tensor]) -> tuple[torch.Tensor, torch.Tensor]:
+                masks: dict[str, torch.Tensor],
+                domain: torch.Tensor | None = None) -> tuple[torch.Tensor, torch.Tensor]:
+        signal = None
+        if self.n_domains and domain is not None:
+            signal = self.domain_embed(domain)
         hidden = []
         scores = []
         for name in self.names:
             encoded = self.encoders[name](blocks[name], masks[name])
             hidden.append(encoded)
             score = self.gate[name](encoded).squeeze(1)
+            if signal is not None:
+                score = score + self.domain_gate[name](signal).squeeze(1)
             # A group that is absent for this row cannot win attention.
             score = score.masked_fill(~masks[name], float("-inf"))
             scores.append(score)
@@ -84,14 +105,15 @@ class GatedFusion(nn.Module):
 class TwoLevelHead(nn.Module):
     """Stage 1 real/fake, stage 2 human/AI. Stage 2 sees fakes only at training."""
 
-    def __init__(self, widths: dict[str, int], hidden: int = 64, dropout: float = 0.2):
+    def __init__(self, widths: dict[str, int], hidden: int = 64, dropout: float = 0.2,
+                 n_domains: int = 0):
         super().__init__()
-        self.stage1 = GatedFusion(widths, hidden, dropout, n_classes=2)
-        self.stage2 = GatedFusion(widths, hidden, dropout, n_classes=2)
+        self.stage1 = GatedFusion(widths, hidden, dropout, n_classes=2, n_domains=n_domains)
+        self.stage2 = GatedFusion(widths, hidden, dropout, n_classes=2, n_domains=n_domains)
 
-    def forward(self, blocks, masks):
-        logits1, attention1 = self.stage1(blocks, masks)
-        logits2, attention2 = self.stage2(blocks, masks)
+    def forward(self, blocks, masks, domain=None):
+        logits1, attention1 = self.stage1(blocks, masks, domain)
+        logits2, attention2 = self.stage2(blocks, masks, domain)
         return logits1, logits2, attention1, attention2
 
     @staticmethod

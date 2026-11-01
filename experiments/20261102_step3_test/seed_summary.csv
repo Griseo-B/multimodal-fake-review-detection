@@ -1,0 +1,15 @@
+﻿pool,run,seeds,macro_f1_mean,macro_f1_std,f1_real_mean,f1_human_mean,f1_ai_mean,macro_f1_min,macro_f1_max
+pool_a,gate-text,1,0.738,,0.7068,0.6558,0.8514,0.738,0.738
+pool_a,gate-text+llm,1,0.8865,,0.8627,0.8471,0.9497,0.8865,0.8865
+pool_a,gate-text+llm+clip,1,0.8975,,0.8814,0.8646,0.9466,0.8975,0.8975
+pool_a,gate-text+llm-risk,1,0.8878,,0.8648,0.8494,0.9493,0.8878,0.8878
+pool_a,gate-text-risk,1,0.7817,,0.7591,0.6987,0.8873,0.7817,0.7817
+pool_a,lgbm-text,1,0.7324,,0.6918,0.6626,0.8427,0.7324,0.7324
+pool_a,lgbm-text+llm,1,0.8798,,0.855,0.8354,0.949,0.8798,0.8798
+pool_a,lgbm-text+llm-risk,1,0.8799,,0.8524,0.8361,0.9511,0.8799,0.8799
+pool_a,lgbm-text-risk,1,0.7789,,0.7545,0.7009,0.8813,0.7789,0.7789
+pool_a,twolevel-text+llm,1,0.8904,,0.8611,0.8525,0.9575,0.8904,0.8904
+pool_a,twolevel-text+llm-noRisk,1,0.8868,,0.861,0.8477,0.9515,0.8868,0.8868
+pool_a/with_image,mm-text,1,0.7354,,0.6093,0.7056,0.8912,0.7354,0.7354
+pool_a/with_image,mm-text+llm,1,0.9124,,0.8713,0.8842,0.9818,0.9124,0.9124
+pool_a/with_image,mm-text+llm+image,1,0.9153,,0.8654,0.8841,0.9964,0.9153,0.9153

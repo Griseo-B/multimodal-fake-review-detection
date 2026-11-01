@@ -1,0 +1,146 @@
+[
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "gate-text",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 1.0
+        },
+        "class_1": {
+          "text_hand": 1.0
+        },
+        "class_2": {
+          "text_hand": 1.0
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "gate-text+llm",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.0901,
+          "llm": 0.9099
+        },
+        "class_1": {
+          "text_hand": 0.1623,
+          "llm": 0.8377
+        },
+        "class_2": {
+          "text_hand": 0.0495,
+          "llm": 0.9505
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "gate-text+llm+clip",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.1157,
+          "llm": 0.8432,
+          "clip_text": 0.0412
+        },
+        "class_1": {
+          "text_hand": 0.1152,
+          "llm": 0.3956,
+          "clip_text": 0.4892
+        },
+        "class_2": {
+          "text_hand": 0.0522,
+          "llm": 0.7057,
+          "clip_text": 0.2421
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "gate-text-risk",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 1.0
+        },
+        "class_1": {
+          "text_hand": 1.0
+        },
+        "class_2": {
+          "text_hand": 1.0
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "gate-text+llm-risk",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.1097,
+          "llm": 0.8903
+        },
+        "class_1": {
+          "text_hand": 0.2048,
+          "llm": 0.7952
+        },
+        "class_2": {
+          "text_hand": 0.0491,
+          "llm": 0.9509
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "twolevel-text+llm",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.2205,
+          "llm": 0.7795
+        },
+        "class_1": {
+          "text_hand": 0.1931,
+          "llm": 0.8069
+        },
+        "class_2": {
+          "text_hand": 0.0869,
+          "llm": 0.9131
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "twolevel-text+llm-noRisk",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.1245,
+          "llm": 0.8755
+        },
+        "class_1": {
+          "text_hand": 0.3095,
+          "llm": 0.6905
+        },
+        "class_2": {
+          "text_hand": 0.1053,
+          "llm": 0.8947
+        }
+      }
+    }
+  }
+]

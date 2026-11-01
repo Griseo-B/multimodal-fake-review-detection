@@ -1,0 +1,2 @@
+﻿run,rows,macro_f1,macro_f1_ci_low,macro_f1_ci_high,f1_real,f1_human,f1_ai,accuracy,majority_macro_f1,confusion,seconds
+zero-shot,300,0.2984,0.2493,0.3497,0.0813,0.2642,0.5499,0.4033,0.3867,"[[5, 10, 101], [2, 14, 65], [0, 1, 102]]",188.7

@@ -1,0 +1,1302 @@
+[
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "gate-text",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "gate-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0901,
+        "llm": 0.9099
+      },
+      "class_1": {
+        "text_hand": 0.1623,
+        "llm": 0.8377
+      },
+      "class_2": {
+        "text_hand": 0.0495,
+        "llm": 0.9505
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "gate-text+llm+clip",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.1157,
+        "llm": 0.8432,
+        "clip_text": 0.0412
+      },
+      "class_1": {
+        "text_hand": 0.1152,
+        "llm": 0.3956,
+        "clip_text": 0.4892
+      },
+      "class_2": {
+        "text_hand": 0.0522,
+        "llm": 0.7057,
+        "clip_text": 0.2421
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "gate-text-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "gate-text+llm-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.1097,
+        "llm": 0.8903
+      },
+      "class_1": {
+        "text_hand": 0.2048,
+        "llm": 0.7952
+      },
+      "class_2": {
+        "text_hand": 0.0491,
+        "llm": 0.9509
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "twolevel-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.2205,
+        "llm": 0.7795
+      },
+      "class_1": {
+        "text_hand": 0.1931,
+        "llm": 0.8069
+      },
+      "class_2": {
+        "text_hand": 0.0869,
+        "llm": 0.9131
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 42,
+    "run": "twolevel-text+llm-noRisk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.1245,
+        "llm": 0.8755
+      },
+      "class_1": {
+        "text_hand": 0.3095,
+        "llm": 0.6905
+      },
+      "class_2": {
+        "text_hand": 0.1053,
+        "llm": 0.8947
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 7,
+    "run": "gate-text",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 7,
+    "run": "gate-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0992,
+        "llm": 0.9008
+      },
+      "class_1": {
+        "text_hand": 0.1477,
+        "llm": 0.8523
+      },
+      "class_2": {
+        "text_hand": 0.0277,
+        "llm": 0.9723
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 7,
+    "run": "gate-text+llm+clip",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.1253,
+        "llm": 0.8307,
+        "clip_text": 0.044
+      },
+      "class_1": {
+        "text_hand": 0.1369,
+        "llm": 0.3432,
+        "clip_text": 0.5199
+      },
+      "class_2": {
+        "text_hand": 0.0325,
+        "llm": 0.7741,
+        "clip_text": 0.1934
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 7,
+    "run": "gate-text-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 7,
+    "run": "gate-text+llm-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0827,
+        "llm": 0.9173
+      },
+      "class_1": {
+        "text_hand": 0.1938,
+        "llm": 0.8062
+      },
+      "class_2": {
+        "text_hand": 0.0322,
+        "llm": 0.9678
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 7,
+    "run": "twolevel-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.1573,
+        "llm": 0.8427
+      },
+      "class_1": {
+        "text_hand": 0.2321,
+        "llm": 0.7679
+      },
+      "class_2": {
+        "text_hand": 0.0614,
+        "llm": 0.9386
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 7,
+    "run": "twolevel-text+llm-noRisk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.145,
+        "llm": 0.855
+      },
+      "class_1": {
+        "text_hand": 0.1764,
+        "llm": 0.8236
+      },
+      "class_2": {
+        "text_hand": 0.0472,
+        "llm": 0.9528
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 2024,
+    "run": "gate-text",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 2024,
+    "run": "gate-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.1097,
+        "llm": 0.8903
+      },
+      "class_1": {
+        "text_hand": 0.1507,
+        "llm": 0.8493
+      },
+      "class_2": {
+        "text_hand": 0.076,
+        "llm": 0.924
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 2024,
+    "run": "gate-text+llm+clip",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0858,
+        "llm": 0.8614,
+        "clip_text": 0.0528
+      },
+      "class_1": {
+        "text_hand": 0.0956,
+        "llm": 0.3772,
+        "clip_text": 0.5273
+      },
+      "class_2": {
+        "text_hand": 0.0285,
+        "llm": 0.774,
+        "clip_text": 0.1975
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 2024,
+    "run": "gate-text-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 2024,
+    "run": "gate-text+llm-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0972,
+        "llm": 0.9028
+      },
+      "class_1": {
+        "text_hand": 0.1572,
+        "llm": 0.8428
+      },
+      "class_2": {
+        "text_hand": 0.1556,
+        "llm": 0.8444
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 2024,
+    "run": "twolevel-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.1705,
+        "llm": 0.8295
+      },
+      "class_1": {
+        "text_hand": 0.2123,
+        "llm": 0.7877
+      },
+      "class_2": {
+        "text_hand": 0.0644,
+        "llm": 0.9356
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 2024,
+    "run": "twolevel-text+llm-noRisk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.195,
+        "llm": 0.805
+      },
+      "class_1": {
+        "text_hand": 0.1788,
+        "llm": 0.8212
+      },
+      "class_2": {
+        "text_hand": 0.0524,
+        "llm": 0.9476
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 13,
+    "run": "gate-text",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 13,
+    "run": "gate-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.1091,
+        "llm": 0.8909
+      },
+      "class_1": {
+        "text_hand": 0.1897,
+        "llm": 0.8103
+      },
+      "class_2": {
+        "text_hand": 0.0403,
+        "llm": 0.9597
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 13,
+    "run": "gate-text+llm+clip",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.089,
+        "llm": 0.8726,
+        "clip_text": 0.0384
+      },
+      "class_1": {
+        "text_hand": 0.0951,
+        "llm": 0.4419,
+        "clip_text": 0.4629
+      },
+      "class_2": {
+        "text_hand": 0.0146,
+        "llm": 0.7858,
+        "clip_text": 0.1997
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 13,
+    "run": "gate-text-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 13,
+    "run": "gate-text+llm-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.205,
+        "llm": 0.795
+      },
+      "class_1": {
+        "text_hand": 0.224,
+        "llm": 0.776
+      },
+      "class_2": {
+        "text_hand": 0.0702,
+        "llm": 0.9298
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 13,
+    "run": "twolevel-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.2439,
+        "llm": 0.7561
+      },
+      "class_1": {
+        "text_hand": 0.1682,
+        "llm": 0.8318
+      },
+      "class_2": {
+        "text_hand": 0.0599,
+        "llm": 0.9401
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 13,
+    "run": "twolevel-text+llm-noRisk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.2182,
+        "llm": 0.7818
+      },
+      "class_1": {
+        "text_hand": 0.2099,
+        "llm": 0.7901
+      },
+      "class_2": {
+        "text_hand": 0.0558,
+        "llm": 0.9442
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 99,
+    "run": "gate-text",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 99,
+    "run": "gate-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.1305,
+        "llm": 0.8695
+      },
+      "class_1": {
+        "text_hand": 0.1316,
+        "llm": 0.8684
+      },
+      "class_2": {
+        "text_hand": 0.0313,
+        "llm": 0.9687
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 99,
+    "run": "gate-text+llm+clip",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.1393,
+        "llm": 0.8316,
+        "clip_text": 0.0291
+      },
+      "class_1": {
+        "text_hand": 0.1498,
+        "llm": 0.425,
+        "clip_text": 0.4252
+      },
+      "class_2": {
+        "text_hand": 0.0438,
+        "llm": 0.7406,
+        "clip_text": 0.2156
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 99,
+    "run": "gate-text-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 99,
+    "run": "gate-text+llm-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.1507,
+        "llm": 0.8493
+      },
+      "class_1": {
+        "text_hand": 0.1942,
+        "llm": 0.8058
+      },
+      "class_2": {
+        "text_hand": 0.093,
+        "llm": 0.907
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 99,
+    "run": "twolevel-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.1936,
+        "llm": 0.8064
+      },
+      "class_1": {
+        "text_hand": 0.2154,
+        "llm": 0.7846
+      },
+      "class_2": {
+        "text_hand": 0.0545,
+        "llm": 0.9455
+      }
+    }
+  },
+  {
+    "pool": "pool_a",
+    "seed": 99,
+    "run": "twolevel-text+llm-noRisk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0991,
+        "llm": 0.9009
+      },
+      "class_1": {
+        "text_hand": 0.1462,
+        "llm": 0.8538
+      },
+      "class_2": {
+        "text_hand": 0.0352,
+        "llm": 0.9648
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 42,
+    "run": "gate-text",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 42,
+    "run": "gate-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0259,
+        "llm": 0.9741
+      },
+      "class_1": {
+        "text_hand": 0.0723,
+        "llm": 0.9277
+      },
+      "class_2": {
+        "text_hand": 0.2814,
+        "llm": 0.7186
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 42,
+    "run": "gate-text+llm+clip",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0414,
+        "llm": 0.8029,
+        "clip_text": 0.1556
+      },
+      "class_1": {
+        "text_hand": 0.0829,
+        "llm": 0.5769,
+        "clip_text": 0.3402
+      },
+      "class_2": {
+        "text_hand": 0.1554,
+        "llm": 0.6634,
+        "clip_text": 0.1812
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 42,
+    "run": "gate-text-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 42,
+    "run": "gate-text+llm-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0403,
+        "llm": 0.9597
+      },
+      "class_1": {
+        "text_hand": 0.0594,
+        "llm": 0.9406
+      },
+      "class_2": {
+        "text_hand": 0.2854,
+        "llm": 0.7146
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 42,
+    "run": "twolevel-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.024,
+        "llm": 0.976
+      },
+      "class_1": {
+        "text_hand": 0.2603,
+        "llm": 0.7397
+      },
+      "class_2": {
+        "text_hand": 0.5671,
+        "llm": 0.4329
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 42,
+    "run": "twolevel-text+llm-noRisk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0327,
+        "llm": 0.9673
+      },
+      "class_1": {
+        "text_hand": 0.2243,
+        "llm": 0.7757
+      },
+      "class_2": {
+        "text_hand": 0.2551,
+        "llm": 0.7449
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 7,
+    "run": "gate-text",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 7,
+    "run": "gate-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0939,
+        "llm": 0.9061
+      },
+      "class_1": {
+        "text_hand": 0.1682,
+        "llm": 0.8318
+      },
+      "class_2": {
+        "text_hand": 0.0772,
+        "llm": 0.9228
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 7,
+    "run": "gate-text+llm+clip",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0819,
+        "llm": 0.8332,
+        "clip_text": 0.0849
+      },
+      "class_1": {
+        "text_hand": 0.1018,
+        "llm": 0.5903,
+        "clip_text": 0.3079
+      },
+      "class_2": {
+        "text_hand": 0.1605,
+        "llm": 0.6613,
+        "clip_text": 0.1782
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 7,
+    "run": "gate-text-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 7,
+    "run": "gate-text+llm-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0462,
+        "llm": 0.9538
+      },
+      "class_1": {
+        "text_hand": 0.0783,
+        "llm": 0.9217
+      },
+      "class_2": {
+        "text_hand": 0.3,
+        "llm": 0.7
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 7,
+    "run": "twolevel-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0215,
+        "llm": 0.9785
+      },
+      "class_1": {
+        "text_hand": 0.1019,
+        "llm": 0.8981
+      },
+      "class_2": {
+        "text_hand": 0.2893,
+        "llm": 0.7107
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 7,
+    "run": "twolevel-text+llm-noRisk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.5238,
+        "llm": 0.4762
+      },
+      "class_1": {
+        "text_hand": 0.021,
+        "llm": 0.979
+      },
+      "class_2": {
+        "text_hand": 0.0343,
+        "llm": 0.9657
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 2024,
+    "run": "gate-text",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 2024,
+    "run": "gate-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0382,
+        "llm": 0.9618
+      },
+      "class_1": {
+        "text_hand": 0.1054,
+        "llm": 0.8946
+      },
+      "class_2": {
+        "text_hand": 0.2363,
+        "llm": 0.7637
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 2024,
+    "run": "gate-text+llm+clip",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0711,
+        "llm": 0.5784,
+        "clip_text": 0.3505
+      },
+      "class_1": {
+        "text_hand": 0.0831,
+        "llm": 0.6463,
+        "clip_text": 0.2706
+      },
+      "class_2": {
+        "text_hand": 0.1736,
+        "llm": 0.6557,
+        "clip_text": 0.1707
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 2024,
+    "run": "gate-text-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 2024,
+    "run": "gate-text+llm-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.034,
+        "llm": 0.966
+      },
+      "class_1": {
+        "text_hand": 0.062,
+        "llm": 0.938
+      },
+      "class_2": {
+        "text_hand": 0.2959,
+        "llm": 0.7041
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 2024,
+    "run": "twolevel-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.1159,
+        "llm": 0.8841
+      },
+      "class_1": {
+        "text_hand": 0.0316,
+        "llm": 0.9684
+      },
+      "class_2": {
+        "text_hand": 0.2327,
+        "llm": 0.7673
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 2024,
+    "run": "twolevel-text+llm-noRisk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0419,
+        "llm": 0.9581
+      },
+      "class_1": {
+        "text_hand": 0.1045,
+        "llm": 0.8955
+      },
+      "class_2": {
+        "text_hand": 0.1807,
+        "llm": 0.8193
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 13,
+    "run": "gate-text",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 13,
+    "run": "gate-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.02,
+        "llm": 0.98
+      },
+      "class_1": {
+        "text_hand": 0.0872,
+        "llm": 0.9128
+      },
+      "class_2": {
+        "text_hand": 0.2396,
+        "llm": 0.7604
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 13,
+    "run": "gate-text+llm+clip",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0492,
+        "llm": 0.6563,
+        "clip_text": 0.2945
+      },
+      "class_1": {
+        "text_hand": 0.0679,
+        "llm": 0.6116,
+        "clip_text": 0.3205
+      },
+      "class_2": {
+        "text_hand": 0.1622,
+        "llm": 0.6608,
+        "clip_text": 0.177
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 13,
+    "run": "gate-text-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 13,
+    "run": "gate-text+llm-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0643,
+        "llm": 0.9357
+      },
+      "class_1": {
+        "text_hand": 0.1039,
+        "llm": 0.8961
+      },
+      "class_2": {
+        "text_hand": 0.2768,
+        "llm": 0.7232
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 13,
+    "run": "twolevel-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0324,
+        "llm": 0.9676
+      },
+      "class_1": {
+        "text_hand": 0.1303,
+        "llm": 0.8697
+      },
+      "class_2": {
+        "text_hand": 0.3154,
+        "llm": 0.6846
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 13,
+    "run": "twolevel-text+llm-noRisk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0359,
+        "llm": 0.9641
+      },
+      "class_1": {
+        "text_hand": 0.1099,
+        "llm": 0.8901
+      },
+      "class_2": {
+        "text_hand": 0.2758,
+        "llm": 0.7242
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 99,
+    "run": "gate-text",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 99,
+    "run": "gate-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0301,
+        "llm": 0.9699
+      },
+      "class_1": {
+        "text_hand": 0.1046,
+        "llm": 0.8954
+      },
+      "class_2": {
+        "text_hand": 0.1602,
+        "llm": 0.8398
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 99,
+    "run": "gate-text+llm+clip",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0409,
+        "llm": 0.8492,
+        "clip_text": 0.1099
+      },
+      "class_1": {
+        "text_hand": 0.07,
+        "llm": 0.5669,
+        "clip_text": 0.3632
+      },
+      "class_2": {
+        "text_hand": 0.1571,
+        "llm": 0.6499,
+        "clip_text": 0.193
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 99,
+    "run": "gate-text-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 1.0
+      },
+      "class_1": {
+        "text_hand": 1.0
+      },
+      "class_2": {
+        "text_hand": 1.0
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 99,
+    "run": "gate-text+llm-risk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0449,
+        "llm": 0.9551
+      },
+      "class_1": {
+        "text_hand": 0.06,
+        "llm": 0.94
+      },
+      "class_2": {
+        "text_hand": 0.3204,
+        "llm": 0.6796
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 99,
+    "run": "twolevel-text+llm",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0261,
+        "llm": 0.9739
+      },
+      "class_1": {
+        "text_hand": 0.1125,
+        "llm": 0.8875
+      },
+      "class_2": {
+        "text_hand": 0.3167,
+        "llm": 0.6833
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 99,
+    "run": "twolevel-text+llm-noRisk",
+    "attention": {
+      "class_0": {
+        "text_hand": 0.0215,
+        "llm": 0.9785
+      },
+      "class_1": {
+        "text_hand": 0.2327,
+        "llm": 0.7673
+      },
+      "class_2": {
+        "text_hand": 0.2365,
+        "llm": 0.7635
+      }
+    }
+  }
+]

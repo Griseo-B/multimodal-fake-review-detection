@@ -1,0 +1,17 @@
+﻿variant,slice,n,auc
+pooled,pooled,3428,0.8098
+pooled,domain=ecommerce,521,0.3614
+pooled,domain=food,2636,0.9004
+pooled,domain=hotel,271,0.076
+within,pooled,3428,0.7624
+within,domain=ecommerce,521,0.3758
+within,domain=food,2636,0.9076
+within,domain=hotel,271,0.0855
+per_domain,pooled,3428,0.9236
+per_domain,domain=ecommerce,521,0.6163
+per_domain,domain=food,2636,0.9077
+per_domain,domain=hotel,271,0.9533
+residual,pooled,3428,0.7248
+residual,domain=ecommerce,521,0.3587
+residual,domain=food,2636,0.8566
+residual,domain=hotel,271,0.0944

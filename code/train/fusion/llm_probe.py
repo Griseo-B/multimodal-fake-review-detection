@@ -88,8 +88,14 @@ def log(message: str) -> None:
     print(f"[{time.strftime('%H:%M:%S')}] {message}", flush=True)
 
 
-def description(frame: pd.DataFrame, train_index: np.ndarray) -> list[str]:
-    """Bucketed one-liner per row, cuts fit on train rows only."""
+def description(frame: pd.DataFrame, train_index: np.ndarray,
+                shuffle: bool = False) -> list[str]:
+    """Bucketed one-liner per row, cuts fit on train rows only.
+
+    `shuffle` permutes the phrases within a row. It is the control for the LoRA
+    arm: if the score survives a random field order the adapter is reading the
+    review's surface form, not the card.
+    """
     parts = []
     for name in TALK:
         if name not in frame.columns:
@@ -102,6 +108,7 @@ def description(frame: pd.DataFrame, train_index: np.ndarray) -> list[str]:
         if not np.isfinite(low) or not np.isfinite(high) or high <= low:
             continue
         parts.append((name, values.to_numpy(dtype=float), float(low), float(high)))
+    order = np.random.default_rng(SEED)
     rows = []
     for row in range(len(frame)):
         words = []
@@ -111,11 +118,19 @@ def description(frame: pd.DataFrame, train_index: np.ndarray) -> list[str]:
                 continue
             bucket = 0 if value <= low else (2 if value >= high else 1)
             words.append(PHRASES[name][bucket])
+        if shuffle and len(words) > 1:
+            words = [words[i] for i in order.permutation(len(words))]
         rows.append("；".join(words))
     return rows
 
 
-def build_prompt(summary: str, text: str) -> str:
+def build_prompt(summary: str, text: str, card_only: bool = False) -> str:
+    if card_only:
+        # No review text. This is the only version where a high score means the
+        # model read the feature card rather than the review it describes; with
+        # the text in the prompt, LoRA can ignore the card entirely and still
+        # reach 0.86, which is exactly what the shuffle control showed.
+        return f"{INSTRUCTION}自检描述：{summary}\n类别："
     return (f"{INSTRUCTION}自检描述：{summary}\n评论原文：{text}\n类别：")
 
 
@@ -158,10 +173,24 @@ def evaluate(name: str, labels: np.ndarray, scores: np.ndarray, rows: int) -> di
     predictions = scores.argmax(1)
     per_class = f1_score(labels, predictions, average=None, labels=[0, 1, 2], zero_division=0)
     matrix = confusion_matrix(labels, predictions, labels=[0, 1, 2])
+    # 500 resamples over the test rows, the same interval every other table in
+    # this section carries; one seed of LoRA deserves at least that much.
+    rng = np.random.default_rng(SEED)
+    draws = []
+    for _ in range(500):
+        index = rng.integers(0, len(labels), len(labels))
+        if len(np.unique(labels[index])) < 2:
+            continue
+        draws.append(f1_score(labels[index], predictions[index], average="macro",
+                              zero_division=0))
+    low, high = (float(np.percentile(draws, 2.5)), float(np.percentile(draws, 97.5))) \
+        if draws else (float("nan"), float("nan"))
     return {
         "run": name,
         "rows": rows,
         "macro_f1": round(float(f1_score(labels, predictions, average="macro")), 4),
+        "macro_f1_ci_low": round(low, 4),
+        "macro_f1_ci_high": round(high, 4),
         "f1_real": round(float(per_class[0]), 4),
         "f1_human": round(float(per_class[1]), 4),
         "f1_ai": round(float(per_class[2]), 4),
@@ -177,6 +206,12 @@ def main() -> None:
     parser.add_argument("--model", default="Qwen/Qwen2.5-0.5B-Instruct")
     parser.add_argument("--mode", default="both", choices=["zero", "lora", "both"])
     parser.add_argument("--zero-shot-rows", type=int, default=300)
+    parser.add_argument("--shuffle-description", action="store_true",
+                        help="permute the card fields; the LoRA control for "
+                             "'is it reading the card or the review'")
+    parser.add_argument("--card-only", action="store_true",
+                        help="drop the review text from the prompt; the only "
+                             "version where the score is about the card")
     parser.add_argument("--out", default="experiments/20261101_llm_probe")
     args = parser.parse_args()
 
@@ -189,8 +224,9 @@ def main() -> None:
     train_index = np.where(frame["split"].eq("train"))[0]
     val_index = np.where(frame["split"].eq("val"))[0]
     test_index = np.where(frame["split"].eq("test"))[0]
-    summary = description(frame, train_index)
-    prompts = [build_prompt(summary[i], frame["text"].iloc[i]) for i in range(len(frame))]
+    summary = description(frame, train_index, shuffle=args.shuffle_description)
+    prompts = [build_prompt(summary[i], frame["text"].iloc[i], args.card_only)
+               for i in range(len(frame))]
     log(f"{args.pool}: {len(frame)} rows, test {len(test_index)}")
 
     tokenizer = AutoTokenizer.from_pretrained(args.model, padding_side="right")
@@ -204,6 +240,7 @@ def main() -> None:
     out.mkdir(parents=True, exist_ok=True)
     rows = []
     rng = np.random.default_rng(SEED)
+    saved = {}
 
     if args.mode in ("zero", "both"):
         sample = test_index if len(test_index) <= args.zero_shot_rows else rng.choice(
@@ -212,6 +249,8 @@ def main() -> None:
         scores = label_scores(model, tokenizer, [prompts[i] for i in sample], device)
         rows.append({**evaluate("zero-shot", labels[sample], scores, len(sample)),
                      "seconds": round(time.perf_counter() - started, 1)})
+        saved["zero_shot_id"] = frame["id"].to_numpy(dtype=str)[sample]
+        saved["zero_shot_prediction"] = scores.argmax(1)
         log(f"zero-shot done in {rows[-1]['seconds']}s")
 
     if args.mode in ("lora", "both"):
@@ -275,7 +314,13 @@ def main() -> None:
         scores = label_scores(model, tokenizer, [prompts[i] for i in test_index], device)
         rows.append({**evaluate("lora", labels[test_index], scores, len(test_index)),
                      "seconds": round(time.perf_counter() - started, 1)})
+        saved["lora_id"] = frame["id"].to_numpy(dtype=str)[test_index]
+        saved["lora_prediction"] = scores.argmax(1)
+        saved["lora_label"] = labels[test_index]
         model.save_pretrained(out / "lora_adapter")
+
+    if saved:
+        np.savez_compressed(out / "predictions.npz", **saved)
 
     table = pd.DataFrame(rows)
     table.to_csv(out / "metrics.csv", index=False, encoding="utf-8-sig")
@@ -287,7 +332,10 @@ def main() -> None:
         "prompt": INSTRUCTION,
         "rows": int(len(frame)),
         "note": "label likelihood rather than free generation; description buckets "
-                "fit on train only; corpus-level fields excluded",
+                "fit on train only; corpus-level fields excluded; "
+                "shuffle_description permutes the card fields as a control",
+        "shuffle_description": bool(args.shuffle_description),
+        "card_only": bool(args.card_only),
         "table": rows,
     }
     (out / "summary.json").write_text(json.dumps(summary_doc, ensure_ascii=False, indent=2),

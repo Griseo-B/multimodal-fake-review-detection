@@ -1,0 +1,587 @@
+[
+  {
+    "pool": "pool_b",
+    "seed": 42,
+    "run": "gate-text",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 1.0
+        },
+        "class_1": {
+          "text_hand": 1.0
+        },
+        "class_2": {
+          "text_hand": 1.0
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 42,
+    "run": "gate-text+llm",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.0259,
+          "llm": 0.9741
+        },
+        "class_1": {
+          "text_hand": 0.0723,
+          "llm": 0.9277
+        },
+        "class_2": {
+          "text_hand": 0.2814,
+          "llm": 0.7186
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 42,
+    "run": "gate-text+llm+clip",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.0414,
+          "llm": 0.8029,
+          "clip_text": 0.1556
+        },
+        "class_1": {
+          "text_hand": 0.0829,
+          "llm": 0.5769,
+          "clip_text": 0.3402
+        },
+        "class_2": {
+          "text_hand": 0.1554,
+          "llm": 0.6634,
+          "clip_text": 0.1812
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 42,
+    "run": "gate-text-risk",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 1.0
+        },
+        "class_1": {
+          "text_hand": 1.0
+        },
+        "class_2": {
+          "text_hand": 1.0
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 42,
+    "run": "gate-text+llm-risk",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.0403,
+          "llm": 0.9597
+        },
+        "class_1": {
+          "text_hand": 0.0594,
+          "llm": 0.9406
+        },
+        "class_2": {
+          "text_hand": 0.2854,
+          "llm": 0.7146
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 42,
+    "run": "twolevel-text+llm",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.024,
+          "llm": 0.976
+        },
+        "class_1": {
+          "text_hand": 0.2603,
+          "llm": 0.7397
+        },
+        "class_2": {
+          "text_hand": 0.5671,
+          "llm": 0.4329
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 42,
+    "run": "twolevel-text+llm-noRisk",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.0327,
+          "llm": 0.9673
+        },
+        "class_1": {
+          "text_hand": 0.2243,
+          "llm": 0.7757
+        },
+        "class_2": {
+          "text_hand": 0.2551,
+          "llm": 0.7449
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 42,
+    "run": "gate-text+llm-clip-cond",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.0489,
+          "llm": 0.7947,
+          "clip_text": 0.1563
+        },
+        "class_1": {
+          "text_hand": 0.0845,
+          "llm": 0.5673,
+          "clip_text": 0.3482
+        },
+        "class_2": {
+          "text_hand": 0.1372,
+          "llm": 0.6473,
+          "clip_text": 0.2155
+        }
+      },
+      "by_domain": {
+        "book": {
+          "text_hand": 0.0494,
+          "llm": 0.9506,
+          "clip_text": 0.0
+        },
+        "ecommerce": {
+          "text_hand": 0.2027,
+          "llm": 0.5932,
+          "clip_text": 0.2041
+        },
+        "food": {
+          "text_hand": 0.0081,
+          "llm": 0.7827,
+          "clip_text": 0.2092
+        },
+        "hotel": {
+          "text_hand": 0.0442,
+          "llm": 0.6547,
+          "clip_text": 0.3011
+        },
+        "other": {
+          "text_hand": 0.0739,
+          "llm": 0.9261,
+          "clip_text": 0.0
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 7,
+    "run": "gate-text",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 1.0
+        },
+        "class_1": {
+          "text_hand": 1.0
+        },
+        "class_2": {
+          "text_hand": 1.0
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 7,
+    "run": "gate-text+llm",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.0939,
+          "llm": 0.9061
+        },
+        "class_1": {
+          "text_hand": 0.1682,
+          "llm": 0.8318
+        },
+        "class_2": {
+          "text_hand": 0.0772,
+          "llm": 0.9228
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 7,
+    "run": "gate-text+llm+clip",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.0819,
+          "llm": 0.8332,
+          "clip_text": 0.0849
+        },
+        "class_1": {
+          "text_hand": 0.1018,
+          "llm": 0.5903,
+          "clip_text": 0.3079
+        },
+        "class_2": {
+          "text_hand": 0.1605,
+          "llm": 0.6613,
+          "clip_text": 0.1782
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 7,
+    "run": "gate-text-risk",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 1.0
+        },
+        "class_1": {
+          "text_hand": 1.0
+        },
+        "class_2": {
+          "text_hand": 1.0
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 7,
+    "run": "gate-text+llm-risk",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.0462,
+          "llm": 0.9538
+        },
+        "class_1": {
+          "text_hand": 0.0783,
+          "llm": 0.9217
+        },
+        "class_2": {
+          "text_hand": 0.3,
+          "llm": 0.7
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 7,
+    "run": "twolevel-text+llm",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.0215,
+          "llm": 0.9785
+        },
+        "class_1": {
+          "text_hand": 0.1019,
+          "llm": 0.8981
+        },
+        "class_2": {
+          "text_hand": 0.2893,
+          "llm": 0.7107
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 7,
+    "run": "twolevel-text+llm-noRisk",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.5238,
+          "llm": 0.4762
+        },
+        "class_1": {
+          "text_hand": 0.021,
+          "llm": 0.979
+        },
+        "class_2": {
+          "text_hand": 0.0343,
+          "llm": 0.9657
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 7,
+    "run": "gate-text+llm-clip-cond",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.0403,
+          "llm": 0.8266,
+          "clip_text": 0.133
+        },
+        "class_1": {
+          "text_hand": 0.0908,
+          "llm": 0.5828,
+          "clip_text": 0.3264
+        },
+        "class_2": {
+          "text_hand": 0.1342,
+          "llm": 0.6728,
+          "clip_text": 0.193
+        }
+      },
+      "by_domain": {
+        "book": {
+          "text_hand": 0.0459,
+          "llm": 0.9541,
+          "clip_text": 0.0
+        },
+        "ecommerce": {
+          "text_hand": 0.1994,
+          "llm": 0.5841,
+          "clip_text": 0.2165
+        },
+        "food": {
+          "text_hand": 0.0041,
+          "llm": 0.8407,
+          "clip_text": 0.1552
+        },
+        "hotel": {
+          "text_hand": 0.0302,
+          "llm": 0.6973,
+          "clip_text": 0.2725
+        },
+        "other": {
+          "text_hand": 0.1177,
+          "llm": 0.8823,
+          "clip_text": 0.0
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 2024,
+    "run": "gate-text",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 1.0
+        },
+        "class_1": {
+          "text_hand": 1.0
+        },
+        "class_2": {
+          "text_hand": 1.0
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 2024,
+    "run": "gate-text+llm",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.0382,
+          "llm": 0.9618
+        },
+        "class_1": {
+          "text_hand": 0.1054,
+          "llm": 0.8946
+        },
+        "class_2": {
+          "text_hand": 0.2363,
+          "llm": 0.7637
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 2024,
+    "run": "gate-text+llm+clip",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.0711,
+          "llm": 0.5784,
+          "clip_text": 0.3505
+        },
+        "class_1": {
+          "text_hand": 0.0831,
+          "llm": 0.6463,
+          "clip_text": 0.2706
+        },
+        "class_2": {
+          "text_hand": 0.1736,
+          "llm": 0.6557,
+          "clip_text": 0.1707
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 2024,
+    "run": "gate-text-risk",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 1.0
+        },
+        "class_1": {
+          "text_hand": 1.0
+        },
+        "class_2": {
+          "text_hand": 1.0
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 2024,
+    "run": "gate-text+llm-risk",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.034,
+          "llm": 0.966
+        },
+        "class_1": {
+          "text_hand": 0.062,
+          "llm": 0.938
+        },
+        "class_2": {
+          "text_hand": 0.2959,
+          "llm": 0.7041
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 2024,
+    "run": "twolevel-text+llm",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.1159,
+          "llm": 0.8841
+        },
+        "class_1": {
+          "text_hand": 0.0316,
+          "llm": 0.9684
+        },
+        "class_2": {
+          "text_hand": 0.2327,
+          "llm": 0.7673
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 2024,
+    "run": "twolevel-text+llm-noRisk",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.0419,
+          "llm": 0.9581
+        },
+        "class_1": {
+          "text_hand": 0.1045,
+          "llm": 0.8955
+        },
+        "class_2": {
+          "text_hand": 0.1807,
+          "llm": 0.8193
+        }
+      }
+    }
+  },
+  {
+    "pool": "pool_b",
+    "seed": 2024,
+    "run": "gate-text+llm-clip-cond",
+    "attention": {
+      "by_class": {
+        "class_0": {
+          "text_hand": 0.0422,
+          "llm": 0.9225,
+          "clip_text": 0.0353
+        },
+        "class_1": {
+          "text_hand": 0.0738,
+          "llm": 0.597,
+          "clip_text": 0.3292
+        },
+        "class_2": {
+          "text_hand": 0.1599,
+          "llm": 0.4812,
+          "clip_text": 0.3589
+        }
+      },
+      "by_domain": {
+        "book": {
+          "text_hand": 0.0188,
+          "llm": 0.9812,
+          "clip_text": 0.0
+        },
+        "ecommerce": {
+          "text_hand": 0.2215,
+          "llm": 0.5863,
+          "clip_text": 0.1922
+        },
+        "food": {
+          "text_hand": 0.0099,
+          "llm": 0.7614,
+          "clip_text": 0.2287
+        },
+        "hotel": {
+          "text_hand": 0.0316,
+          "llm": 0.652,
+          "clip_text": 0.3164
+        },
+        "other": {
+          "text_hand": 0.0535,
+          "llm": 0.9465,
+          "clip_text": 0.0
+        }
+      }
+    }
+  }
+]

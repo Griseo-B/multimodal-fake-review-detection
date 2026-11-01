@@ -180,6 +180,9 @@ def train_torch(
     binary: bool,
     config: Config,
     device,
+    domain: np.ndarray | None = None,
+    n_domains: int = 0,
+    domain_labels: np.ndarray | None = None,
 ) -> tuple[object, dict, np.ndarray]:
     import torch
     from torch import nn
@@ -188,13 +191,17 @@ def train_torch(
     blocks, mask_t = to_tensors(values, masks, device)
     target = torch.tensor(labels, dtype=torch.long, device=device)
     stage1_target = (target != 0).long()
+    domain_t = (torch.tensor(domain, dtype=torch.long, device=device)
+                if domain is not None and n_domains else None)
 
     if binary:
-        model = GatedFusion(widths, config.hidden, config.dropout, n_classes=2)
+        model = GatedFusion(widths, config.hidden, config.dropout, n_classes=2,
+                            n_domains=n_domains)
     elif two_level:
-        model = TwoLevelHead(widths, config.hidden, config.dropout)
+        model = TwoLevelHead(widths, config.hidden, config.dropout, n_domains=n_domains)
     else:
-        model = GatedFusion(widths, config.hidden, config.dropout, n_classes=3)
+        model = GatedFusion(widths, config.hidden, config.dropout, n_classes=3,
+                            n_domains=n_domains)
     model.to(device)
 
     optimiser = torch.optim.AdamW(model.parameters(), lr=config.lr,
@@ -207,13 +214,14 @@ def train_torch(
         with torch.no_grad():
             subset = {name: matrix[index_tensor] for name, matrix in blocks.items()}
             subset_mask = {name: mask[index_tensor] for name, mask in mask_t.items()}
+            dom = domain_t[index_tensor] if domain_t is not None else None
             if binary:
-                logits, _ = model(subset, subset_mask)
+                logits, _ = model(subset, subset_mask, dom)
                 return torch.softmax(logits, dim=1)[:, 1]
             if two_level:
-                logits1, logits2, _, _ = model(subset, subset_mask)
+                logits1, logits2, _, _ = model(subset, subset_mask, dom)
                 return TwoLevelHead.combine(logits1, logits2)
-            logits, _ = model(subset, subset_mask)
+            logits, _ = model(subset, subset_mask, dom)
             return torch.softmax(logits, dim=1)
 
     best_state, best_score, best_epoch, history = None, -1.0, -1, []
@@ -226,22 +234,24 @@ def train_torch(
             batch = torch.tensor(order[start : start + config.batch_size], device=device)
             subset = {name: matrix[batch] for name, matrix in blocks.items()}
             subset_mask = {name: mask[batch] for name, mask in mask_t.items()}
+            dom = domain_t[batch] if domain_t is not None else None
             optimiser.zero_grad()
             if binary:
-                logits, _ = model(subset, subset_mask)
+                logits, _ = model(subset, subset_mask, dom)
                 loss = nn.functional.cross_entropy(logits, target[batch])
             elif two_level:
-                logits1, logits2, _, _ = model(subset, subset_mask)
+                logits1, logits2, _, _ = model(subset, subset_mask, dom)
                 loss = nn.functional.cross_entropy(logits1, stage1_target[batch])
                 fake = batch[(target[batch] != 0)]
                 if len(fake):
                     full = {name: matrix[fake] for name, matrix in blocks.items()}
                     full_mask = {name: mask[fake] for name, mask in mask_t.items()}
-                    _, kind_logits, _, _ = model(full, full_mask)
+                    fake_dom = domain_t[fake] if domain_t is not None else None
+                    _, kind_logits, _, _ = model(full, full_mask, fake_dom)
                     kind_target = (target[fake] == 2).long()
                     loss = loss + nn.functional.cross_entropy(kind_logits, kind_target)
             else:
-                logits, _ = model(subset, subset_mask)
+                logits, _ = model(subset, subset_mask, dom)
                 loss = nn.functional.cross_entropy(logits, target[batch])
             loss.backward()
             optimiser.step()
@@ -264,7 +274,8 @@ def train_torch(
     model.eval()
     with torch.no_grad():
         test_probabilities = scores(torch.arange(len(labels), device=device)).cpu().numpy()
-    attention = attention_table(model, blocks, mask_t, two_level, binary, device)
+    attention = attention_table(model, blocks, mask_t, two_level, binary, device,
+                                domain_t, domain_labels)
     info = {
         "parameters": parameter_count(model),
         "epochs_run": len(history),
@@ -276,47 +287,48 @@ def train_torch(
     return model, info, test_probabilities
 
 
-def attention_table(model, blocks, masks, two_level: bool, binary: bool, device) -> dict:
-    """Mean gate weight per block, per predicted class, on all rows.
+def attention_table(model, blocks, masks, two_level: bool, binary: bool, device,
+                    domain_t=None, domain_labels: np.ndarray | None = None) -> dict:
+    """Mean gate weight per block, grouped by predicted class and by domain.
 
     These weights are the numbers the explainability stage will quote, so they
-    are written next to the metrics rather than recomputed later.
+    are written next to the metrics rather than recomputed later. The by-domain
+    block is what shows a group being trusted in one domain and suppressed in
+    another; a single pooled column would average that away.
     """
     import torch
 
     with torch.no_grad():
-        if binary:
-            logits, attention = model(blocks, masks)
-            predictions = logits.argmax(1)
-            names = list(getattr(model, "names"))
-            table = {}
-            for cls in range(2):
-                rows = predictions == cls
-                if rows.any():
-                    table[f"class_{cls}"] = {name: round(float(attention[rows, i].mean()), 4)
-                                             for i, name in enumerate(names)}
-            return table
         if two_level:
-            logits1, logits2, attention1, _ = model(blocks, masks)
-            combined = TwoLevelHead.combine(logits1, logits2).argmax(1)
-            names = list(model.stage1.names)
-            table = {}
-            for cls in range(3):
-                rows = combined == cls
-                if rows.any():
-                    table[f"class_{cls}"] = {name: round(float(attention1[rows, i].mean()), 4)
-                                             for i, name in enumerate(names)}
-            return table
-        logits, attention = model(blocks, masks)
-        predictions = logits.argmax(1)
-        names = list(getattr(model, "names"))
-        table = {}
-        for cls in range(3):
-            rows = predictions == cls
+            logits1, logits2, attention, _ = model(blocks, masks, domain_t)
+            predictions = TwoLevelHead.combine(logits1, logits2).argmax(1)
+        elif binary:
+            logits, attention = model(blocks, masks, domain_t)
+            predictions = logits.argmax(1)
+        else:
+            logits, attention = model(blocks, masks, domain_t)
+            predictions = logits.argmax(1)
+    names = list(model.stage1.names if two_level else model.names)
+
+    def mean(rows) -> dict:
+        return {name: round(float(attention[rows, i].mean()), 4)
+                for i, name in enumerate(names)}
+
+    table = {}
+    for cls in range(3 if not binary else 2):
+        rows = predictions == cls
+        if rows.any():
+            table[f"class_{cls}"] = mean(rows)
+    table = {"by_class": table}
+
+    if domain_labels is not None:
+        by_domain = {}
+        for name in sorted(set(domain_labels.tolist())):
+            rows = torch.tensor(domain_labels == name, device=attention.device)
             if rows.any():
-                table[f"class_{cls}"] = {name: round(float(attention[rows, i].mean()), 4)
-                                         for i, name in enumerate(names)}
-        return table
+                by_domain[name] = mean(rows)
+        table["by_domain"] = by_domain
+    return table
 
 
 def evaluate_predictions(labels: np.ndarray, probabilities, n_classes: int,
@@ -380,7 +392,7 @@ def lightgbm_scores(values: dict[str, np.ndarray], masks: dict[str, np.ndarray],
 
 def run_one(label: str, data: dict, blocks: list[str], include_risk: bool,
             two_level: bool, binary: bool, family: str, config: Config,
-            rng: np.random.Generator, device) -> dict:
+            rng: np.random.Generator, device, conditioned: bool = False) -> dict:
     frame = data["frame"]
     labels = np.array([LABEL_INDEX[name] for name in frame["label"]], dtype=np.int64)
     train_index = np.where(frame["split"].eq("train"))[0]
@@ -389,16 +401,27 @@ def run_one(label: str, data: dict, blocks: list[str], include_risk: bool,
     values, masks, widths = block_arrays(data, blocks, include_risk)
     scaler = fit_scaler(values, masks, train_index)
     scaled = apply_scaler(values, scaler)
+    domain = data["domain_index"] if conditioned else None
+    n_domains = len(data["domains"]) if conditioned else 0
+    domain_names = frame["domain"].astype(str).to_numpy() if conditioned else None
 
     started = time.perf_counter()
     if family == "lightgbm":
+        if conditioned:
+            # Gradient boosting gets the same conditioning as a one-hot column;
+            # without it the comparison would price the architecture, not the idea.
+            scaled = dict(scaled)
+            one_hot = np.zeros((len(frame), n_domains), dtype=np.float32)
+            one_hot[np.arange(len(frame)), domain] = 1.0
+            scaled["domain"] = one_hot
+            widths = {**widths, "domain": n_domains}
         probabilities = lightgbm_scores(scaled, masks, labels, train_index, test_index, binary)
         info = {"parameters": None, "epochs_run": 0, "best_epoch": 0,
                 "val_macro_f1": None, "attention": {}}
     else:
         _, info, all_probabilities = train_torch(
             scaled, masks, labels, widths, train_index, val_index,
-            two_level, binary, config, device,
+            two_level, binary, config, device, domain, n_domains, domain_names,
         )
         probabilities = all_probabilities[test_index]
 
@@ -418,6 +441,10 @@ def run_one(label: str, data: dict, blocks: list[str], include_risk: bool,
         "seconds": round(time.perf_counter() - started, 1),
         **metrics,
     }
+    # Keep the test rows' predictions so the language breakdown, the seed vote
+    # and the confusion matrices all read one run instead of retraining it.
+    row["_predictions"] = probabilities
+    row["_test_index"] = test_index
     return row, info.get("attention", {})
 
 
@@ -437,6 +464,8 @@ def subset(data: dict, mask: np.ndarray) -> dict:
         "text_columns": data["text_columns"],
         "pool": data["pool"],
         "source_table": data["source_table"],
+        "domains": data["domains"],
+        "domain_index": data["domain_index"][mask],
     }
     return out
 
@@ -446,6 +475,12 @@ def main() -> None:
     parser.add_argument("--llm", default="")
     parser.add_argument("--out", default="experiments/20261101_fusion")
     parser.add_argument("--pools", nargs="+", default=["pool_a", "pool_b"])
+    parser.add_argument("--seeds", nargs="+", type=int, default=[SEED],
+                        help="one full pass over the matrix per seed; "
+                             "the split is fixed, only init/order/bootstrap move")
+    parser.add_argument("--conditioned", action="store_true",
+                        help="add the domain-conditioned arms: the same blocks, "
+                             "with each gate score shifted by a learned per-domain bias")
     args = parser.parse_args()
 
     import torch
@@ -453,11 +488,23 @@ def main() -> None:
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")
     out = ROOT / args.out
     out.mkdir(parents=True, exist_ok=True)
-    rng = np.random.default_rng(SEED)
-    config = Config()
     llm_path = ROOT / args.llm if args.llm else None
 
     rows, attentions, meta = [], [], {}
+    store = {}
+
+    def record(pool_name: str, seed: int, row: dict, frame: pd.DataFrame) -> dict:
+        """Strip the private prediction payload off a result and keep it aside."""
+        probabilities = row.pop("_predictions", None)
+        index = row.pop("_test_index", None)
+        if probabilities is not None:
+            key = f"{pool_name}|{seed}|{row['run']}"
+            store[f"{key}|id"] = frame["id"].to_numpy(dtype=str)[index]
+            store[f"{key}|language"] = frame["language"].to_numpy(dtype=str)[index]
+            store[f"{key}|label"] = frame["label"].to_numpy(dtype=str)[index]
+            store[f"{key}|probability"] = probabilities.astype(np.float32)
+        return {"pool": pool_name, "seed": seed, **row}
+
     for pool in args.pools:
         data = build(pool, llm_path=llm_path, with_images=True)
         frame = data["frame"]
@@ -477,58 +524,116 @@ def main() -> None:
             ("gate-text", [TEXT_BLOCK], False, "gate"),
             ("gate-text+llm", [TEXT_BLOCK, LLM_BLOCK], False, "gate"),
             ("gate-text+llm+clip", [TEXT_BLOCK, LLM_BLOCK, CLIP_TEXT_BLOCK], False, "gate"),
+            # The risk columns again, so the 0.7726 of the locked baseline and
+            # the fusion numbers sit in one table. Four of the five are English
+            # readability formulas, so their absence is itself the Chinese flag;
+            # the pair of rows exists to price that, not to recommend it.
+            ("lgbm-text-risk", [TEXT_BLOCK], True, "lightgbm"),
+            ("gate-text-risk", [TEXT_BLOCK], True, "gate"),
         ]
         if llm_path is not None:
             matrix.insert(1, ("lgbm-text+llm", [TEXT_BLOCK, LLM_BLOCK], False, "lightgbm"))
-        for label, blocks, include_risk, family in matrix:
-            row, attention = run_one(label, data, blocks, include_risk, False, False,
-                                     family, config, rng, device)
-            rows.append({"pool": pool, **row})
-            if attention:
-                attentions.append({"pool": pool, "run": label, "attention": attention})
-
-        # Two-level on the best block set, plus one ablation that drops the
-        # risk columns so the report can show what readability/perplexity add.
-        if llm_path is not None:
-            for label, include_risk in (("twolevel-text+llm", False),
-                                        ("twolevel-text+llm-noRisk", True)):
-                row, attention = run_one(label, data, [TEXT_BLOCK, LLM_BLOCK],
-                                         not include_risk, True, False, "gate",
-                                         config, rng, device)
-                rows.append({"pool": pool, **row})
+            matrix.append(("lgbm-text+llm+clip",
+                           [TEXT_BLOCK, LLM_BLOCK, CLIP_TEXT_BLOCK], False, "lightgbm"))
+            matrix.append(("lgbm-text+llm-risk", [TEXT_BLOCK, LLM_BLOCK], True, "lightgbm"))
+            matrix.append(("gate-text+llm-risk", [TEXT_BLOCK, LLM_BLOCK], True, "gate"))
+        for seed in args.seeds:
+            # Every arm is retrained under each seed, so "gated fusion matches
+            # gradient boosting" can be read against seed noise rather than a
+            # single draw. The partition never moves; only the initialisation,
+            # the batch order and the bootstrap resample do.
+            config = Config(seed=seed)
+            rng = np.random.default_rng(seed)
+            for label, blocks, include_risk, family in matrix:
+                row, attention = run_one(label, data, blocks, include_risk, False, False,
+                                         family, config, rng, device)
+                rows.append(record(pool, seed, row, frame))
                 if attention:
-                    attentions.append({"pool": pool, "run": label, "attention": attention})
+                    attentions.append({"pool": pool, "seed": seed, "run": label,
+                                       "attention": attention})
 
-        # Multimodal arm on rows that own an image. This subset is not random:
-        # image presence is 23% / 76% / 75% across the three labels, so the row
-        # is reported beside its text-only twin on the same rows.
-        present = data["blocks"].get(IMAGE_BLOCK, {}).get("present")
-        if present is not None and present.sum() > 500:
-            sub = subset(data, present)
-            for label, blocks in (("mm-text", [TEXT_BLOCK]),
-                                  ("mm-text+llm", [TEXT_BLOCK, LLM_BLOCK]),
-                                  ("mm-text+llm+image", [TEXT_BLOCK, LLM_BLOCK, IMAGE_BLOCK])):
-                if LLM_BLOCK not in blocks and llm_path is None:
-                    continue
-                row, _ = run_one(label, sub, blocks, False, False, False,
-                                 "gate", config, rng, device)
-                rows.append({"pool": f"{pool}/with_image", **row})
+            # Two-level on the best block set, plus one ablation that drops the
+            # risk columns so the report can show what readability/perplexity add.
+            if llm_path is not None:
+                for label, include_risk in (("twolevel-text+llm", False),
+                                            ("twolevel-text+llm-noRisk", True)):
+                    row, attention = run_one(label, data, [TEXT_BLOCK, LLM_BLOCK],
+                                             not include_risk, True, False, "gate",
+                                             config, rng, device)
+                    rows.append(record(pool, seed, row, frame))
+                    if attention:
+                        attentions.append({"pool": pool, "seed": seed, "run": label,
+                                           "attention": attention})
+
+            # Domain-conditioned arms. The unconditioned twins above are the
+            # comparison, so nothing else changes but the per-domain gate bias.
+            if args.conditioned and len(data["domains"]) > 1:
+                for label, blocks, family in (
+                        ("gate-text+llm-clip-cond",
+                         [TEXT_BLOCK, LLM_BLOCK, CLIP_TEXT_BLOCK], "gate"),
+                        ("lgbm-text+llm-clip-cond",
+                         [TEXT_BLOCK, LLM_BLOCK, CLIP_TEXT_BLOCK], "lightgbm")):
+                    if LLM_BLOCK not in blocks and llm_path is None:
+                        continue
+                    row, attention = run_one(label, data, blocks, False, False, False,
+                                             family, config, rng, device, conditioned=True)
+                    rows.append(record(pool, seed, row, frame))
+                    if attention:
+                        attentions.append({"pool": pool, "seed": seed, "run": label,
+                                           "attention": attention})
+
+            # Multimodal arm on rows that own an image. This subset is not random:
+            # image presence is 23% / 76% / 75% across the three labels, so the row
+            # is reported beside its text-only twin on the same rows.
+            present = data["blocks"].get(IMAGE_BLOCK, {}).get("present")
+            if present is not None and present.sum() > 500:
+                sub = subset(data, present)
+                for label, blocks in (("mm-text", [TEXT_BLOCK]),
+                                      ("mm-text+llm", [TEXT_BLOCK, LLM_BLOCK]),
+                                      ("mm-text+llm+image", [TEXT_BLOCK, LLM_BLOCK, IMAGE_BLOCK])):
+                    if LLM_BLOCK not in blocks and llm_path is None:
+                        continue
+                    row, _ = run_one(label, sub, blocks, False, False, False,
+                                     "gate", config, rng, device)
+                    rows.append(record(f"{pool}/with_image", seed, row, sub["frame"]))
 
     table = pd.DataFrame(rows)
     table.to_csv(out / "metrics.csv", index=False, encoding="utf-8-sig")
+    if store:
+        np.savez_compressed(out / "predictions.npz", **store)
+
+    # Seed spread beside the test-set interval. The interval answers "how sure
+    # about this test set"; the spread answers "would another run agree".
+    keys = ["pool", "run"]
+    aggregate = (table.groupby(keys)
+                 .agg(seeds=("seed", "nunique"),
+                      macro_f1_mean=("macro_f1", "mean"),
+                      macro_f1_std=("macro_f1", "std"),
+                      f1_real_mean=("f1_real", "mean"),
+                      f1_human_mean=("f1_human", "mean"),
+                      f1_ai_mean=("f1_ai", "mean"),
+                      macro_f1_min=("macro_f1", "min"),
+                      macro_f1_max=("macro_f1", "max"))
+                 .reset_index())
+    for name in aggregate.columns:
+        if name.endswith(("mean", "std", "min", "max")):
+            aggregate[name] = aggregate[name].round(4)
+    aggregate.to_csv(out / "seed_summary.csv", index=False, encoding="utf-8-sig")
+
     (out / "attention.json").write_text(
         json.dumps(attentions, ensure_ascii=False, indent=2), encoding="utf-8"
     )
     summary = {
-        "config": asdict(config),
+        "seeds": list(args.seeds),
+        "config": {**asdict(Config()), "seed": None},
         "llm_features": str(llm_path.relative_to(ROOT)) if llm_path else "",
         "blocks": ["text_hand", "llm", "clip_text", "image_stats", "clip_image", "resnet"],
         "note": "corpus-level duplicate features excluded; test split used once; "
-                "image rows are not a random subset",
+                "image rows are not a random subset; seed_summary.csv holds the "
+                "spread across seeds",
         "pools": meta,
-        "best": table.sort_values("macro_f1", ascending=False)
-        .head(10)[["pool", "run", "blocks", "macro_f1", "f1_real", "f1_human", "f1_ai"]]
-        .to_dict("records"),
+        "best": aggregate.sort_values("macro_f1_mean", ascending=False)
+        .head(10)[keys + ["macro_f1_mean", "macro_f1_std"]].to_dict("records"),
     }
     (out / "summary.json").write_text(json.dumps(summary, ensure_ascii=False, indent=2),
                                       encoding="utf-8")
