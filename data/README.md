@@ -7,6 +7,7 @@
 | 路径 | 用途 |
 |---|---|
 | `frozen/three_class.csv` | 三类训练表，95,299 条。带 `protocol` 和 224 图。不要和 `mm_v2.csv` 混着改 |
+| `frozen/three_class_pool_a.csv`、`_b.csv` | 真正能训三分类的两张表：A 酒店单域 7,168 条，B 跨源 45,370 条 |
 | `frozen/mm_v2.csv` | 全量表，41,606 条。不要改 |
 | `frozen/allowed_reviews.csv` | 允许使用的评论合在一张表里，并带上已有图片路径 |
 | `frozen/mm_v2_hotel3.csv` | 芝加哥酒店三类平衡子集，已有划分 |
@@ -23,6 +24,8 @@
 | `raw/abo_small/`、`raw/hotel_images/` | 只为重做 `mm3.csv`。酒店图没有许可证，不上传 |
 | `raw/models/clip-vit-base-patch32/` | 重跑图像特征时用 |
 | `processed/mm_v2/`、`processed/mm3/`、`processed/three_class/` | 已经缩到 224 的图 |
+| `processed/features/20261030_public_dataset/` | 餐饮 24,768 行的文本、困惑度、流畅度、视觉、图文对齐、场景特征 |
+| `processed/features/20261031_pool_shared_images/` | 池 A、池 B 里共用图的 4,121 行同一套图像特征。图属于酒店或商品，不属于这条评论，只能当来源线索用 |
 
 标签和能否进入数据集，以 `templates/标注规范.md` 为准。金标、人工标注和按规则打分都可以用。总览在 `catalog.csv`。本次补进的评论在 `raw/supplement/kept.csv`。
 

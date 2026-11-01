@@ -202,6 +202,8 @@ def attach_224(frame: pd.DataFrame) -> pd.DataFrame:
         if not source:
             paths.append("")
             continue
+        # 采多条图的行在 image_path 里用 | 存全部原图，三分类表只挂第一张的 224 副本
+        source = source.split("|")[0]
         if source in cache:
             paths.append(cache[source])
             continue

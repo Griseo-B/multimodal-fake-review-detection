@@ -303,6 +303,25 @@ def collected_rows() -> list[dict]:
             )
             if row:
                 rows.append(row)
+
+    # 2026-11-01 补采：浏览器登录态下按商圈列表逐店抓的点评真评，一条保留多张原图
+    topup = RAW / "collected_20261101" / "dianping" / "reviews.json"
+    if topup.is_file():
+        payload = json.loads(topup.read_text(encoding="utf-8"))
+        topup_index = 0
+        for shop in payload["shops"]:
+            for review in shop["reviews"]:
+                topup_index += 1
+                row = _collected_row(
+                    "dianping-human",
+                    "food",
+                    review,
+                    topup_index,
+                    "raw/supplement/collected_20261101/dianping/images",
+                )
+                if row:
+                    row["item"] = shop.get("shop") or row.get("item", "")
+                    rows.append(row)
     return rows
 
 

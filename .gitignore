@@ -13,6 +13,7 @@ venv/
 # IDE
 .idea/
 .vscode/
+.cursor/
 *.swp
 
 # OS
@@ -20,16 +21,14 @@ venv/
 Thumbs.db
 desktop.ini
 
+# Run logs (reproducible, not results)
+logs/
+
 # Data (keep structure, ignore heavy files)
 data/raw/**
 data/processed/**
-data/records/**
 !data/raw/.gitkeep
 !data/processed/.gitkeep
-!data/records/.gitkeep
-!data/records/manifest.json
-!data/records/letters.json
-!data/records/README.md
 !data/README.md
 !data/templates/**
 data/frozen/*.csv
@@ -42,6 +41,7 @@ data/frozen/*.json
 *.pth
 *.ckpt
 *.bin
+*.safetensors
 *.onnx
 *.h5
 checkpoints/
