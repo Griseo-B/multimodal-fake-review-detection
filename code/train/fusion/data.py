@@ -28,14 +28,14 @@ ROOT = Path(__file__).resolve().parents[3]
 FEATURES = ROOT / "data" / "processed" / "features"
 
 TEXT_DIRS = [
-    FEATURES / "20261030_all_protocols",
-    FEATURES / "20261101_missing_text",
-    FEATURES / "20261030_public_dataset",
+    FEATURES / "20261008_all_protocols",
+    FEATURES / "20261020_missing_text",
+    FEATURES / "20261008_public_dataset",
 ]
 IMAGE_DIRS = [
-    FEATURES / "20261030_public_dataset",
-    FEATURES / "20261031_pool_shared_images",
-    FEATURES / "20261101_web_image_benchmark",
+    FEATURES / "20261008_public_dataset",
+    FEATURES / "20261015_pool_shared_images",
+    FEATURES / "20261020_web_image_benchmark",
 ]
 
 TABLES = {

@@ -21,8 +21,8 @@ scene-level photo and are reported as such rather than silently upgraded.
 
 Outputs
 -------
-experiments/20261101_web_image_pair/pairing.csv   per-row old vs new image
-experiments/20261101_web_image_pair/pairing.json  coverage and pool audit
+experiments/20261019_web_image_pair/pairing.csv   per-row old vs new image
+experiments/20261019_web_image_pair/pairing.json  coverage and pool audit
 data/frozen/web_image_category.csv                the re-paired fake rows
 
     python code/data/repair_web_image_pairing.py
@@ -39,9 +39,9 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 FROZEN = ROOT / "data" / "frozen"
-COLLECTED = ROOT / "data" / "raw" / "supplement" / "collected_20261029"
-JD_COLLECTED = ROOT / "data" / "raw" / "supplement" / "collected_jd_20261029"
-OUT = ROOT / "experiments" / "20261101_web_image_pair"
+COLLECTED = ROOT / "data" / "raw" / "supplement" / "collected_taobao_dianping"
+JD_COLLECTED = ROOT / "data" / "raw" / "supplement" / "collected_jd"
+OUT = ROOT / "experiments" / "20261019_web_image_pair"
 
 # --- food: keyword evidence -> cuisine, ordered most specific first ----------
 CUISINE_KEYWORDS: dict[str, tuple[str, ...]] = {

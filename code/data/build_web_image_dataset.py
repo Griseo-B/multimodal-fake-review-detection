@@ -37,7 +37,7 @@ import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
 FROZEN = ROOT / "data" / "frozen"
-ENTITY_MAP = ROOT / "experiments" / "20261031_image_assignment" / "entity_map.csv"
+ENTITY_MAP = ROOT / "experiments" / "20261014_image_assignment" / "entity_map.csv"
 
 KEEP_LABELS = ("real", "human_fake")
 SEED = 20261031

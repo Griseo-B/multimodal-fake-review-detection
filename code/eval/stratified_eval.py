@@ -20,7 +20,7 @@ Three readings per run:
     zh_two_class Chinese rows collapsed to real-vs-ai, which is the only
                  question that slice can actually answer.
 
-    python code/eval/stratified_eval.py --run experiments/20261102_seeds_05b
+    python code/eval/stratified_eval.py --run experiments/20261030_seeds_05b
 """
 
 from __future__ import annotations
@@ -34,7 +34,7 @@ import pandas as pd
 from sklearn.metrics import f1_score
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "experiments" / "20261102_stratified"
+OUT = ROOT / "experiments" / "20261101_stratified"
 LABELS = ["real", "human_fake", "ai_fake"]
 
 
@@ -100,7 +100,7 @@ def evaluate(run: str, seed: str, rows: dict) -> list[dict]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--run", default="experiments/20261102_seeds_05b")
+    parser.add_argument("--run", default="experiments/20261030_seeds_05b")
     parser.add_argument("--seeds-vote", action="store_true",
                         help="add a majority vote across seeds per arm")
     args = parser.parse_args()

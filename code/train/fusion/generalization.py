@@ -46,7 +46,7 @@ def main() -> None:
     parser.add_argument("--pool", default="pool_b")
     parser.add_argument("--field", default="domain")
     parser.add_argument("--llm", required=True)
-    parser.add_argument("--out", default="experiments/20261101_fusion_generalization")
+    parser.add_argument("--out", default="experiments/20261022_fusion_generalization")
     args = parser.parse_args()
 
     device = torch.device("cuda" if torch.cuda.is_available() else "cpu")

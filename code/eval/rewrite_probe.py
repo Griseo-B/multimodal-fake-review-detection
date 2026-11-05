@@ -99,13 +99,13 @@ def main() -> None:
     sample = pool.sample(N, random_state=SEED).copy()
     sample["rewritten"] = sample["text"].map(rewrite)
     reals = usable.loc[(usable["split"] == "test") & (usable["label"] == "real"), ["source_id", "label", "text"]]
-    bundle = joblib.load(ROOT / "experiments" / "20261026_aigen_tfidf" / "model_tfidf.joblib")
+    bundle = joblib.load(ROOT / "experiments" / "20260916_aigen_tfidf" / "model_tfidf.joblib")
     original_text = pd.concat([sample["text"], reals["text"]], ignore_index=True)
     rewritten_text = pd.concat([sample["rewritten"], reals["text"]], ignore_index=True)
     y = pd.concat([sample["label"], reals["label"]], ignore_index=True).to_numpy()
     original = score(bundle, original_text, y)
     rewritten = score(bundle, rewritten_text, y)
-    out = ROOT / "experiments" / "20261026_rewrite_tfidf"
+    out = ROOT / "experiments" / "20260922_rewrite_tfidf"
     out.mkdir(parents=True, exist_ok=True)
     rows = pd.DataFrame(
         [
@@ -123,7 +123,7 @@ def main() -> None:
     (out / "summary.json").write_text(
         json.dumps(
             {
-                "model": "experiments/20261026_aigen_tfidf/model_tfidf.joblib",
+                "model": "experiments/20260916_aigen_tfidf/model_tfidf.joblib",
                 "method": "fixed English synonym list; unchanged sentences receive the prefix 'In short, '",
                 "original_macro_f1": original["macro_f1"],
                 "rewritten_macro_f1": rewritten["macro_f1"],

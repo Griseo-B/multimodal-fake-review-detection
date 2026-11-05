@@ -40,7 +40,7 @@ from sklearn.preprocessing import StandardScaler
 ROOT = Path(__file__).resolve().parents[2]
 FROZEN = ROOT / "data" / "frozen"
 FEAT = ROOT / "data" / "processed" / "features"
-OUT = ROOT / "experiments" / "20261101_web_image_pair"
+OUT = ROOT / "experiments" / "20261019_web_image_pair"
 
 VISUAL = [
     "brightness", "saturation", "contrast", "lap_var", "edge_density", "colorfulness",
@@ -57,7 +57,7 @@ SEED = 20261031
 def load() -> pd.DataFrame:
     d = pd.read_csv(FROZEN / "web_image_pair.csv", dtype=str, keep_default_na=False)
     parts = []
-    for sub in ("20261031_pool_shared_images", "20261101_web_image_pair"):
+    for sub in ("20261015_pool_shared_images", "20261019_web_image_pair"):
         base = FEAT / sub
         v = pd.read_parquet(base / "visual_features.parquet")
         a = pd.read_parquet(base / "alignment_features.parquet")

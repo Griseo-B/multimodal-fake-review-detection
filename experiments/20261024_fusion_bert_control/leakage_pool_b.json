@@ -1,0 +1,67 @@
+{
+  "llm": "data/processed/features/20261024_encoder_bert-base",
+  "pool": "pool_b",
+  "note": "grouped 5-fold, group_id; a non-label target at high macro-F1 means the block carries provenance",
+  "table": [
+    {
+      "pool": "pool_b",
+      "target": "source",
+      "block": "llm",
+      "values": 11,
+      "classes": 11,
+      "macro_f1": 0.8202,
+      "accuracy": 0.9637,
+      "majority": 0.4436
+    },
+    {
+      "pool": "pool_b",
+      "target": "source",
+      "block": "text_hand",
+      "values": 11,
+      "classes": 11,
+      "macro_f1": 0.4938,
+      "accuracy": 0.6648,
+      "majority": 0.4436
+    },
+    {
+      "pool": "pool_b",
+      "target": "domain",
+      "block": "llm",
+      "values": 5,
+      "classes": 5,
+      "macro_f1": 0.9965,
+      "accuracy": 0.997,
+      "majority": 0.448
+    },
+    {
+      "pool": "pool_b",
+      "target": "domain",
+      "block": "text_hand",
+      "values": 5,
+      "classes": 5,
+      "macro_f1": 0.7681,
+      "accuracy": 0.7835,
+      "majority": 0.448
+    },
+    {
+      "pool": "pool_b",
+      "target": "language",
+      "block": "llm",
+      "values": 3,
+      "classes": 3,
+      "macro_f1": 0.9993,
+      "accuracy": 0.9999,
+      "majority": 0.9473
+    },
+    {
+      "pool": "pool_b",
+      "target": "language",
+      "block": "text_hand",
+      "values": 3,
+      "classes": 3,
+      "macro_f1": 0.9862,
+      "accuracy": 0.9975,
+      "majority": 0.9473
+    }
+  ]
+}

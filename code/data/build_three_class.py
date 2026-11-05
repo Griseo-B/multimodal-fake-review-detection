@@ -32,7 +32,7 @@ AUDIT = FROZEN / "three_class_audit.json"
 CATALOG = ROOT / "data" / "catalog.csv"
 IMAGE_DIR = ROOT / "data" / "processed" / "three_class" / "images"
 AUG_DIR = ROOT / "data" / "processed" / "three_class" / "aug"
-MANIFEST = ROOT / "data" / "raw" / "generated_ai_images_20261030" / "manifest.csv"
+MANIFEST = ROOT / "data" / "raw" / "generated_ai_images_20260928" / "manifest.csv"
 
 SD_SUBSETS = {"hotel_ai", "hotel_maide_en", "hotel_maide_zh", "ecommerce_salminen"}
 FIELDS = [

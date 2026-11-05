@@ -31,7 +31,7 @@ from pathlib import Path
 from urllib.parse import parse_qs, urlparse
 
 ROOT = Path(__file__).resolve().parents[2]
-OUT = ROOT / "data" / "raw" / "supplement" / "collected_20261101" / "dianping"
+OUT = ROOT / "data" / "raw" / "supplement" / "collected_dianping_chinese" / "dianping"
 SHOPS = OUT / "shops.jsonl"
 REVIEWS = OUT / "reviews.jsonl"
 TASKS_DONE = OUT / "tasks.jsonl"

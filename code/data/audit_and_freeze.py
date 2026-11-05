@@ -227,7 +227,7 @@ def audit_gpt3(ott: pd.DataFrame) -> dict:
             "status": "excluded_archive_removed",
             "n": 800,
             "prefix10_hits": 800,
-            "note": "2026-10-26 local audit: 800/800 GPT-3 reviews share the first 10 words with the paired Ott review. Not frozen. The archive was deleted after that audit.",
+            "note": "2026-09-16 local audit: 800/800 GPT-3 reviews share the first 10 words with the paired Ott review. Not frozen. The archive was deleted after that audit.",
         }
     dest = extract_gpt3()
     truthful = {

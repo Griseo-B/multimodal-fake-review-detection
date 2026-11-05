@@ -252,8 +252,8 @@ def aigen_check(frame: pd.DataFrame) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--features", default="data/processed/features/20261030_public_dataset")
-    parser.add_argument("--out", default="experiments/20261030_features")
+    parser.add_argument("--features", default="data/processed/features/20261008_public_dataset")
+    parser.add_argument("--out", default="experiments/20261008_features")
     parser.add_argument("--protocol", default="public_dataset")
     parser.add_argument("--suffix", default="")
     args = parser.parse_args()

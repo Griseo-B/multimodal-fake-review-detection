@@ -14,7 +14,7 @@
 | `frozen/two_class.csv`、`two_class_protocol.csv` | 真评 / 人写假评，以及能否混训 |
 | `frozen/hotel_three_class.csv`、`phone_paired.csv` | 酒店、手机的文本三类 |
 | `frozen/aigen_food.csv`、`ott_hotel.csv` | 审核后的两个子集 |
-| `frozen/mm3.csv` | 10 月 27 日的 1,080 条，只对应那次模型 |
+| `frozen/mm3.csv` | 9 月 24 日的 1,080 条，只对应那次模型 |
 | `raw/aigen_foodreview/` | 餐饮原图和原表。MIT |
 | `raw/ott/` | Ott 酒店文本。CC BY-NC-SA 3.0 |
 | `raw/maide_up/`、`raw/salminen/` | 酒店和电商文本 |
@@ -24,8 +24,8 @@
 | `raw/abo_small/`、`raw/hotel_images/` | 只为重做 `mm3.csv`。酒店图没有许可证，不上传 |
 | `raw/models/clip-vit-base-patch32/` | 重跑图像特征时用 |
 | `processed/mm_v2/`、`processed/mm3/`、`processed/three_class/` | 已经缩到 224 的图 |
-| `processed/features/20261030_public_dataset/` | 餐饮 24,768 行的文本、困惑度、流畅度、视觉、图文对齐、场景特征 |
-| `processed/features/20261031_pool_shared_images/` | 池 A、池 B 里共用图的 4,121 行同一套图像特征。图属于酒店或商品，不属于这条评论，只能当来源线索用 |
+| `processed/features/20261008_public_dataset/` | 餐饮 24,768 行的文本、困惑度、流畅度、视觉、图文对齐、场景特征 |
+| `processed/features/20261015_pool_shared_images/` | 池 A、池 B 里共用图的 4,121 行同一套图像特征。图属于酒店或商品，不属于这条评论，只能当来源线索用 |
 
 标签和能否进入数据集，以 `templates/标注规范.md` 为准。金标、人工标注和按规则打分都可以用。总览在 `catalog.csv`。本次补进的评论在 `raw/supplement/kept.csv`。
 

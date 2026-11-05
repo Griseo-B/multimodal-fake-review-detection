@@ -21,8 +21,8 @@ from pathlib import Path
 import pandas as pd
 
 ROOT = Path(__file__).resolve().parents[2]
-COLLECTED = ROOT / "data" / "raw" / "supplement" / "collected_20261029"
-OUT = ROOT / "experiments" / "20261101_web_image_pair"
+COLLECTED = ROOT / "data" / "raw" / "supplement" / "collected_taobao_dianping"
+OUT = ROOT / "experiments" / "20261019_web_image_pair"
 
 
 def main() -> None:

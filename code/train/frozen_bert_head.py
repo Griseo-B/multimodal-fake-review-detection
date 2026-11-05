@@ -86,7 +86,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--all", action="store_true")
     args = parser.parse_args()
-    out = ROOT / "experiments" / "20261026_aigen_bert_head"
+    out = ROOT / "experiments" / "20260917_aigen_bert_head"
     out.mkdir(parents=True, exist_ok=True)
     if not torch.cuda.is_available():
         raise RuntimeError("CUDA is not available")
@@ -110,7 +110,7 @@ def main() -> None:
     head.fit(vectors[train], frame.loc[train, "label"])
     bert_pred = head.predict(vectors[test])
     y_test = frame.loc[test, "label"]
-    saved = joblib.load(ROOT / "experiments" / "20261026_aigen_tfidf" / "model_tfidf.joblib")
+    saved = joblib.load(ROOT / "experiments" / "20260916_aigen_tfidf" / "model_tfidf.joblib")
     tfidf_pred = saved["model"].predict(saved["vectorizer"].transform(frame.loc[test, "text"]))
     rows = [
         metrics_row("tfidf_full_train", y_test, tfidf_pred, len(frame), int(train.sum()), int(test.sum()), status),

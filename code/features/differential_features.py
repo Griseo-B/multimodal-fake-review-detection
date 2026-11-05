@@ -120,9 +120,9 @@ def compare(frame: pd.DataFrame, protocol: str, group: str) -> list[dict]:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--ai-features", default="data/processed/features/20261030_public_dataset")
-    parser.add_argument("--fake-features", default="data/processed/features/20261030_all_protocols")
-    parser.add_argument("--out", default="experiments/20261031_differential")
+    parser.add_argument("--ai-features", default="data/processed/features/20261008_public_dataset")
+    parser.add_argument("--fake-features", default="data/processed/features/20261008_all_protocols")
+    parser.add_argument("--out", default="experiments/20261010_differential")
     args = parser.parse_args()
 
     out = ROOT / args.out

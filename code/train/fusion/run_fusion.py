@@ -473,7 +473,7 @@ def subset(data: dict, mask: np.ndarray) -> dict:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--llm", default="")
-    parser.add_argument("--out", default="experiments/20261101_fusion")
+    parser.add_argument("--out", default="experiments/20261021_fusion")
     parser.add_argument("--pools", nargs="+", default=["pool_a", "pool_b"])
     parser.add_argument("--seeds", nargs="+", type=int, default=[SEED],
                         help="one full pass over the matrix per seed; "

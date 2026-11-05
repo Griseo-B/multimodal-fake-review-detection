@@ -39,7 +39,7 @@ IMAGE_BLOCK = (
     "scene_prob", "scene_match", "entity_image_prob",
     "image_valence", "sentiment_synergy", "sentiment_agreement",
 )
-FEATURE_DIR = ROOT / "data" / "processed" / "features" / "20261030_public_dataset"
+FEATURE_DIR = ROOT / "data" / "processed" / "features" / "20261008_public_dataset"
 
 
 def load() -> pd.DataFrame:
@@ -110,7 +110,7 @@ def pool_overlap(name: str) -> dict:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--out", default="experiments/20261031_leakage_split")
+    parser.add_argument("--out", default="experiments/20261013_leakage_split")
     args = parser.parse_args()
     out = ROOT / args.out
     out.mkdir(parents=True, exist_ok=True)

@@ -222,7 +222,7 @@ def _collected_row(source: str, scene: str, review: dict, index: int, prefix: st
 def collected_rows() -> list[dict]:
     """Platform reviews the project lead checked as real on 2026-10-29."""
     rows: list[dict] = []
-    day = RAW / "collected_20261029"
+    day = RAW / "collected_taobao_dianping"
 
     taobao = json.loads((day / "taobao_reviews.json").read_text(encoding="utf-8"))
     for index, review in enumerate(taobao["reviews"], start=1):
@@ -231,12 +231,12 @@ def collected_rows() -> list[dict]:
             "ecommerce",
             review,
             index,
-            "raw/supplement/collected_20261029/taobao_images",
+            "raw/supplement/collected_taobao_dianping/taobao_images",
         )
         if row:
             rows.append(row)
 
-    jingdong = json.loads((RAW / "collected_jd_20261029" / "reviews.json").read_text(encoding="utf-8"))
+    jingdong = json.loads((RAW / "collected_jd" / "reviews.json").read_text(encoding="utf-8"))
     jd_index = 0
     for product in jingdong["products"]:
         for review in product["reviews"]:
@@ -246,7 +246,7 @@ def collected_rows() -> list[dict]:
                 "ecommerce",
                 review,
                 jd_index,
-                "raw/supplement/collected_jd_20261029",
+                "raw/supplement/collected_jd",
             )
             if row:
                 rows.append(row)
@@ -257,7 +257,7 @@ def collected_rows() -> list[dict]:
             "ecommerce",
             review,
             index,
-            "raw/supplement/collected_20261029/jd_images",
+            "raw/supplement/collected_taobao_dianping/jd_images",
         )
         if row:
             rows.append(row)
@@ -273,7 +273,7 @@ def collected_rows() -> list[dict]:
                     "food",
                     review,
                     dp_index,
-                    f"raw/supplement/collected_20261029/{folder}/images",
+                    f"raw/supplement/collected_taobao_dianping/{folder}/images",
                 )
                 if row:
                     rows.append(row)
@@ -284,12 +284,12 @@ def collected_rows() -> list[dict]:
             "food",
             review,
             index,
-            "raw/supplement/collected_20261029/dianping_images",
+            "raw/supplement/collected_taobao_dianping/dianping_images",
         )
         if row:
             rows.append(row)
 
-    ctrip = json.loads((RAW / "collected_ctrip_20261029" / "reviews.json").read_text(encoding="utf-8"))
+    ctrip = json.loads((RAW / "collected_ctrip" / "reviews.json").read_text(encoding="utf-8"))
     ctrip_index = 0
     for hotel in ctrip["hotels"]:
         for review in hotel["reviews"]:
@@ -299,13 +299,13 @@ def collected_rows() -> list[dict]:
                 "hotel",
                 review,
                 ctrip_index,
-                "raw/supplement/collected_ctrip_20261029",
+                "raw/supplement/collected_ctrip",
             )
             if row:
                 rows.append(row)
 
     # 2026-11-01 补采：浏览器登录态下按商圈列表逐店抓的点评真评，一条保留多张原图
-    topup = RAW / "collected_20261101" / "dianping" / "reviews.json"
+    topup = RAW / "collected_dianping_chinese" / "dianping" / "reviews.json"
     if topup.is_file():
         payload = json.loads(topup.read_text(encoding="utf-8"))
         topup_index = 0
@@ -317,7 +317,7 @@ def collected_rows() -> list[dict]:
                     "food",
                     review,
                     topup_index,
-                    "raw/supplement/collected_20261101/dianping/images",
+                    "raw/supplement/collected_dianping_chinese/dianping/images",
                 )
                 if row:
                     row["item"] = shop.get("shop") or row.get("item", "")
@@ -427,11 +427,11 @@ def main() -> None:
         "ctrip_rows_that_mention_images_but_have_no_file": claimed_images,
         "dianping_rows_with_picture_count_but_no_file": dianping_pictures,
         "text_only_reviews_allowed": {
-            "decided": "2026-10-29",
+            "decided": "2026-09-26",
             "note": "一部分评论可以没有图片。没有文件的行留在表里，不为了凑图去补。",
         },
         "ecommerce_platforms": {
-            "decided": "2026-10-30",
+            "decided": "2026-09-28",
             "note": "放弃淘宝平台，不再继续采集。电商用已经采集的天猫 1 个商品和京东。已写入的天猫 20 条保留。",
         },
         "human_fake_shared_web": {
@@ -449,9 +449,9 @@ def main() -> None:
         "proposal": [
             {"item": "一套数据里有真、人假、AI 假", "status": "达到", "evidence": "原有表、Li 2014 人写评论，加上大众点评和京东的规则标注"},
             {"item": "覆盖酒店、餐饮、电商", "status": "达到", "evidence": "场景是覆盖，不按场景拆开要求"},
-            {"item": "携程、淘宝等带图真评", "status": "达到", "evidence": f"2026-10-30 放弃淘宝平台，不再继续采集。电商用已经采集的天猫和京东：天猫 1 个商品 {human_n['taobao-human']} 条（{human_with_files['taobao-human']} 条有图，{human_files['taobao-human']} 张），京东 20 个商品 {human_n['jd-human']} 条（{human_with_files['jd-human']} 条有图，{human_files['jd-human']} 张）。携程 20 家酒店 {human_n['ctrip-human']} 条（{human_with_files['ctrip-human']} 条有图，{human_files['ctrip-human']} 张）。大众点评 126 家店 {human_n['dianping-human']} 条（{human_with_files['dianping-human']} 条有图，{human_files['dianping-human']} 张）。一部分评论可以没有图片。"},
+            {"item": "携程、淘宝等带图真评", "status": "达到", "evidence": f"2026-09-28 放弃淘宝平台，不再继续采集。电商用已经采集的天猫和京东：天猫 1 个商品 {human_n['taobao-human']} 条（{human_with_files['taobao-human']} 条有图，{human_files['taobao-human']} 张），京东 20 个商品 {human_n['jd-human']} 条（{human_with_files['jd-human']} 条有图，{human_files['jd-human']} 张）。携程 20 家酒店 {human_n['ctrip-human']} 条（{human_with_files['ctrip-human']} 条有图，{human_files['ctrip-human']} 张）。大众点评 126 家店 {human_n['dianping-human']} 条（{human_with_files['dianping-human']} 条有图，{human_files['dianping-human']} 张）。一部分评论可以没有图片。"},
             {"item": "Ott 之外的国内水军", "status": "达到", "evidence": f"大众点评规则标注人假 {dp_fake} 条、真评 {dp_real} 条已写入。京东规则标注人假 {jd_fake} 条、真评 {jd_real} 条已写入。人写假评各配一张已经下载的同场景网上实拍，记为共用，不是伪造图。同一句出现相反标签的没有写入"},
-            {"item": "AI 评论配 DALL·E 或 Stable Diffusion 图", "status": "达到", "evidence": "餐饮已有 DALL·E。酒店和电商没有原图的 AI 评论，每个子集前一半配了 Stable Diffusion，后一半不配图。清单在 data/raw/generated_ai_images_20261030/manifest.csv。"},
+            {"item": "AI 评论配 DALL·E 或 Stable Diffusion 图", "status": "达到", "evidence": "餐饮已有 DALL·E。酒店和电商没有原图的 AI 评论，每个子集前一半配了 Stable Diffusion，后一半不配图。清单在 data/raw/generated_ai_images_20260928/manifest.csv。"},
         ],
     }
     CHECK.write_text(json.dumps(check, ensure_ascii=False, indent=2), encoding="utf-8")
@@ -471,10 +471,10 @@ def main() -> None:
         ["新收", "真", "大众点评十城与成都", str(dp_real), "只有张数", "规则标注", "raw/supplement/kept.csv"],
         ["新收", "人假", "京东商品", str(jd_fake), "共用网上实拍", "规则标注", "raw/supplement/kept.csv"],
         ["新收", "真", "京东商品", str(jd_real), "无", "规则标注", "raw/supplement/kept.csv"],
-        ["新收", "真", "天猫 1 个商品", str(human_n["taobao-human"]), f"{human_files['taobao-human']} 张文件", "人工标注", "raw/supplement/collected_20261029"],
-        ["新收", "真", "京东 20 个商品", str(human_n["jd-human"]), f"{human_files['jd-human']} 张文件", "人工标注", "raw/supplement/collected_jd_20261029"],
-        ["新收", "真", "大众点评 126 家店", str(human_n["dianping-human"]), f"{human_files['dianping-human']} 张文件", "人工标注", "raw/supplement/collected_20261029"],
-        ["新收", "真", "携程 20 家酒店", str(human_n["ctrip-human"]), f"{human_files['ctrip-human']} 张文件", "人工标注", "raw/supplement/collected_ctrip_20261029"],
+        ["新收", "真", "天猫 1 个商品", str(human_n["taobao-human"]), f"{human_files['taobao-human']} 张文件", "人工标注", "raw/supplement/collected_taobao_dianping"],
+        ["新收", "真", "京东 20 个商品", str(human_n["jd-human"]), f"{human_files['jd-human']} 张文件", "人工标注", "raw/supplement/collected_jd"],
+        ["新收", "真", "大众点评 126 家店", str(human_n["dianping-human"]), f"{human_files['dianping-human']} 张文件", "人工标注", "raw/supplement/collected_taobao_dianping"],
+        ["新收", "真", "携程 20 家酒店", str(human_n["ctrip-human"]), f"{human_files['ctrip-human']} 张文件", "人工标注", "raw/supplement/collected_ctrip"],
         ["不收", "", "模型重标垃圾评论", "", "", "不是人工标注", ""],
         ["不收", "", "Li 2014 医生", "", "", "不在申报场景", "原始包里仍留着"],
         ["不收", "", "罗马乌尔都语评论", "5150", "", "未写明人工标注", "raw/supplement/ru-frdc-2022.csv"],

@@ -43,9 +43,9 @@ from pool_three_class import (  # noqa: E402
 from features.common import ROOT  # noqa: E402
 
 SEED = 42
-PAIRED_DIR = ROOT / "data" / "processed" / "features" / "20261030_public_dataset"
-SHARED_DIR = ROOT / "data" / "processed" / "features" / "20261031_pool_shared_images"
-TEXT_PARQUET = ROOT / "data" / "processed" / "features" / "20261030_all_protocols"
+PAIRED_DIR = ROOT / "data" / "processed" / "features" / "20261008_public_dataset"
+SHARED_DIR = ROOT / "data" / "processed" / "features" / "20261015_pool_shared_images"
+TEXT_PARQUET = ROOT / "data" / "processed" / "features" / "20261008_all_protocols"
 IMAGE_FILES = ("visual_features.parquet", "alignment_features.parquet", "scene_features.parquet")
 IMAGE_COLUMNS = (
     "brightness", "saturation", "contrast", "lap_var", "edge_density",
@@ -169,7 +169,7 @@ def run_setting(name: str, pool: str, block: str, frame: pd.DataFrame, columns: 
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--out", default="experiments/20261031_pool_multimodal")
+    parser.add_argument("--out", default="experiments/20261015_pool_multimodal")
     args = parser.parse_args()
     out = ROOT / args.out
     out.mkdir(parents=True, exist_ok=True)
@@ -223,7 +223,7 @@ def main() -> None:
             "`availability_only` is the leak measure: it uses nothing but 'this row has a photo'. "
             "`text(rows with image)` is the control row for `text+image(shared ok)`: both are fitted "
             "on the same rows, so the difference is the image block and nothing else. Numbers on a "
-            "subset are not comparable with the full-table ones in 20261031_pool_three_class. "
+            "subset are not comparable with the full-table ones in 20261016_pool_three_class. "
             "Every text+mm gain here comes from photographs of the hotel or product, not from a "
             "review-owned image, so it must be reported as provenance, not as fake-review evidence."
         ),

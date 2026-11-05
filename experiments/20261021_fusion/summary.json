@@ -1,0 +1,196 @@
+{
+  "config": {
+    "seed": 42,
+    "hidden": 64,
+    "dropout": 0.2,
+    "lr": 0.001,
+    "weight_decay": 0.0001,
+    "epochs": 120,
+    "patience": 15,
+    "batch_size": 512
+  },
+  "llm_features": "data\\processed\\features\\20261021_llm_Qwen2.5-0.5B-Instruct",
+  "blocks": [
+    "text_hand",
+    "llm",
+    "clip_text",
+    "image_stats",
+    "clip_image",
+    "resnet"
+  ],
+  "note": "corpus-level duplicate features excluded; test split used once; image rows are not a random subset",
+  "pools": {
+    "pool_a": {
+      "rows": 7168,
+      "by_label": {
+        "ai_fake": 2637,
+        "real": 2611,
+        "human_fake": 1920
+      },
+      "by_domain": {
+        "hotel": 7168
+      },
+      "by_split": {
+        "train": 5502,
+        "test": 842,
+        "val": 824
+      },
+      "blocks": {
+        "image_stats": {
+          "dim": 22,
+          "present": 3515
+        },
+        "clip_text": {
+          "dim": 512,
+          "present": 3515
+        },
+        "clip_image": {
+          "dim": 512,
+          "present": 3515
+        },
+        "resnet": {
+          "dim": 2048,
+          "present": 3515
+        },
+        "llm": {
+          "dim": 896,
+          "present": 7168
+        }
+      }
+    },
+    "pool_b": {
+      "rows": 45370,
+      "by_label": {
+        "real": 19891,
+        "ai_fake": 19279,
+        "human_fake": 6200
+      },
+      "by_domain": {
+        "food": 20328,
+        "ecommerce": 17872,
+        "hotel": 4984,
+        "book": 1537,
+        "other": 649
+      },
+      "by_split": {
+        "train": 32497,
+        "val": 6437,
+        "test": 6436
+      },
+      "blocks": {
+        "image_stats": {
+          "dim": 22,
+          "present": 27673
+        },
+        "clip_text": {
+          "dim": 512,
+          "present": 27673
+        },
+        "clip_image": {
+          "dim": 512,
+          "present": 27673
+        },
+        "resnet": {
+          "dim": 2048,
+          "present": 27673
+        },
+        "llm": {
+          "dim": 896,
+          "present": 45370
+        }
+      }
+    }
+  },
+  "best": [
+    {
+      "pool": "pool_b/with_image",
+      "run": "mm-text+llm+image",
+      "blocks": "text_hand+llm+image_stats (no-risk)",
+      "macro_f1": 0.9936,
+      "f1_real": 0.9962,
+      "f1_human": 0.9865,
+      "f1_ai": 0.998
+    },
+    {
+      "pool": "pool_b/with_image",
+      "run": "mm-text+llm",
+      "blocks": "text_hand+llm (no-risk)",
+      "macro_f1": 0.9924,
+      "f1_real": 0.9957,
+      "f1_human": 0.984,
+      "f1_ai": 0.9974
+    },
+    {
+      "pool": "pool_b",
+      "run": "gate-text+llm+clip",
+      "blocks": "text_hand+llm+clip_text (no-risk)",
+      "macro_f1": 0.9831,
+      "f1_real": 0.9872,
+      "f1_human": 0.9719,
+      "f1_ai": 0.9903
+    },
+    {
+      "pool": "pool_b",
+      "run": "gate-text+llm",
+      "blocks": "text_hand+llm (no-risk)",
+      "macro_f1": 0.9802,
+      "f1_real": 0.984,
+      "f1_human": 0.9679,
+      "f1_ai": 0.9887
+    },
+    {
+      "pool": "pool_b",
+      "run": "twolevel-text+llm-noRisk",
+      "blocks": "text_hand+llm (no-risk)",
+      "macro_f1": 0.9784,
+      "f1_real": 0.9824,
+      "f1_human": 0.9661,
+      "f1_ai": 0.9867
+    },
+    {
+      "pool": "pool_b",
+      "run": "lgbm-text+llm",
+      "blocks": "text_hand+llm (no-risk)",
+      "macro_f1": 0.9781,
+      "f1_real": 0.9806,
+      "f1_human": 0.9686,
+      "f1_ai": 0.985
+    },
+    {
+      "pool": "pool_b",
+      "run": "twolevel-text+llm",
+      "blocks": "text_hand+llm",
+      "macro_f1": 0.9778,
+      "f1_real": 0.985,
+      "f1_human": 0.9591,
+      "f1_ai": 0.9893
+    },
+    {
+      "pool": "pool_a/with_image",
+      "run": "mm-text+llm+image",
+      "blocks": "text_hand+llm+image_stats (no-risk)",
+      "macro_f1": 0.9153,
+      "f1_real": 0.8654,
+      "f1_human": 0.8841,
+      "f1_ai": 0.9964
+    },
+    {
+      "pool": "pool_b/with_image",
+      "run": "mm-text",
+      "blocks": "text_hand (no-risk)",
+      "macro_f1": 0.9144,
+      "f1_real": 0.9486,
+      "f1_human": 0.8329,
+      "f1_ai": 0.9615
+    },
+    {
+      "pool": "pool_a/with_image",
+      "run": "mm-text+llm",
+      "blocks": "text_hand+llm (no-risk)",
+      "macro_f1": 0.9124,
+      "f1_real": 0.8713,
+      "f1_human": 0.8842,
+      "f1_ai": 0.9818
+    }
+  ]
+}

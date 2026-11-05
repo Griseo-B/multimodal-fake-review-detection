@@ -56,8 +56,8 @@ def evaluate_block(frame: pd.DataFrame, block: str, model: str = "logreg") -> di
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--features", default="data/processed/features/20261030_public_dataset")
-    parser.add_argument("--out", default="experiments/20261031_baseline")
+    parser.add_argument("--features", default="data/processed/features/20261008_public_dataset")
+    parser.add_argument("--out", default="experiments/20261012_baseline")
     args = parser.parse_args()
 
     folder = ROOT / args.features

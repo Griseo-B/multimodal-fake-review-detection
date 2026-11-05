@@ -1,7 +1,7 @@
 """Run the feature extraction for one protocol.
 
     python code/features/extract_features.py --protocol public_dataset \
-        --out data/processed/features/20261030_public_dataset
+        --out data/processed/features/20261008_public_dataset
 
 Each part writes its own file, so a rerun skips finished parts unless --force
 is given. Image parts only see rows whose image belongs to that review.

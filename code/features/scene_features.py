@@ -213,7 +213,7 @@ def scene_frame(frame: pd.DataFrame, embeddings_path: Path, device) -> tuple[pd.
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--features", default="data/processed/features/20261030_public_dataset")
+    parser.add_argument("--features", default="data/processed/features/20261008_public_dataset")
     parser.add_argument("--protocol", default="public_dataset")
     args = parser.parse_args()
 

@@ -39,7 +39,7 @@ def predict(features: np.ndarray, train: np.ndarray, test: np.ndarray, labels: n
 
 
 def main() -> None:
-    data = np.load(ROOT / "experiments" / "20261026_modality_rows" / "features.npz", allow_pickle=True)
+    data = np.load(ROOT / "experiments" / "20260918_modality_rows" / "features.npz", allow_pickle=True)
     text = data["text"]
     image = data["image"]
     similarity = data["similarity"]
@@ -57,7 +57,7 @@ def main() -> None:
     rows = []
     for name, (features, dropped) in specs.items():
         rows.append(row(name, dropped, y_test, predict(features, train, test, labels)))
-    text_metrics = pd.read_csv(ROOT / "experiments" / "20261026_aigen_tfidf" / "metrics.csv")
+    text_metrics = pd.read_csv(ROOT / "experiments" / "20260916_aigen_tfidf" / "metrics.csv")
     for _, item in text_metrics.iterrows():
         dropped = "none" if item["model"] == "tfidf_length_sentiment" else "length_and_sentiment"
         rows.append(
@@ -74,7 +74,7 @@ def main() -> None:
                 "recall_ai_fake": item["recall_ai_fake"],
             }
         )
-    out = ROOT / "experiments" / "20261026_ablation"
+    out = ROOT / "experiments" / "20260919_ablation"
     out.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(rows).to_csv(out / "metrics.csv", index=False)
     print(pd.DataFrame(rows)[["model", "dropped", "accuracy", "macro_f1"]].to_string(index=False))

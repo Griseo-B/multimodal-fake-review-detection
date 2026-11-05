@@ -212,7 +212,7 @@ def main() -> None:
     parser.add_argument("--card-only", action="store_true",
                         help="drop the review text from the prompt; the only "
                              "version where the score is about the card")
-    parser.add_argument("--out", default="experiments/20261101_llm_probe")
+    parser.add_argument("--out", default="experiments/20261028_llm_probe")
     args = parser.parse_args()
 
     from transformers import AutoModelForCausalLM, AutoTokenizer

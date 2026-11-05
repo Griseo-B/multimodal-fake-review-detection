@@ -67,7 +67,7 @@ def evaluate_setting(name: str, split_kind: str, train: pd.DataFrame, test: pd.D
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--out", default="experiments/20261031_source_generalization")
+    parser.add_argument("--out", default="experiments/20261017_source_generalization")
     args = parser.parse_args()
     out = ROOT / args.out
     out.mkdir(parents=True, exist_ok=True)

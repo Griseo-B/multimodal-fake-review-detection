@@ -28,7 +28,7 @@ def top_terms(vectorizer, model, text: str, k: int = 5) -> str:
 
 
 def main() -> None:
-    bundle = joblib.load(ROOT / "experiments" / "20261026_aigen_tfidf" / "model_tfidf.joblib")
+    bundle = joblib.load(ROOT / "experiments" / "20260916_aigen_tfidf" / "model_tfidf.joblib")
     frame = pd.read_csv(ROOT / "data" / "frozen" / "aigen_food.csv")
     test = frame.loc[
         frame["usable"].astype(str).isin(["True", "true", "1"]) & (frame["split"] == "test")
@@ -38,7 +38,7 @@ def main() -> None:
     wrong = test.loc[test["prediction"] != test["label"]]
     correct = test.loc[test["prediction"] == test["label"]].sample(20, random_state=42)
     chosen = pd.concat([wrong, correct], ignore_index=True).head(20)
-    rewrite = pd.read_csv(ROOT / "experiments" / "20261026_rewrite_tfidf" / "rewritten_200.csv")
+    rewrite = pd.read_csv(ROOT / "experiments" / "20260922_rewrite_tfidf" / "rewritten_200.csv")
     changed = rewrite.loc[rewrite["pred_original"] != rewrite["pred_rewritten"]]
     rows = []
     for row in chosen.itertuples(index=False):
@@ -69,7 +69,7 @@ def main() -> None:
                 "text_preview": str(row.rewritten).replace("\n", " ")[:160],
             }
         )
-    out = ROOT / "experiments" / "20261026_explanations"
+    out = ROOT / "experiments" / "20260923_explanations"
     out.mkdir(parents=True, exist_ok=True)
     pd.DataFrame(rows).head(20).to_csv(out / "explanations_20.csv", index=False)
     print("wrote", len(rows), "wrong_in_test", len(wrong))

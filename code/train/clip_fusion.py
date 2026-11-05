@@ -96,7 +96,7 @@ def encode(frame: pd.DataFrame, processor, model, device: torch.device) -> tuple
 
 
 def main() -> None:
-    out = ROOT / "experiments" / "20261026_modality_rows"
+    out = ROOT / "experiments" / "20260918_modality_rows"
     out.mkdir(parents=True, exist_ok=True)
     if not torch.cuda.is_available():
         raise RuntimeError("CUDA is not available")

@@ -207,7 +207,7 @@ def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--pool", default="pool_b")
     parser.add_argument("--domain", default="food")
-    parser.add_argument("--out", default="experiments/20261101_coop")
+    parser.add_argument("--out", default="experiments/20261027_coop")
     parser.add_argument("--epochs", type=int, default=20)
     args = parser.parse_args()
 

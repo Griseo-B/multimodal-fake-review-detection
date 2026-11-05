@@ -1,6 +1,6 @@
 """Image features for the pool rows the public_dataset run never covered.
 
-The 20261030_public_dataset pass used PAIRED_LINKS == {"paired"}, i.e. only
+The 20261008_public_dataset pass used PAIRED_LINKS == {"paired"}, i.e. only
 images that belong to the review itself. Every row still missing an image
 feature in pool A and pool B is a shared image: `assignment` (one photo reused
 across reviews of the same hotel or product) or `shared` (a same-scene web photo
@@ -36,8 +36,8 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 from common import FEATURE_ROOT, ROOT, project_path  # noqa: E402
 
 PARTS = ["visual", "align", "scene"]
-COVERED = FEATURE_ROOT / "20261030_public_dataset"
-TEXT_FEATURES = FEATURE_ROOT / "20261030_all_protocols" / "text_features.parquet"
+COVERED = FEATURE_ROOT / "20261008_public_dataset"
+TEXT_FEATURES = FEATURE_ROOT / "20261008_all_protocols" / "text_features.parquet"
 POOLS = ("a", "b")
 
 
@@ -70,7 +70,7 @@ def load_rows() -> pd.DataFrame:
 
 def main() -> None:
     parser = argparse.ArgumentParser()
-    parser.add_argument("--out", default=str(FEATURE_ROOT / "20261031_pool_shared_images"))
+    parser.add_argument("--out", default=str(FEATURE_ROOT / "20261015_pool_shared_images"))
     parser.add_argument("--parts", default="visual,align,scene")
     parser.add_argument("--force", action="store_true")
     args = parser.parse_args()

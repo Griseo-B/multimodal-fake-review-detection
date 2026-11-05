@@ -22,13 +22,13 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import FEATURE_ROOT, ROOT  # noqa: E402
 
-OUT = FEATURE_ROOT / "20261101_web_image_benchmark"
+OUT = FEATURE_ROOT / "20261020_web_image_benchmark"
 COVERED_DIRS = [
-    "20261030_public_dataset",
-    "20261031_pool_shared_images",
-    "20261101_web_image_pair",
+    "20261008_public_dataset",
+    "20261015_pool_shared_images",
+    "20261019_web_image_pair",
 ]
-TEXT_FEATURES = FEATURE_ROOT / "20261030_all_protocols" / "text_features.parquet"
+TEXT_FEATURES = FEATURE_ROOT / "20261008_all_protocols" / "text_features.parquet"
 
 
 def log(message: str) -> None:

@@ -24,9 +24,9 @@ from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
 TABLE = ROOT / "data" / "frozen" / "mm_v2.csv"
-OUT = ROOT / "data" / "raw" / "generated_ai_images_20261030"
+OUT = ROOT / "data" / "raw" / "generated_ai_images_20260928"
 IMAGE_DIR = OUT / "images"
-SMALL_DIR = ROOT / "data" / "processed" / "generated_ai_images_20261030"
+SMALL_DIR = ROOT / "data" / "processed" / "generated_ai_images_20260928"
 MANIFEST = OUT / "manifest.csv"
 MODEL_ID = "runwayml/stable-diffusion-v1-5"
 LOCAL_MODEL = ROOT / "data" / "raw" / "models" / "stable-diffusion-v1-5"

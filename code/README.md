@@ -16,6 +16,6 @@
 - `python code/data/build_allowed_reviews.py`
 - `python code/data/build_supplement.py`
 - `python code/data/build_three_class.py`
-- `python code/train/text_baseline.py --table data/frozen/aigen_food.csv --out experiments/20261026_aigen_tfidf --labels real ai_fake`
+- `python code/train/text_baseline.py --table data/frozen/aigen_food.csv --out experiments/20260916_aigen_tfidf --labels real ai_fake`
 
 `text_baseline.py` 只读带 `usable` 和 `split` 的表。

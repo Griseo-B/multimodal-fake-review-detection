@@ -28,7 +28,7 @@ import requests
 from PIL import Image
 
 ROOT = Path(__file__).resolve().parents[2]
-SRC = ROOT / "data" / "raw" / "supplement" / "collected_20261101" / "dianping"
+SRC = ROOT / "data" / "raw" / "supplement" / "collected_dianping_chinese" / "dianping"
 REVIEWS_JSONL = SRC / "reviews.jsonl"
 IMAGES = SRC / "images"
 OUT = SRC / "reviews.json"

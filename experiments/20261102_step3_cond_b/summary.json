@@ -14,7 +14,7 @@
     "patience": 15,
     "batch_size": 512
   },
-  "llm_features": "data\\processed\\features\\20261101_llm_Qwen2.5-0.5B-Instruct",
+  "llm_features": "data\\processed\\features\\20261021_llm_Qwen2.5-0.5B-Instruct",
   "blocks": [
     "text_hand",
     "llm",

@@ -41,7 +41,7 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from benchmark_baselines import ALIGN, VISUAL, load  # noqa: E402
 
-OUT = ROOT / "experiments" / "20261101_alignment_domain_shift"
+OUT = ROOT / "experiments" / "20261029_alignment_domain_shift"
 
 
 def pooled_logistic(train: pd.DataFrame, test: pd.DataFrame, cols: list[str]) -> np.ndarray:

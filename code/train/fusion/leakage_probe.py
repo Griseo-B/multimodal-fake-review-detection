@@ -70,7 +70,7 @@ def main() -> None:
     parser.add_argument("--pool", default="pool_b")
     parser.add_argument("--llm", required=True)
     parser.add_argument("--targets", nargs="+", default=["source", "domain", "language"])
-    parser.add_argument("--out", default="experiments/20261101_fusion")
+    parser.add_argument("--out", default="experiments/20261021_fusion")
     args = parser.parse_args()
 
     data = build(args.pool, llm_path=ROOT / args.llm, with_images=False)

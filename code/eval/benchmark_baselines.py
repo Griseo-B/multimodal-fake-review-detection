@@ -29,7 +29,7 @@ from sklearn.preprocessing import StandardScaler
 ROOT = Path(__file__).resolve().parents[2]
 FROZEN = ROOT / "data" / "frozen"
 FEAT = ROOT / "data" / "processed" / "features"
-OUT = ROOT / "experiments" / "20261101_web_image_benchmark"
+OUT = ROOT / "experiments" / "20261020_web_image_benchmark"
 
 VISUAL = [
     "brightness", "saturation", "contrast", "lap_var", "edge_density", "colorfulness",
@@ -40,10 +40,10 @@ ALIGN = ["clip_cosine", "sent_max_cosine", "sent_mean_cosine"]
 SCENE = ["scene_prob", "scene_match", "entity_image_prob", "image_valence",
          "sentiment_synergy", "sentiment_agreement"]
 FEATURE_DIRS = [
-    "20261030_public_dataset",
-    "20261031_pool_shared_images",
-    "20261101_web_image_pair",
-    "20261101_web_image_benchmark",
+    "20261008_public_dataset",
+    "20261015_pool_shared_images",
+    "20261019_web_image_pair",
+    "20261020_web_image_benchmark",
 ]
 
 

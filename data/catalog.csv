@@ -14,10 +14,10 @@
 新收,真,大众点评十城与成都,31658,只有张数,规则标注,raw/supplement/kept.csv
 新收,人假,京东商品,1756,共用网上实拍,规则标注,raw/supplement/kept.csv
 新收,真,京东商品,2180,无,规则标注,raw/supplement/kept.csv
-新收,真,天猫 1 个商品,20,7 张文件,人工标注,raw/supplement/collected_20261029
-新收,真,京东 20 个商品,441,930 张文件,人工标注,raw/supplement/collected_jd_20261029
-新收,真,大众点评 126 家店,1258,5145 张文件,人工标注,raw/supplement/collected_20261029
-新收,真,携程 20 家酒店,224,662 张文件,人工标注,raw/supplement/collected_ctrip_20261029
+新收,真,天猫 1 个商品,20,7 张文件,人工标注,raw/supplement/collected_taobao_dianping
+新收,真,京东 20 个商品,441,930 张文件,人工标注,raw/supplement/collected_jd
+新收,真,大众点评 126 家店,1258,5145 张文件,人工标注,raw/supplement/collected_taobao_dianping
+新收,真,携程 20 家酒店,224,662 张文件,人工标注,raw/supplement/collected_ctrip
 不收,,模型重标垃圾评论,,,不是人工标注,
 不收,,Li 2014 医生,,,不在申报场景,原始包里仍留着
 不收,,罗马乌尔都语评论,5150,,未写明人工标注,raw/supplement/ru-frdc-2022.csv

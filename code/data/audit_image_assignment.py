@@ -28,7 +28,7 @@ import pandas as pd
 ROOT = Path(__file__).resolve().parents[2]
 FROZEN = ROOT / "data" / "frozen"
 ASSIGNMENT = ROOT / "data" / "raw" / "human_fake_images" / "assignment.csv"
-OUT = ROOT / "experiments" / "20261031_image_assignment"
+OUT = ROOT / "experiments" / "20261014_image_assignment"
 
 
 def key(text: str) -> str:

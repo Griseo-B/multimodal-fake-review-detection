@@ -187,7 +187,7 @@ def describe(card: dict) -> str:
 def main() -> None:
     parser = argparse.ArgumentParser()
     parser.add_argument("--features", nargs="+",
-                        default=["data/processed/features/20261030_public_dataset"])
+                        default=["data/processed/features/20261008_public_dataset"])
     parser.add_argument("--out", default="data/processed/features/cards")
     parser.add_argument("--table", default="")
     parser.add_argument("--protocol", default="public_dataset",

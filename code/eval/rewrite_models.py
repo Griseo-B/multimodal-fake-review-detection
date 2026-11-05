@@ -44,7 +44,7 @@ def main() -> None:
     frame = frame.loc[frame["usable"].astype(str).isin(["True", "true", "1"])].reset_index(drop=True)
     frame["source_id"] = frame["source_id"].astype(str)
     frame["text"] = frame["text"].fillna("").astype(str)
-    rewritten = pd.read_csv(ROOT / "experiments" / "20261026_rewrite_tfidf" / "rewritten_200.csv")
+    rewritten = pd.read_csv(ROOT / "experiments" / "20260922_rewrite_tfidf" / "rewritten_200.csv")
     rewritten["source_id"] = rewritten["source_id"].astype(str)
     id_to_index = {source_id: index for index, source_id in enumerate(frame["source_id"])}
     ai_index = np.array([id_to_index[source_id] for source_id in rewritten["source_id"]])
@@ -54,7 +54,7 @@ def main() -> None:
     train = frame["split"].to_numpy() == "train"
     y_train = frame.loc[train, "label"]
 
-    data = np.load(ROOT / "experiments" / "20261026_modality_rows" / "features.npz")
+    data = np.load(ROOT / "experiments" / "20260918_modality_rows" / "features.npz")
     text = data["text"]
     image = data["image"]
     print("encoding rewritten CLIP text", flush=True)
@@ -130,7 +130,7 @@ def main() -> None:
         }
     )
     out = pd.DataFrame(rows)
-    out.to_csv(ROOT / "experiments" / "20261026_rewrite_tfidf" / "metrics_models.csv", index=False)
+    out.to_csv(ROOT / "experiments" / "20260922_rewrite_tfidf" / "metrics_models.csv", index=False)
     print(out.to_string(index=False), flush=True)
 
 

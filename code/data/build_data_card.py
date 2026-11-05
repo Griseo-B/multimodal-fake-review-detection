@@ -74,13 +74,13 @@ def main() -> None:
         name: json.loads((FROZEN / f"three_class_pool_{name}_audit.json").read_text(encoding="utf-8"))
         for name in ("a", "b")
     }
-    leak = json.loads((ROOT / "experiments" / "20261031_leakage_split" / "summary.json").read_text(encoding="utf-8"))
-    shared = json.loads((ROOT / "experiments" / "20261031_image_assignment" / "summary.json").read_text(encoding="utf-8"))
-    pairing = json.loads((ROOT / "experiments" / "20261101_web_image_pair" / "pairing.json").read_text(encoding="utf-8"))
-    matcher = json.loads((ROOT / "experiments" / "20261101_web_image_pair" / "category_matcher_validation.json").read_text(encoding="utf-8"))
-    leakage = json.loads((ROOT / "experiments" / "20261101_web_image_pair" / "leakage.json").read_text(encoding="utf-8"))
+    leak = json.loads((ROOT / "experiments" / "20261013_leakage_split" / "summary.json").read_text(encoding="utf-8"))
+    shared = json.loads((ROOT / "experiments" / "20261014_image_assignment" / "summary.json").read_text(encoding="utf-8"))
+    pairing = json.loads((ROOT / "experiments" / "20261019_web_image_pair" / "pairing.json").read_text(encoding="utf-8"))
+    matcher = json.loads((ROOT / "experiments" / "20261019_web_image_pair" / "category_matcher_validation.json").read_text(encoding="utf-8"))
+    leakage = json.loads((ROOT / "experiments" / "20261019_web_image_pair" / "leakage.json").read_text(encoding="utf-8"))
     bench = json.loads((FROZEN / "web_image_benchmark_audit.json").read_text(encoding="utf-8"))
-    baselines = json.loads((ROOT / "experiments" / "20261101_web_image_benchmark" / "baselines.json").read_text(encoding="utf-8"))
+    baselines = json.loads((ROOT / "experiments" / "20261020_web_image_benchmark" / "baselines.json").read_text(encoding="utf-8"))
     probe = {row["probe"]: row for row in baselines["probes"]}
     pool_audit = json.loads((FROZEN / "three_class_pool_audit.json").read_text(encoding="utf-8"))
     split_repair = pool_audit["split_repair"]
@@ -161,7 +161,7 @@ def main() -> None:
     lines.append("# 数据卡")
     lines.append("")
     lines.append("> 自动生成：`code/data/build_data_card.py`。数字来自 `data/frozen/three_class.csv` 与两个实验池的核对文件，不手填。")
-    lines.append("> 生成日期 2026-10-31。改表之后重跑本脚本，不要手改本页。")
+    lines.append("> 生成日期 2026-11-01。改表之后重跑本脚本，不要手改本页。")
     lines.append("")
     lines.append("## 一句话状态")
     lines.append("")
@@ -232,7 +232,7 @@ def main() -> None:
     lines.append("")
     lines.append("在这个前提下，「借用网图」还分三档对应强度，逐档核对过。核对脚本 "
                  "`code/data/audit_image_assignment.py`（实体档）与 `code/data/repair_web_image_pairing.py`（品类档），"
-                 "结果在 `experiments/20261031_image_assignment/`、`experiments/20261101_web_image_pair/`。")
+                 "结果在 `experiments/20261014_image_assignment/`、`experiments/20261019_web_image_pair/`。")
     lines.append("")
     lines.append("| 档位 | 行数 | 唯一图 | 图的来源 | 对应关系 |")
     lines.append("|---|---:|---:|---|---|")
@@ -325,7 +325,7 @@ def main() -> None:
     lines.append(md_table(gen_domain, "生成器"))
     lines.append("")
     lines.append("生成器和场景几乎一一对应，所以“跨域泛化”在现有表里实际是“跨生成器”。"
-                 "`experiments/20261031_source_generalization/` 把这两个对比分开量了一遍，结论写在 `docs/实验进展.md`。")
+                 "`experiments/20261017_source_generalization/` 把这两个对比分开量了一遍，结论写在 `docs/实验进展.md`。")
     lines.append("")
     lines.append("### 3.1 图片角色是标签的函数，不是标签的相关量")
     lines.append("")
@@ -341,7 +341,7 @@ def main() -> None:
     lines.append("")
     lines.append("人写假评的自属图在两个池里都是 **0**。这不是采集疏漏：假评不会附一张能证明它在现场的照片。"
                  "结论是三分类多模态在当前数据上组不出来；任何把共用图放进模型的写法都会把图片角色当标签用。"
-                 "实测见 `experiments/20261031_pool_multimodal/`：池 B 只用图像时人写假评 F1 = 1.000、AI 假 = 0.000。")
+                 "实测见 `experiments/20261015_pool_multimodal/`：池 B 只用图像时人写假评 F1 = 1.000、AI 假 = 0.000。")
     lines.append("")
     lines.append("中期口径据此锁定为「文本三分类 + 餐饮二分类图文真伪」：图像只在餐饮 20,128 行的真伪对照里用，"
                  "三分类一律纯文本。范围这么写死的理由就是上两张表，不是模型还没调好。")

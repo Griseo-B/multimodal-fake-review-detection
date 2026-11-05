@@ -65,7 +65,7 @@ def main() -> None:
     table["binary_label"] = (table["label"] == "human_fake").astype(int)
 
     # split by what the model could memorise: the image file, or the entity
-    ent = pd.read_csv(ROOT / "experiments" / "20261031_image_assignment" / "entity_map.csv",
+    ent = pd.read_csv(ROOT / "experiments" / "20261014_image_assignment" / "entity_map.csv",
                       dtype=str, keep_default_na=False).set_index("id")["entity"]
     table["entity"] = table["id"].map(ent).fillna("")
     image_key = table["image_224_path"].map(lambda p: Path(p).stem)

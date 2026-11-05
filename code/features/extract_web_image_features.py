@@ -1,7 +1,7 @@
 """Image features for every row of the borrowed-web-image dataset.
 
 `data/frozen/web_image_pair.csv` holds 5,237 reviews over 183 unique web
-images. The 20261031_pool_shared_images pass already covered 2,901 of them;
+images. The 20261015_pool_shared_images pass already covered 2,901 of them;
 this script fills the remaining 2,336 (all ecommerce real reviews) and writes a
 self-contained feature set for the whole table so the leakage test can run on
 the complete dataset in one place.
@@ -24,9 +24,9 @@ sys.path.insert(0, str(Path(__file__).resolve().parent))
 
 from common import FEATURE_ROOT, ROOT  # noqa: E402
 
-PREVIOUS = FEATURE_ROOT / "20261031_pool_shared_images"
-OUT = FEATURE_ROOT / "20261101_web_image_pair"
-TEXT_FEATURES = FEATURE_ROOT / "20261030_all_protocols" / "text_features.parquet"
+PREVIOUS = FEATURE_ROOT / "20261015_pool_shared_images"
+OUT = FEATURE_ROOT / "20261019_web_image_pair"
+TEXT_FEATURES = FEATURE_ROOT / "20261008_all_protocols" / "text_features.parquet"
 
 
 def log(message: str) -> None:
@@ -103,7 +103,7 @@ def main() -> None:
     log(f"scene {scene.shape} {timings['scene']}s")
 
     run = {
-        "purpose": "features for rows the 20261031_pool_shared_images pass did not cover",
+        "purpose": "features for rows the 20261015_pool_shared_images pass did not cover",
         "rows": int(len(frame)),
         "unique_images": int(frame["image_file"].nunique()),
         "by_domain": {str(k): int(v) for k, v in frame["domain"].value_counts().items()},

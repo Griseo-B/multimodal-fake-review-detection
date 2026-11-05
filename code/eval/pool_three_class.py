@@ -51,7 +51,7 @@ DROP = {
     "subset", "label_quality", "image_md5", "y", "group_id", "source",
     "generator",
 }
-FEATURE_DIR = ROOT / "data" / "processed" / "features" / "20261030_all_protocols"
+FEATURE_DIR = ROOT / "data" / "processed" / "features" / "20261008_all_protocols"
 
 
 def load_pool(name: str) -> pd.DataFrame:
@@ -228,7 +228,7 @@ def main() -> None:
     parser.add_argument("--pools", nargs="+", default=["a", "b"])
     parser.add_argument("--models", nargs="+", default=["logreg", "lightgbm"])
     parser.add_argument("--weightings", nargs="+", default=["plain", "balanced", "downsample"])
-    parser.add_argument("--out", default="experiments/20261031_pool_three_class")
+    parser.add_argument("--out", default="experiments/20261016_pool_three_class")
     parser.add_argument("--cv", action="store_true", help="also run grouped 5-fold")
     args = parser.parse_args()
 

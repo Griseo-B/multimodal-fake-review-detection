@@ -18,7 +18,7 @@
 | `two_class_protocol.csv` | 加上 `protocol`。同一实验和不同来源分开训练 |
 | `hotel_three_class.csv` | 芝加哥 20 家酒店的文本三类，没有划分列 |
 | `phone_paired.csv` | 19 款手机的文本三类 |
-| `mm3.csv` | 10 月 27 日的 1,080 条，只对应那次模型 |
+| `mm3.csv` | 9 月 24 日的 1,080 条，只对应那次模型 |
 | `three_class_pool_a.csv`、`three_class_pool_b.csv` | 能直接训三分类的两张表。A 是酒店单域 7,168 条，B 是跨源 45,370 条。多一列 `split_purged`（按图片 md5 归并）和 `image_cross_label`。核对文件 `_audit.json` |
 | `three_class_pool_audit.json` | 两个池的条数、图片哈希与划分修复汇总 |
 | `web_image_pair.csv` | 实体档「人写假评 + 同实体网图」。29 个实体，5,237 行（真 3,132 / 人写假 2,105），真假共用同一图池。核对文件 `_audit.json` |
